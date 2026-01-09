@@ -160,17 +160,23 @@
 }
 
 .mock-content {
-    padding: 24px;
+    padding: 32px;
     flex: 1;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow-y: auto;
 }
 
 .console-text {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Courier New', monospace;
     color: #00d4ff;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    white-space: pre-line;
+    width: 100%;
+    font-weight: 500;
+    letter-spacing: -0.3px;
 }
 
 .cursor {
@@ -204,5 +210,34 @@
         top: 0;
         height: 300px;
         margin-bottom: 40px;
+    }
+
+    .console-text {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .mock-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .console-text {
+        font-size: 0.75rem;
+        line-height: 1.5;
+    }
+
+    .mock-content {
+        padding: 16px;
+    }
+
+    .hiw-step h3 {
+        font-size: 2rem;
+    }
+
+    .hiw-step p {
+        font-size: 1rem;
+        margin-left: 0;
     }
 }

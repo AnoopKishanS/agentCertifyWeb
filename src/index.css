@@ -265,18 +265,43 @@ button {
   display: block;
 }
 
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-text-main);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .navbar {
     min-width: 0;
-    width: calc(100% - 32px);
-    padding: 0 5px;
-    height: 60px;
+    width: calc(100% - 20px);
+    padding: 0 10px;
+    height: 56px;
+    border-radius: 16px;
   }
 
-  .nav-links .nav-link:not(:last-of-type) {
-    display: none;
-    /* Hide secondary links on mobile */
+  .navbar-content {
+    padding: 0 10px;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
   }
 
   .logo {
@@ -284,12 +309,43 @@ button {
   }
 
   .nav-links {
-    gap: 4px;
+    position: fixed;
+    top: 90px;
+    left: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 16px;
+    padding: 20px;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .nav-links.mobile-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-link {
+    width: 100%;
+    text-align: center;
+    padding: 12px 16px;
+    font-size: 15px;
   }
 
   .nav-cta {
-    margin-left: 5px;
-    padding: 8px 16px;
+    margin-left: 0;
+    padding: 12px 20px;
+    width: 100%;
+    text-align: center;
   }
 
   .hero-container {
@@ -297,18 +353,38 @@ button {
     text-align: center;
   }
 
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
   .hero-subtitle {
     margin: 0 auto 32px;
+    font-size: 1.1rem;
   }
 
   .hero-actions {
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   .visual-wrapper {
     transform: none;
     margin-top: 40px;
     justify-content: center;
-    /* Center on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .btn-lg {
+    padding: 12px 20px;
+    font-size: 14px;
   }
 }

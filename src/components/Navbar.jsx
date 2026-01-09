@@ -3,6 +3,7 @@ import '../index.css';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,12 +19,21 @@ const Navbar = () => {
         <div className="logo">
           Madame<span style={{ color: 'var(--color-primary)' }}>QA</span>
         </div>
-        <div className="nav-links">
-          <a href="#industry" className="nav-link">Industry</a>
-          <a href="#features" className="nav-link">Features</a>
-          <a href="#pricing" className="nav-link">Pricing</a>
-          <a href="#login" className="nav-link">Login</a>
-          <a href="#start" className="btn btn-primary nav-cta">Hire Her</a>
+        <button 
+          className="mobile-menu-toggle"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div className={`nav-links ${mobileMenuOpen ? 'mobile-open' : ''}`}>
+          <a href="#industry" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Industry</a>
+          <a href="#features" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Features</a>
+          <a href="#pricing" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Pricing</a>
+          <a href="#login" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Login</a>
+          <a href="#start" className="btn btn-primary nav-cta" onClick={() => setMobileMenuOpen(false)}>Hire Her</a>
         </div>
       </div>
     </nav>

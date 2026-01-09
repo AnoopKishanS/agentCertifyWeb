@@ -95,7 +95,7 @@
 }
 
 .ha-status-pill {
-    margin-top: 12px;
+    margin-top: 20px;
     font-size: 12px;
     color: #3C4044;
     background: #F7F7F6;
@@ -203,12 +203,13 @@
 
 .stage-connect {
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
+    padding: 30px 20px;
 }
 
 .ha-app-icon,
 .ha-agent-icon {
-    width: 80px;
+    width: 100px;
     height: 80px;
     background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
     border-radius: 16px;
@@ -219,10 +220,11 @@
     font-weight: 600;
     color: #334155;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    padding: 0 12px;
 }
 
 .ha-agent-icon {
-    width: 200px;
+    width: 220px;
     background: #3C4044;
     /* Charcoal for contrast */
     border: 1px solid rgba(253, 123, 65, 0.3);
@@ -249,6 +251,7 @@
     justify-content: center;
     align-items: center;
     animation: slowRotate 20s linear infinite;
+    margin-bottom: 10px;
 }
 
 @keyframes slowRotate {
@@ -420,13 +423,15 @@
     background: #fff;
     border: 1px solid #e6ebf1;
     border-radius: 12px;
-    padding: 20px;
+    padding: 16px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
     opacity: 0;
     transform: scale(0.9);
+    min-height: 80px;
+    justify-content: space-between;
 }
 
 /* Only animate when the stage is active */
@@ -455,15 +460,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .tc-tag {
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    padding: 4px 10px;
+    padding: 5px 10px;
     border-radius: 4px;
     font-weight: 600;
+    line-height: 1;
 }
 
 /* Color Coding */
@@ -529,9 +536,12 @@
 }
 
 .tc-title {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
     color: #1e293b;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
 }
 
 /* Execute Stage - Split */
@@ -673,11 +683,13 @@
         aspect-ratio: auto;
         min-height: 480px;
         /* Give it more vertical space */
-        padding: 10px 5px;
+        padding: 5px;
+        /* Reduced padding for mobile */
     }
 
     .ha-content {
-        padding: 15px;
+        padding: 12px;
+        /* Reduced padding */
     }
 
     .ha-floating-badge {
@@ -685,6 +697,11 @@
     }
 
     /* Connect Stage */
+    .stage-connect {
+        gap: 16px;
+        padding: 20px 15px;
+    }
+
     .ha-agent-icon {
         width: 140px;
         height: 60px;
@@ -692,11 +709,17 @@
     }
 
     .ha-app-icon {
-        width: 50px;
-        height: 50px;
+        width: 70px;
+        height: 60px;
+        font-size: 11px;
     }
 
     /* Analyze Stage */
+    .orbit-container {
+        width: 240px;
+        height: 240px;
+    }
+
     .ha-wireframe-lg {
         width: 180px;
         height: 140px;
@@ -706,14 +729,21 @@
     .test-grid {
         grid-template-columns: 1fr 1fr;
         gap: 8px;
+        padding: 5px;
     }
 
     .ha-test-card {
         padding: 12px;
+        min-height: 70px;
     }
 
     .tc-title {
         font-size: 12px;
+    }
+
+    .tc-tag {
+        font-size: 9px;
+        padding: 4px 8px;
     }
 
     /* Execute Stage */
@@ -726,12 +756,53 @@
     .ha-stats-panel {
         width: 100%;
     }
+
+    .ha-run-item {
+        padding: 10px 12px;
+    }
+
+    .ri-text {
+        font-size: 13px;
+    }
+
+    .ha-status-pill {
+        font-size: 11px;
+        padding: 5px 12px;
+    }
 }
 
 @media (max-width: 480px) {
+    .hero-animation-container {
+        min-height: 550px;
+        /* More height for stacked cards */
+        padding: 0;
+        /* Remove all padding on very small screens */
+    }
+
+    .ha-content {
+        padding: 10px;
+        border-radius: 16px;
+    }
+
     .test-grid {
         grid-template-columns: 1fr;
         /* Stack on tiny phones */
+        gap: 6px;
+        padding: 0;
+    }
+
+    .ha-test-card {
+        padding: 10px;
+        min-height: 65px;
+    }
+
+    .tc-title {
+        font-size: 11px;
+    }
+
+    .orbit-container {
+        width: 200px;
+        height: 200px;
     }
 
     .ha-wireframe-lg {
@@ -740,11 +811,23 @@
     }
 
     .ha-stage {
-        padding: 10px;
+        padding: 8px;
     }
 
-    .hero-animation-container {
-        min-height: 550px;
-        /* More height for stacked cards */
+    .ha-agent-icon {
+        width: 120px;
+        height: 50px;
+        font-size: 10px;
+        padding: 0 12px;
+    }
+
+    .ri-spinner {
+        width: 16px;
+        height: 16px;
+        margin-right: 10px;
+    }
+
+    .ri-text {
+        font-size: 12px;
     }
 }
