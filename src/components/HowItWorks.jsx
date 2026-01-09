@@ -5,26 +5,26 @@ import './HowItWorks.css';
 const steps = [
     {
         id: 1,
-        title: 'Application Analysis',
-        desc: 'Our AI agents crawl your application to understand the UI structure, user flows, and potential edge cases.',
+        title: 'She studies your world',
+        desc: 'She quietly navigates your application, observing every user flow and UI nuance with the curiosity of a dedicated engineer.',
         visual: 'Analyzing UI Structure...'
     },
     {
         id: 2,
-        title: 'Test Case Generation',
-        desc: 'Based on the analysis, the system automatically generates a comprehensive suite of test cases covering all critical paths.',
+        title: 'She imagines the breaks',
+        desc: 'Where others test happy paths, she creatively drafts edge cases and scenarios tailored to break your specific logic.',
         visual: 'Generating Test Cases: 100%...'
     },
     {
         id: 3,
-        title: 'Test Execution',
-        desc: 'Tests are executed in parallel across multiple environments. No manual intervention required.',
+        title: 'She executes relentlessly',
+        desc: 'She runs thousands of tests across parallel universes (cloud environments), validating your code with ruthless precision.',
         visual: 'Running Tests: Pass, Pass, Pass...'
     },
     {
         id: 4,
-        title: 'Result Summary',
-        desc: 'Get a detailed report of the test run, highlighting failures, bugs, and performance regressions.',
+        title: 'She reports the truth',
+        desc: 'No vague errors. She hands you a dossier of exactly what failed, why it failed, and often, how to fix it.',
         visual: 'Success! 142/142 Tests Passed.'
     }
 ];
@@ -66,7 +66,7 @@ const HowItWorks = () => {
             <div className="container">
                 <ScrollReveal animation="slide-left">
                     <div className="section-header">
-                        <h2>See AgentCertify in action</h2>
+                        <h2>See her in action</h2>
                     </div>
                 </ScrollReveal>
 

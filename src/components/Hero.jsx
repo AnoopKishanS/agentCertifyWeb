@@ -22,30 +22,26 @@ const Hero = () => {
                 <div className="hero-content">
                     <ScrollReveal animation="fade-up" delay="100">
                         <h1 className="hero-title">
-                            Generate and execute <br />
-                            <span className="text-gradient">test cases with AI.</span>
+                            Meet the Synthetic QA Engineer who <br />
+                            <span className="text-gradient">Understands Your Code Better Than You</span>
                         </h1>
                     </ScrollReveal>
 
                     <ScrollReveal animation="slide-right" delay="200">
                         <p className="hero-subtitle">
-                            AI agents analyze your application to generate and execute test cases automatically.
+                            She doesn't just run scripts. She autonomously explores, designs intricate tests, and ensures your release quality with human-like intuition.
                         </p>
                     </ScrollReveal>
 
                     <ScrollReveal animation="scale-up" delay="300">
                         <div className="hero-actions">
-                            <button className="btn btn-primary btn-lg">See how it works</button>
-                            <button className="btn btn-secondary btn-lg">Get Started</button>
+                            <button className="btn btn-primary btn-lg">Get Started</button>
+                            <button className="btn btn-secondary btn-lg">Request a Demo</button>
                         </div>
                     </ScrollReveal>
                 </div>
                 <div className="hero-visual">
-                    <div
-                        className="visual-wrapper"
-                        // Re-added parallax logic that was lost in previous overwrite
-                        style={{ transform: `perspective(1000px) rotateY(-10deg) rotateX(5deg) translateY(${offset * 0.25}px)` }}
-                    >
+                    <div className="visual-wrapper">
                         <HeroAnimation />
                     </div>
                 </div>

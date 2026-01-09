@@ -6,23 +6,44 @@ const features = [
     {
         title: 'Integrate seamlessly',
         desc: 'Connect with Jira, GitHub, Slack, and GitLab to sync your workflow.',
-        icon: '🔗',
+        icon: (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+            </svg>
+        ),
         isIntegration: true
     },
     {
-        title: 'Understands your application',
-        desc: 'Deep analysis of your UI, user flows, and module relationships to build a comprehensive map of your software.',
-        icon: '🔍'
+        title: 'She builds a mental map',
+        desc: 'She doesn’t just click. She learns your architecture, understanding dependencies and risks like a senior developer.',
+        icon: (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+            </svg>
+        )
     },
     {
-        title: 'Generates intelligent test cases',
-        desc: 'Creates realistic user scenarios, edge cases, and regression tests automatically based on usage patterns.',
-        icon: '⚡'
+        title: 'She anticipates user behavior',
+        desc: 'She dreams up scenarios you forgot about—improbable edge cases and chaotic user flows—to ensure bulletproof reliability.',
+        icon: (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+        )
     },
     {
-        title: 'Executes test cases',
-        desc: 'Autonomous agents run the generated test cases in real cloud environments and report clear, actionable results.',
-        icon: '🚀'
+        title: 'She validates with purpose',
+        desc: 'She executes purposeful tests, checking not just for crashes, but for experience degradations and logical fallacies.',
+        icon: (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+                <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+            </svg>
+        )
     }
 ];
 
@@ -39,7 +60,7 @@ const Features = () => {
             <div className="container">
                 <ScrollReveal animation="slide-right">
                     <div className="section-header">
-                        <h2>What AgentCertify does</h2>
+                        <h2>What she is capable of</h2>
                     </div>
                 </ScrollReveal>
 
