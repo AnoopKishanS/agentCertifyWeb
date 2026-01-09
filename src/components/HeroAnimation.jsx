@@ -65,27 +65,31 @@ const HeroAnimation = () => {
                 {/* Step 2: Generate Tests */}
                 <div className={`ha-stage stage-generate ${step === 2 ? 'active' : ''}`}>
                     <div className="test-grid">
-                        <div className="ha-test-card c1">
+                        <div className="ha-test-card c1 unit">
                             <div className="tc-header">
                                 <div className="tc-tag">Unit</div>
+                                <div className="tc-status"></div>
                             </div>
                             <div className="tc-title">Verify Login</div>
                         </div>
-                        <div className="ha-test-card c2">
+                        <div className="ha-test-card c2 e2e">
                             <div className="tc-header">
                                 <div className="tc-tag">E2E</div>
+                                <div className="tc-status"></div>
                             </div>
                             <div className="tc-title">Checkout Flow</div>
                         </div>
-                        <div className="ha-test-card c3">
+                        <div className="ha-test-card c3 edge">
                             <div className="tc-header">
                                 <div className="tc-tag">Edge</div>
+                                <div className="tc-status"></div>
                             </div>
                             <div className="tc-title">Invalid Input</div>
                         </div>
-                        <div className="ha-test-card c4">
+                        <div className="ha-test-card c4 perf">
                             <div className="tc-header">
                                 <div className="tc-tag">Perf</div>
+                                <div className="tc-status"></div>
                             </div>
                             <div className="tc-title">Load Test</div>
                         </div>
