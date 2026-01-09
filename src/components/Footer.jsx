@@ -39,7 +39,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="footer-bottom">
-                    <p>&copy; 2024 AgentCertify Inc. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} MadameQA. All rights reserved.</p>
                 </div>
             </div>
         </footer>

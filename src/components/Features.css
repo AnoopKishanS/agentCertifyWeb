@@ -1,83 +1,104 @@
 .feature-section {
     background-color: var(--color-bg-base);
+    padding: 100px 20px !important;
 }
 
 .feature-section .section-header {
-    margin-bottom: 60px;
+    margin-bottom: 70px;
     text-align: left;
 }
 
 .feature-section .section-header h2 {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
+    font-weight: 700;
     color: var(--color-text-main);
+    letter-spacing: -1px;
 }
 
 .feature-row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* Changed to 2x2 grid for 4 items */
-    gap: 40px;
+    gap: 36px;
 }
 
 .feature-item {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 30px;
+    padding: 40px 36px;
     border-radius: 12px;
-    background: #fff;
-    border: 1px solid transparent;
-    transition: all 0.2s ease;
+    /* Consistent radius */
+    background: #ffffff;
+    border: 1px solid #E8E8E6;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .feature-item:hover {
-    box-shadow: var(--shadow-soft);
-    border-color: var(--color-border);
-    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(60, 64, 68, 0.08);
+    border-color: #FD7B41;
+    /* Orange accent */
+    transform: translateY(-4px);
 }
 
 .feature-icon-wrapper {
-    margin-bottom: 24px;
+    margin-bottom: 28px;
 }
 
 .feature-icon {
     font-size: 2rem;
     display: inline-block;
-    padding: 12px;
-    background: #f0f4f8;
-    border-radius: 12px;
+    padding: 14px;
+    background: #F7F7F6;
+    /* Light grey */
+    border-radius: 14px;
     line-height: 1;
+    color: var(--color-primary);
 }
 
 .feature-content h3 {
     font-size: 1.5rem;
+    font-weight: 600;
     margin-bottom: 16px;
     color: var(--color-text-main);
+    letter-spacing: -0.02em;
 }
 
 .feature-content p {
-    color: var(--color-text-light);
-    line-height: 1.6;
+    color: #64748b;
+    line-height: 1.65;
+    font-weight: 400;
 }
 
 .mini-integration-list {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
-    margin-top: 16px;
+    margin-top: 20px;
 }
 
 .mini-pill {
     font-size: 12px;
-    padding: 4px 10px;
-    border: 1px solid #e6ebf1;
+    padding: 6px 12px;
+    border: 1px solid #dcd9da;
     border-radius: 20px;
     font-weight: 600;
-    color: var(--color-text-main);
+    color: #7B7F8A;
+    background: #F9F9F9;
+    transition: all 0.2s ease;
+}
+
+.mini-pill:hover {
+    border-color: var(--color-primary);
+    color: #FFFFFF;
+    background: var(--color-primary);
 }
 
 @media (max-width: 768px) {
     .feature-row {
         grid-template-columns: 1fr;
+    }
+
+    .feature-section {
+        padding: 60px 20px !important;
     }
 }

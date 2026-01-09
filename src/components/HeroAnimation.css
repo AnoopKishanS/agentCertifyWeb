@@ -1,22 +1,24 @@
 .hero-animation-container {
     width: 100%;
-    height: 450px;
-    /* Increased height */
+    /* 16:9 aspect ratio - responsive */
+    aspect-ratio: 16 / 9;
+    max-width: 900px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    /* No perspective here, parent Hero has it */
+    padding: 60px 40px;
+    /* Padding to prevent badge cropping */
 }
 
 /* Floating Badges for Depth */
 .ha-floating-badge {
     position: absolute;
     background: #fff;
-    padding: 8px 16px;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    font-size: 12px;
+    padding: 10px 20px;
+    border-radius: 24px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    font-size: 13px;
     font-weight: 700;
     color: var(--color-primary);
     z-index: 10;
@@ -24,14 +26,14 @@
 }
 
 .badge-1 {
-    top: 40px;
-    right: -20px;
+    top: 20px;
+    right: 20px;
     animation-delay: 0s;
 }
 
 .badge-2 {
-    bottom: 60px;
-    left: -20px;
+    bottom: 20px;
+    left: 20px;
     animation-delay: 2s;
 }
 
@@ -47,24 +49,20 @@
     }
 }
 
-/* Main Content Container (No Window Frame) */
-.ha-animation-content {
+/* Frameless content container - with depth */
+.ha-content {
     width: 100%;
-    max-width: 600px;
-    height: 380px;
-    position: relative;
-    /* Keeping background transparent or white depending on desired look. 
-       If "remove outer box" means transparent, we use transparent. 
-       But the content (cards etc) might need contrast. 
-       Let's keep it clean and transparent for now, assuming elements have their own definition */
-    background: transparent;
-    border-radius: 12px;
-    /* Removed box-shadow and border */
+    height: 100%;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12), 0 8px 24px rgba(0, 0, 0, 0.08);
+    /* Restored depth */
     display: flex;
     flex-direction: column;
+    position: relative;
+    padding: 40px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     overflow: hidden;
-    padding: 0;
-    /* Removed padding from body, might need to add back to stages if needed */
 }
 
 /* Ensure stages have full size */
@@ -92,33 +90,48 @@
 }
 
 .ha-status-pill {
-    margin-top: 24px;
-    font-size: 13px;
-    color: var(--color-primary);
-    background: rgba(206, 29, 255, 0.05);
-    padding: 6px 16px;
+    margin-top: 12px;
+    font-size: 12px;
+    color: #3C4044;
+    background: #F7F7F6;
+    padding: 6px 14px;
     border-radius: 20px;
-    font-weight: 600;
+    font-weight: 500;
+    /* Lighter weight */
+    border: 1px solid #E8E8E6;
 }
 
-/* Connect Stage - Stream Effect */
+/* Connect Stage - Vertical Stream Effect */
 .ha-connection-stream {
-    width: 150px;
-    height: 4px;
+    width: 4px;
+    height: 80px;
     background: #eef0f5;
     border-radius: 2px;
-    margin: 0 20px;
     position: relative;
     overflow: hidden;
 }
 
-.stream-particle {
+.ha-scan-line {
     position: absolute;
     top: 0;
-    bottom: 0;
-    width: 40px;
-    background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
-    animation: streamFlow 1.5s infinite linear;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    /* Thinner line */
+    background: linear-gradient(90deg, transparent, #FD7B41, transparent);
+    /* Orange scanline */
+    animation: scanVertical 2s linear infinite;
+    z-index: 2;
+    opacity: 0.5;
+}
+
+.stream-particle {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: linear-gradient(180deg, transparent, var(--color-primary), transparent);
+    animation: streamFlowVertical 1.5s infinite linear;
     opacity: 0;
 }
 
@@ -134,9 +147,9 @@
     animation-delay: 1.0s;
 }
 
-@keyframes streamFlow {
+@keyframes streamFlowVertical {
     0% {
-        left: -40px;
+        top: -30px;
         opacity: 0;
     }
 
@@ -149,31 +162,67 @@
     }
 
     100% {
-        left: 150px;
+        top: 80px;
         opacity: 0;
     }
 }
 
 .stage-connect {
-    flex-direction: row;
-    /* Horizontal layout for connect */
+    flex-direction: column;
+    gap: 20px;
 }
 
-/* Analyze Stage - Complex */
+.ha-app-icon,
+.ha-agent-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.ha-agent-icon {
+    width: 180px;
+    background: linear-gradient(135deg, #FD7B41 0%, #EDBF9B 100%);
+    /* Orange to Sand */
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    /* Reduced weight */
+    padding: 0 16px;
+    text-align: center;
+}
+
+.ha-icon-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+/* Analyze Stage - Single centered element */
 .analyze-layout {
     display: flex;
-    gap: 30px;
+    justify-content: center;
     align-items: center;
 }
 
 .ha-wireframe-lg {
-    width: 220px;
-    height: 160px;
+    width: 280px;
+    /* Increased from 220px */
+    height: 200px;
+    /* Increased from 160px */
     background: #fff;
     border: 1px solid #e6ebf1;
     border-radius: 8px;
     position: relative;
-    padding: 12px;
+    padding: 16px;
+    /* Increased padding */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
     overflow: hidden;
 }
@@ -360,34 +409,61 @@
 
 .ha-run-list {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
 .ha-run-item {
     display: flex;
     align-items: center;
-    padding: 8px;
-    border-bottom: 1px solid #f7f9fc;
+    padding: 12px 14px;
+    background: #fafbfc;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.ha-run-item:hover {
+    background: #f5f7fa;
 }
 
 .ri-spinner {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     border: 2px solid #e6ebf1;
     border-top-color: var(--color-primary);
     border-radius: 50%;
     margin-right: 12px;
     animation: spin 1s infinite linear;
+    flex-shrink: 0;
 }
 
 .ri-spinner.spin-done {
     border: none;
-    background: #28c840;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    /* Modern emerald green gradient */
     color: #fff;
     animation: none;
     font-size: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+
+.ri-spinner.spin-done::after {
+    content: '✓';
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.ri-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: #334155;
+    /* Subtle slate color */
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    letter-spacing: -0.01em;
 }
 
 @keyframes spin {
@@ -397,36 +473,61 @@
 }
 
 .ha-stats-panel {
-    width: 120px;
+    width: 180px;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
-.stat-donut {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: conic-gradient(#28c840 0% 98%, #ff5f57 98% 100%);
+.stats-card {
+    background: #fafbfc;
+    border-radius: 12px;
+    padding: 16px;
     display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    position: relative;
 }
 
-.stat-donutch::after {
-    content: '';
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    background: #fff;
-    border-radius: 50%;
+.stat-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #64748b;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.01em;
 }
 
-.stat-inner {
-    position: absolute;
-    z-index: 2;
-    font-weight: 800;
-    font-size: 18px;
-    color: #0a2540;
+.ha-stat-value {
+    font-size: 20px;
+    font-weight: 600;
+    /* Reduced weight */
+    color: var(--color-text-main);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.ha-stat-row.success .ha-stat-value {
+    color: #3C4044;
+}
+
+.stat-value.failed {
+    color: #ef4444;
+}
+
+.stat-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
+    margin: 4px 0;
+}
+
+.stat-row.total {
+    padding-top: 4px;
+}
+
+.stat-row.total .stat-value {
+    color: var(--color-primary);
+    font-size: 20px;
 }

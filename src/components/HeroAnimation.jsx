@@ -14,7 +14,7 @@ const HeroAnimation = () => {
 
     return (
         <div className="hero-animation-container">
-            {/* Floating Elements for Parallax Depth (handled in CSS/Parent usually, but we'll add local movement) */}
+            {/* Floating Elements for Parallax Depth */}
             <div className="ha-floating-badge badge-1">
                 <span>AI Agent</span>
             </div>
@@ -22,7 +22,8 @@ const HeroAnimation = () => {
                 <span>Coverage</span>
             </div>
 
-            <div className="ha-animation-content">
+            {/* Frameless animation content - no window shell */}
+            <div className="ha-content">
                 {/* Step 0: Connect */}
                 <div className={`ha-stage stage-connect ${step === 0 ? 'active' : ''}`}>
                     <div className="ha-app-icon">
@@ -34,15 +35,15 @@ const HeroAnimation = () => {
                         <div className="stream-particle p3"></div>
                     </div>
                     <div className="ha-agent-icon">
-                        <span>Brain</span>
+                        <span>Synthetic Brain</span>
                     </div>
-                    <div className="ha-status-pill">Est. Connection...</div>
+                    <div className="ha-status-pill">Establishing Connection</div>
                 </div>
 
-                {/* Step 1: Understand/Analyze (ENHANCED) */}
+                {/* Step 1: Understand/Analyze */}
                 <div className={`ha-stage stage-analyze ${step === 1 ? 'active' : ''}`}>
                     <div className="analyze-layout">
-                        {/* Left: UI Mockup being scanned */}
+                        {/* Single centered UI Mockup being scanned */}
                         <div className="ha-wireframe-lg">
                             <div className="wf-nav"></div>
                             <div className="wf-hero-lg"></div>
@@ -57,19 +58,8 @@ const HeroAnimation = () => {
                             <div className="detected-node dn-2"></div>
                             <div className="detected-node dn-3"></div>
                         </div>
-
-                        {/* Right: DOM/Graph Tree building up */}
-                        <div className="ha-structure-tree">
-                            <div className="tree-node root"></div>
-                            <div className="tree-branch b1"></div>
-                            <div className="tree-node child c1"></div>
-                            <div className="tree-branch b2"></div>
-                            <div className="tree-node child c2"></div>
-                            <div className="tree-branch b3"></div>
-                            <div className="tree-node child c3"></div>
-                        </div>
                     </div>
-                    <div className="ha-status-pill">Building Application Graph...</div>
+                    <div className="ha-status-pill">Analyzing Application Structure</div>
                 </div>
 
                 {/* Step 2: Generate Tests */}
@@ -100,7 +90,7 @@ const HeroAnimation = () => {
                             <div className="tc-title">Load Test</div>
                         </div>
                     </div>
-                    <div className="ha-status-pill">Generated 42 Test Cases</div>
+                    <div className="ha-status-pill">Test Cases Generated</div>
                 </div>
 
                 {/* Step 3: Execute */}
@@ -108,16 +98,16 @@ const HeroAnimation = () => {
                     <div className="ha-dashboard-split">
                         <div className="ha-run-list">
                             <div className="ha-run-item pass">
-                                <div className="ri-spinner spin-done">✓</div>
+                                <div className="ri-spinner spin-done"></div>
                                 <div className="ri-text">Auth Module</div>
                             </div>
                             <div className="ha-run-item pass">
-                                <div className="ri-spinner spin-done">✓</div>
+                                <div className="ri-spinner spin-done"></div>
                                 <div className="ri-text">User Profile</div>
                             </div>
                             <div className="ha-run-item pass">
-                                <div className="ri-spinner spin-done">✓</div>
-                                <div className="ri-text">Payment Gat...</div>
+                                <div className="ri-spinner spin-done"></div>
+                                <div className="ri-text">Payment Gateway</div>
                             </div>
                             <div className="ha-run-item running">
                                 <div className="ri-spinner"></div>
@@ -125,16 +115,24 @@ const HeroAnimation = () => {
                             </div>
                         </div>
                         <div className="ha-stats-panel">
-                            <div className="stat-donut">
-                                <div className="stat-inner">98%</div>
-                            </div>
-                            <div className="stat-legend">
-                                <div className="sl-item"><span className="dot pl-pass"></span>Pass</div>
-                                <div className="sl-item"><span className="dot pl-fail"></span>Fail</div>
+                            <div className="stats-card">
+                                <div className="stat-row">
+                                    <div className="stat-label">Passed</div>
+                                    <div className="stat-value passed">42</div>
+                                </div>
+                                <div className="stat-row">
+                                    <div className="stat-label">Failed</div>
+                                    <div className="stat-value failed">1</div>
+                                </div>
+                                <div className="stat-divider"></div>
+                                <div className="stat-row total">
+                                    <div className="stat-label">Success Rate</div>
+                                    <div className="stat-value">98%</div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div className="ha-status-pill">Executing Suite...</div>
+                    <div className="ha-status-pill">Executing Test Suite</div>
                 </div>
             </div>
         </div>

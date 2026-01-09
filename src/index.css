@@ -1,27 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --font-family: 'Inter', sans-serif;
+  --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
-  /* Palette - Updated Branding */
-  --color-primary: #CE1DFF;
-  --color-primary-hover: #a815d1;
-  --color-text-main: #0a2540;
-  --color-text-light: #425466;
-  --color-text-hero: #0a2540;
-  --color-bg-base: #ffffff;
-  --color-bg-alt: #f6f9fc;
-  --color-border: #e6ebf1;
+  /* Palette - Calcite Theme */
+  --color-primary: #FD7B41;
+  /* Energetic Orange */
+  --color-primary-hover: #e36a35;
+  --color-secondary: #EDBF9B;
+  /* Warm Sand */
+  --color-accent: #DDDCDB;
+  /* Soft Grey */
+  --color-text-main: #3C4044;
+  /* Charcoal Grey */
+  --color-text-light: #64686c;
+  --color-text-hero: #3C4044;
+  --color-bg-base: #FFFFFF;
+  --color-bg-alt: #F7F7F6;
+  /* Very Light Warm Grey */
+  --color-border: #E8E8E6;
 
   --spacing-container-max: 1440px;
   --spacing-section-padding: 80px 20px;
   --nav-height: 70px;
 
-  --shadow-card: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.08);
-  --shadow-soft: 0 2px 5px rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 10px 30px -5px rgba(60, 64, 68, 0.1), 0 6px 12px -6px rgba(0, 0, 0, 0.05);
+  --shadow-soft: 0 2px 8px rgba(60, 64, 68, 0.04);
 
   --radius-button: 8px;
-  --radius-card: 8px;
+  --radius-card: 12px;
 
   --transition-fast: 0.2s ease;
 }
@@ -39,11 +46,13 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  /* Minimalist Grid Art */
-  background-image:
-    linear-gradient(rgba(206, 29, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(206, 29, 255, 0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
+  font-weight: 400;
+  /* Minimalist Grid Art - Subtle dots */
+  background-image: radial-gradient(#FD7B41 0.5px, transparent 0.5px), radial-gradient(#FD7B41 0.5px, #ffffff 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  background-color: #ffffff;
+  /* Clear background for dots */
 }
 
 a {
@@ -71,46 +80,51 @@ button {
 }
 
 .bg-alt {
-  background-color: var(--color-bg-alt);
+  background: #F7F7F6;
+  /* Flat warm grey */
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 20px;
+  padding: 10px 24px;
   border-radius: var(--radius-button);
-  font-weight: 600;
+  font-weight: 500;
+  /* Lighter weight */
   font-size: 15px;
   transition: all var(--transition-fast);
   cursor: pointer;
+  letter-spacing: -0.2px;
 }
 
 .btn-primary {
   background-color: var(--color-primary);
   color: #fff;
+  box-shadow: 0 4px 12px rgba(253, 123, 65, 0.2);
 }
 
 .btn-primary:hover {
   background-color: var(--color-primary-hover);
   transform: translateY(-1px);
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 14px rgba(253, 123, 65, 0.3);
 }
 
 .btn-secondary {
-  color: var(--color-primary);
-  background: transparent;
-  padding: 10px 20px;
+  color: var(--color-text-main);
+  background: white;
+  border: 1px solid var(--color-border);
+  padding: 9px 23px;
 }
 
 .btn-secondary:hover {
+  border-color: var(--color-text-main);
   color: var(--color-text-main);
+  background: #F7F7F6;
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
-  /* Placeholder gradient */
-  background: linear-gradient(90deg, #CE1DFF 0%, #00d4ff 100%);
+  background: linear-gradient(135deg, #FD7B41 0%, #3C4044 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -212,15 +226,13 @@ button {
 }
 
 .visual-wrapper {
-  transform: rotateY(-10deg) rotateX(5deg);
   transition: transform 0.5s ease-out;
-  border-radius: 12px;
-  box-shadow: var(--shadow-card);
+  border-radius: 16px;
   overflow: hidden;
 }
 
 .visual-wrapper:hover {
-  transform: rotateY(0) rotateX(0);
+  transform: scale(1.02);
 }
 
 .hero-img {

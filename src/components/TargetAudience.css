@@ -1,41 +1,293 @@
-.audience-section {
-    background-color: var(--color-bg-base);
+.industry-carousel-section {
+    height: 100vh;
+    /* Strict full height */
+    position: relative;
+    background: #ffffff;
+    /* Clean white background */
+    /* Dot pattern overlay handled by body/global but can be added here specifically if needed */
+    overflow: hidden;
+    padding: 0;
+    /* Remove all padding */
+    margin: 0;
 }
 
-.audience-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    max-width: 900px;
-    margin: 0 auto;
+.industry-header {
+    position: absolute;
+    /* Overlay header */
+    top: 40px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 20;
+    pointer-events: none;
+    /* Let clicks pass through */
 }
 
-.audience-card {
-    background: #fff;
-    border: 1px solid var(--color-border);
-    padding: 32px;
-    border-radius: var(--radius-card);
-    transition: all var(--transition-fast);
+.industry-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3C4044;
+    /* Charcoal */
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+    text-shadow: 0 4px 12px rgba(255, 255, 255, 0.8);
+    /* Ensure legibility */
 }
 
-.audience-card:hover {
-    border-color: var(--color-primary);
-    box-shadow: var(--shadow-soft);
-}
-
-.audience-card h3 {
-    font-size: 1.5rem;
-    color: var(--color-text-main);
-    margin-bottom: 12px;
-}
-
-.audience-card p {
-    color: var(--color-text-light);
+.industry-header p {
     font-size: 1.1rem;
+    color: #64686c;
+    /* Soft grey text */
+    font-weight: 500;
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
 }
 
-@media (max-width: 600px) {
-    .audience-grid {
-        grid-template-columns: 1fr;
+.industry-carousel-viewport {
+    width: 100vw;
+    height: 100vh;
+    /* Full viewport height */
+    position: relative;
+    overflow: hidden;
+}
+
+.industry-cards-container {
+    display: flex;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Navigation arrows */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    /* More transparent */
+    border: 1px solid #E8E8E6;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    color: #3C4044;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 30;
+    /* Higher z-index */
+}
+
+.carousel-nav:hover {
+    background: #FD7B41;
+    /* Taupe accent */
+    border-color: #FD7B41;
+    color: #ffffff;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.carousel-nav.prev {
+    left: 40px;
+}
+
+.carousel-nav.next {
+    right: 40px;
+}
+
+.industry-card-fullwidth {
+    width: 100vw;
+    height: 100vh;
+    /* Full height */
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    /* Remove padding */
+}
+
+.industry-card-content {
+    width: 100%;
+    height: 100%;
+    /* Full height */
+    max-width: none;
+    /* Remove max-width */
+    aspect-ratio: auto;
+    /* Remove aspect ratio */
+    background: transparent;
+    /* Remove card background */
+    border: none;
+    /* Remove border */
+    border-radius: 0;
+    /* Remove radius */
+    padding: 0;
+    /* Remove internal padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    box-shadow: none;
+    transition: none;
+    /* Remove hover scale */
+    position: relative;
+}
+
+/* Background element for each slide */
+.industry-card-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 70% 50%, rgba(253, 123, 65, 0.03) 0%, transparent 60%);
+    z-index: -1;
+}
+
+.industry-card-content:hover {
+    transform: none;
+    border-color: transparent;
+}
+
+.industry-illustration {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* Push illustration to center-right */
+    padding-right: 60px;
+    min-width: 400px;
+}
+
+.illustration-placeholder {
+    position: relative;
+    animation: float 6s ease-in-out infinite;
+}
+
+/* New wrapper for content to keep it readable */
+.industry-content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.industry-text-content {
+    flex: 1;
+    color: #3C4044;
+    padding-left: 60px;
+    /* Spacing from illustration */
+    padding-top: 80px;
+    /* Space for header */
+}
+
+.industry-text-content h3 {
+    font-size: 4rem;
+    /* Larger size for full screen */
+    font-weight: 700;
+    background: linear-gradient(135deg, #FD7B41 0%, #3C4044 100%);
+    /* Orange to Charcoal */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+    line-height: 1;
+}
+
+.industry-text-content p {
+    font-size: 1.25rem;
+    color: #64686c;
+    line-height: 1.8;
+    margin-bottom: 32px;
+    font-weight: 400;
+}
+
+.use-cases {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.use-case-pill {
+    display: inline-block;
+    padding: 8px 20px;
+    background: #F7F7F6;
+    border: 1px solid #E8E8E6;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    /* Lighter weight */
+    color: #3C4044;
+    transition: all 0.3s ease;
+}
+
+.use-case-pill:hover {
+    background: #FD7B41;
+    color: #ffffff;
+    border-color: #FD7B41;
+    transform: translateY(-2px);
+}
+
+/* Progress indicator */
+.carousel-progress {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 10;
+}
+
+.progress-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #DDDCDB;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.progress-dot.active {
+    background: #FD7B41;
+    /* Orange Active */
+    width: 40px;
+    border-radius: 6px;
+}
+
+.progress-dot:hover {
+    background: #EDBF9B;
+}
+
+@media (max-width: 1200px) {
+    .industry-card-fullwidth {
+        padding: 40px;
+    }
+
+    .industry-card-content {
+        padding: 40px 50px;
+        gap: 40px;
+        flex-direction: column;
+    }
+
+    .industry-illustration {
+        min-width: auto;
+    }
+
+    .illustration-placeholder svg {
+        width: 200px;
+        height: 200px;
+    }
+
+    .industry-text-content h3 {
+        font-size: 2.25rem;
+    }
+
+    .industry-text-content p {
+        font-size: 1.1rem;
     }
 }
