@@ -14,14 +14,16 @@ const Navbar = () => {
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <div className="container navbar-content">
+      <div className="navbar-content">
         <div className="logo">
           Madame<span style={{ color: 'var(--color-primary)' }}>QA</span>
         </div>
         <div className="nav-links">
+          <a href="#industry" className="nav-link">Industry</a>
+          <a href="#features" className="nav-link">Features</a>
+          <a href="#pricing" className="nav-link">Pricing</a>
           <a href="#login" className="nav-link">Login</a>
-          <a href="#signup" className="nav-link">Sign up</a>
-          <a href="#start" className="btn btn-primary nav-cta">Get Started</a>
+          <a href="#start" className="btn btn-primary nav-cta">Hire Her</a>
         </div>
       </div>
     </nav>
