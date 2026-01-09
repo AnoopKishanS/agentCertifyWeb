@@ -66,7 +66,7 @@ const HowItWorks = () => {
             <div className="container">
                 <ScrollReveal animation="slide-left">
                     <div className="section-header">
-                        <h2>See her in action</h2>
+                        <h2>Watch <span style={{ color: 'var(--color-primary)' }}>her</span> work!</h2>
                     </div>
                 </ScrollReveal>
 

@@ -60,7 +60,7 @@ const Features = () => {
             <div className="container">
                 <ScrollReveal animation="slide-right">
                     <div className="section-header">
-                        <h2>What she is capable of</h2>
+                        <h2>What <span style={{ color: 'var(--color-primary)' }}>she</span>'s truly capable of...</h2>
                     </div>
                 </ScrollReveal>
 

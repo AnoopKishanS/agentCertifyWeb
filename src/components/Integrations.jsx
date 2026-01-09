@@ -13,7 +13,7 @@ const Integrations = () => {
         <section className="section integrations-section">
             <div className="container">
                 <div className="section-header center">
-                    <h2>She joins your team seamlessly</h2>
+                    <h2><span style={{ color: 'var(--color-primary)' }}>She</span> joins your team... seamlessly.</h2>
                     <p className="section-subtitle">No complex onboarding. She connects with your stack like she’s been there from Day 1.</p>
                 </div>
                 <div className="integrations-grid">
