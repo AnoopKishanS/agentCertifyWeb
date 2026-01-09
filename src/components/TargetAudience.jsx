@@ -72,20 +72,62 @@ const TargetAudience = () => {
                             <div className="industry-card-content">
                                 <div className="industry-content-wrapper">
                                     <div className="industry-illustration">
-                                        <div className="illustration-placeholder">
-                                            <svg width="400" height="400" viewBox="0 0 300 300" fill="none">
-                                                {/* Increased size */}
-                                                <circle cx="150" cy="150" r="120" fill={`url(#gradient${idx})`} opacity="0.1" />
-                                                <circle cx="150" cy="150" r="90" fill={`url(#gradient${idx})`} opacity="0.2" />
-                                                <circle cx="150" cy="150" r="60" fill={`url(#gradient${idx})`} opacity="0.3" />
-                                                <defs>
-                                                    <linearGradient id={`gradient${idx}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                                                        <stop offset="0%" stopColor="#FD7B41" />
-                                                        <stop offset="100%" stopColor="#EDBF9B" />
-                                                    </linearGradient>
-                                                </defs>
-                                            </svg>
-                                        </div>
+                                        {industry.name === 'E-Commerce' ? (
+                                            <div className="illustration-3d-wrapper">
+                                                <img
+                                                    src="/assets/ecommerce-3d.png"
+                                                    alt="Ecommerce 3D Illustration"
+                                                    className="illustration-3d illustration-ecommerce"
+                                                />
+                                            </div>
+                                        ) : industry.name === 'Healthcare' ? (
+                                            <div className="illustration-3d-wrapper">
+                                                <img
+                                                    src="/assets/healthcare-3d.png"
+                                                    alt="Healthcare 3D Illustration"
+                                                    className="illustration-3d"
+                                                />
+                                            </div>
+                                        ) : industry.name === 'FinTech' ? (
+                                            <div className="illustration-3d-wrapper">
+                                                <img
+                                                    src="/assets/fintech-3d.png"
+                                                    alt="FinTech 3D Illustration"
+                                                    className="illustration-3d"
+                                                />
+                                            </div>
+                                        ) : industry.name === 'Enterprise' ? (
+                                            <div className="illustration-3d-wrapper">
+                                                <img
+                                                    src="/assets/enterprise-3d.png"
+                                                    alt="Enterprise 3D Illustration"
+                                                    className="illustration-3d"
+                                                />
+                                            </div>
+                                        ) : industry.name === 'SaaS & Cloud' ? (
+                                            <div className="illustration-3d-wrapper">
+                                                <img
+                                                    src="/assets/cloud-3d.png"
+                                                    alt="SaaS & Cloud 3D Illustration"
+                                                    className="illustration-3d"
+                                                />
+                                            </div>
+                                        ) : (
+                                            <div className="illustration-placeholder">
+                                                <svg width="400" height="400" viewBox="0 0 300 300" fill="none">
+                                                    {/* Increased size */}
+                                                    <circle cx="150" cy="150" r="120" fill={`url(#gradient${idx})`} opacity="0.1" />
+                                                    <circle cx="150" cy="150" r="90" fill={`url(#gradient${idx})`} opacity="0.2" />
+                                                    <circle cx="150" cy="150" r="60" fill={`url(#gradient${idx})`} opacity="0.3" />
+                                                    <defs>
+                                                        <linearGradient id={`gradient${idx}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                                                            <stop offset="0%" stopColor="#FD7B41" />
+                                                            <stop offset="100%" stopColor="#EDBF9B" />
+                                                        </linearGradient>
+                                                    </defs>
+                                                </svg>
+                                            </div>
+                                        )}
                                     </div>
                                     <div className="industry-text-content">
                                         <h3>{industry.name}</h3>
