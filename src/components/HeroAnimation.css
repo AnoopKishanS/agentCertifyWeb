@@ -8,8 +8,8 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    padding: 30px 40px;
-    /* Padding to prevent badge cropping */
+    padding: 10px 20px;
+    /* Reduced padding to let content fill more space */
 }
 
 /* Floating Badges for Depth */
@@ -18,7 +18,8 @@
     background: #fff;
     padding: 10px 20px;
     border-radius: 24px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     font-size: 13px;
     font-weight: 700;
     color: var(--color-primary);
@@ -27,14 +28,14 @@
 }
 
 .badge-1 {
-    top: 20px;
-    right: 20px;
+    top: 40px;
+    right: 40px;
     animation-delay: 0s;
 }
 
 .badge-2 {
-    bottom: 20px;
-    left: 20px;
+    bottom: 40px;
+    left: 40px;
     animation-delay: 2s;
 }
 
@@ -55,13 +56,17 @@
     width: 100%;
     height: 100%;
     background: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12), 0 8px 24px rgba(0, 0, 0, 0.08);
-    /* Restored depth */
+    border-radius: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 20px 40px -10px rgba(0, 0, 0, 0.08);
+    /* Cleaner layered shadow */
     display: flex;
     flex-direction: column;
     position: relative;
-    padding: 40px;
+    padding: 30px;
+    /* Slightly reduced padding */
     font-family: 'Plus Jakarta Sans', sans-serif;
     overflow: hidden;
 }
@@ -135,19 +140,28 @@
     opacity: 0;
 }
 
-.p1 {
+/* Bidirectional Stream */
+.down-p1 {
+    animation: streamFlowDown 1.2s infinite linear;
     animation-delay: 0s;
 }
 
-.p2 {
-    animation-delay: 0.5s;
+.down-p2 {
+    animation: streamFlowDown 1.2s infinite linear;
+    animation-delay: 0.6s;
 }
 
-.p3 {
-    animation-delay: 1.0s;
+.up-p1 {
+    animation: streamFlowUp 1.2s infinite linear;
+    animation-delay: 0.3s;
 }
 
-@keyframes streamFlowVertical {
+.up-p2 {
+    animation: streamFlowUp 1.2s infinite linear;
+    animation-delay: 0.9s;
+}
+
+@keyframes streamFlowDown {
     0% {
         top: -30px;
         opacity: 0;
@@ -163,6 +177,26 @@
 
     100% {
         top: 80px;
+        opacity: 0;
+    }
+}
+
+@keyframes streamFlowUp {
+    0% {
+        top: 80px;
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        top: -30px;
         opacity: 0;
     }
 }
@@ -188,13 +222,14 @@
 }
 
 .ha-agent-icon {
-    width: 180px;
-    background: linear-gradient(135deg, #FD7B41 0%, #EDBF9B 100%);
-    /* Orange to Sand */
+    width: 200px;
+    background: #3C4044;
+    /* Charcoal for contrast */
+    border: 1px solid rgba(253, 123, 65, 0.3);
+    /* Subtle orange glow */
     color: #fff;
     font-size: 14px;
     font-weight: 600;
-    /* Reduced weight */
     padding: 0 16px;
     text-align: center;
 }
@@ -205,105 +240,79 @@
     color: #64748b;
 }
 
-/* Analyze Stage - Single centered element */
-.analyze-layout {
+/* Cosmic Orbiting Graph Stage */
+.orbit-container {
+    width: 300px;
+    height: 300px;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: slowRotate 20s linear infinite;
 }
 
-.ha-wireframe-lg {
-    width: 280px;
-    /* Increased from 220px */
-    height: 200px;
-    /* Increased from 160px */
-    background: #fff;
-    border: 1px solid #e6ebf1;
-    border-radius: 8px;
-    position: relative;
-    padding: 16px;
-    /* Increased padding */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-    overflow: hidden;
-}
-
-.wf-nav {
-    height: 12px;
-    background: #f0f4f8;
-    margin-bottom: 12px;
-    border-radius: 4px;
-}
-
-.wf-hero-lg {
-    height: 60px;
-    background: #f7f9fc;
-    margin-bottom: 12px;
-    border-radius: 4px;
-}
-
-.wf-row {
-    display: flex;
-    gap: 8px;
-    height: 40px;
-}
-
-.wf-col {
-    flex: 1;
-    background: #f7f9fc;
-    border-radius: 4px;
-}
-
-.ha-scan-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(206, 29, 255, 0.1) 1px, transparent 1px);
-    background-size: 100% 20px;
-    animation: scanDown 2s infinite linear;
-    mask-image: linear-gradient(to bottom, transparent, black, transparent);
-    -webkit-mask-image: linear-gradient(to bottom, transparent, black, transparent);
-}
-
-@keyframes scanDown {
+@keyframes slowRotate {
     from {
-        transform: translateY(-100%);
+        transform: rotate(0deg);
     }
 
     to {
-        transform: translateY(100%);
+        transform: rotate(360deg);
     }
 }
 
-/* Nodes popping up on wireframe */
-.detected-node {
-    position: absolute;
-    width: 8px;
-    height: 8px;
+.cognitive-core {
+    width: 20px;
+    height: 20px;
     background: var(--color-primary);
     border-radius: 50%;
-    box-shadow: 0 0 0 4px rgba(206, 29, 255, 0.2);
-    animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    box-shadow: 0 0 30px var(--color-primary), 0 0 60px rgba(253, 123, 65, 0.4);
+    z-index: 10;
+    animation: corePulse 2s infinite alternate;
+}
+
+@keyframes corePulse {
+    from {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    to {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+}
+
+.orbit-ring {
+    position: absolute;
+    border: 1px solid rgba(253, 123, 65, 0.1);
+    border-radius: 50%;
+}
+
+.r1 {
+    width: 140px;
+    height: 140px;
+}
+
+.r2 {
+    width: 220px;
+    height: 220px;
+}
+
+.orbit-node {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--color-primary);
+    z-index: 5;
     opacity: 0;
+    transform: scale(0);
 }
 
-.dn-1 {
-    top: 20px;
-    left: 20px;
-    animation-delay: 0.5s;
-}
-
-.dn-2 {
-    top: 80px;
-    right: 40px;
-    animation-delay: 0.8s;
-}
-
-.dn-3 {
-    bottom: 30px;
-    left: 50%;
-    animation-delay: 1.1s;
+.stage-analyze.active .orbit-node {
+    animation: nodeAppear 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
 @keyframes popIn {
@@ -318,52 +327,85 @@
     }
 }
 
-/* Tree Structure */
-.ha-structure-tree {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100px;
+@keyframes nodeAppear {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
-.tree-node {
-    width: 30px;
-    height: 30px;
-    background: #f0f4f8;
-    border-radius: 8px;
-    border: 2px solid #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+/* Precise Node Placements corresponding to SVG coordinates */
+.node-a {
+    top: 75px;
+    left: 75px;
+    animation-delay: 0.4s !important;
 }
 
-.tree-node.root {
-    background: var(--color-primary);
+.node-b {
+    top: 75px;
+    right: 75px;
+    animation-delay: 0.6s !important;
 }
 
-.tree-node.child {
-    width: 20px;
-    height: 20px;
-    animation: popIn 0.3s forwards;
-    opacity: 0;
+.node-c {
+    bottom: 75px;
+    right: 75px;
+    animation-delay: 0.8s !important;
 }
 
-.tree-branch {
-    width: 2px;
-    height: 20px;
-    background: #e6ebf1;
-    margin: 2px 0;
+.node-d {
+    bottom: 75px;
+    left: 75px;
+    animation-delay: 1.0s !important;
 }
 
-.c1 {
-    animation-delay: 1.3s !important;
+.node-e {
+    top: 145px;
+    left: 35px;
+    animation-delay: 1.2s !important;
 }
 
-.c2 {
-    animation-delay: 1.5s !important;
+.neural-web {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
 }
 
-.c3 {
-    animation-delay: 1.7s !important;
+.neural-path {
+    stroke: var(--color-primary);
+    stroke-width: 1.5;
+    stroke-opacity: 0.2;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
 }
+
+.stage-analyze.active .neural-path {
+    animation: drawNeural 1.5s ease-out forwards;
+    animation-delay: 1.5s;
+}
+
+@keyframes drawNeural {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+.stage-analyze.active .line-path {
+    animation: drawPath 1.5s ease-out forwards;
+    animation-delay: 1s;
+}
+
+@keyframes drawPath {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Tree Structure Removed - Replaced by Orbit Mapping */
 
 /* Generate Stage - Grid */
 .test-grid {
@@ -377,9 +419,9 @@
 .ha-test-card {
     background: #fff;
     border: 1px solid #e6ebf1;
-    border-radius: 8px;
-    padding: 14px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -392,20 +434,21 @@
     animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
-.c1 {
+/* High specificity to force 0.1s stagger */
+.stage-generate.active .ha-test-card.c1 {
+    animation-delay: 0s;
+}
+
+.stage-generate.active .ha-test-card.c2 {
+    animation-delay: 0.1s;
+}
+
+.stage-generate.active .ha-test-card.c3 {
     animation-delay: 0.2s;
 }
 
-.c2 {
-    animation-delay: 0.4s;
-}
-
-.c3 {
-    animation-delay: 0.6s;
-}
-
-.c4 {
-    animation-delay: 0.8s;
+.stage-generate.active .ha-test-card.c4 {
+    animation-delay: 0.3s;
 }
 
 .tc-header {
@@ -415,10 +458,10 @@
 }
 
 .tc-tag {
-    font-size: 10px;
+    font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    padding: 3px 8px;
+    padding: 4px 10px;
     border-radius: 4px;
     font-weight: 600;
 }
@@ -486,7 +529,7 @@
 }
 
 .tc-title {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
     color: #1e293b;
 }
@@ -622,4 +665,86 @@
 .stat-row.total .stat-value {
     color: var(--color-primary);
     font-size: 20px;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+    .hero-animation-container {
+        aspect-ratio: auto;
+        min-height: 480px;
+        /* Give it more vertical space */
+        padding: 10px 5px;
+    }
+
+    .ha-content {
+        padding: 15px;
+    }
+
+    .ha-floating-badge {
+        display: none;
+    }
+
+    /* Connect Stage */
+    .ha-agent-icon {
+        width: 140px;
+        height: 60px;
+        font-size: 11px;
+    }
+
+    .ha-app-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Analyze Stage */
+    .ha-wireframe-lg {
+        width: 180px;
+        height: 140px;
+    }
+
+    /* Generate Stage */
+    .test-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .ha-test-card {
+        padding: 12px;
+    }
+
+    .tc-title {
+        font-size: 12px;
+    }
+
+    /* Execute Stage */
+    .ha-dashboard-split {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .ha-run-list,
+    .ha-stats-panel {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .test-grid {
+        grid-template-columns: 1fr;
+        /* Stack on tiny phones */
+    }
+
+    .ha-wireframe-lg {
+        width: 140px;
+        height: 120px;
+    }
+
+    .ha-stage {
+        padding: 10px;
+    }
+
+    .hero-animation-container {
+        min-height: 550px;
+        /* More height for stacked cards */
+    }
 }

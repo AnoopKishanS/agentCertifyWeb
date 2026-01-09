@@ -191,7 +191,8 @@ button {
 
 .hero-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.8fr 1.2fr;
+  /* Give visual more room natively */
   gap: 40px;
   align-items: center;
 }
@@ -223,16 +224,16 @@ button {
 .hero-visual {
   position: relative;
   perspective: 1000px;
+  width: 100%;
 }
 
 .visual-wrapper {
   transition: transform 0.5s ease-out;
   border-radius: 16px;
   overflow: hidden;
-}
-
-.visual-wrapper:hover {
-  transform: scale(1.02);
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .hero-img {
@@ -259,5 +260,7 @@ button {
   .visual-wrapper {
     transform: none;
     margin-top: 40px;
+    justify-content: center;
+    /* Center on mobile */
   }
 }
