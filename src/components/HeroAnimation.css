@@ -47,76 +47,27 @@
     }
 }
 
-.ha-window {
+/* Main Content Container (No Window Frame) */
+.ha-animation-content {
     width: 100%;
     max-width: 600px;
-    /* Increased Width */
     height: 380px;
-    /* Increased Height */
-    background: #ffffff;
+    position: relative;
+    /* Keeping background transparent or white depending on desired look. 
+       If "remove outer box" means transparent, we use transparent. 
+       But the content (cards etc) might need contrast. 
+       Let's keep it clean and transparent for now, assuming elements have their own definition */
+    background: transparent;
     border-radius: 12px;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.05);
-    /* Stripe-like border/shadow */
+    /* Removed box-shadow and border */
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    position: relative;
+    padding: 0;
+    /* Removed padding from body, might need to add back to stages if needed */
 }
 
-.ha-header {
-    height: 48px;
-    /* Taller header */
-    background: #f7f9fc;
-    border-bottom: 1px solid #eef0f5;
-    display: flex;
-    align-items: center;
-    padding: 0 16px;
-    gap: 8px;
-}
-
-.ha-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-}
-
-.ha-dot.red {
-    background: #ff5f57;
-}
-
-.ha-dot.yellow {
-    background: #febc2e;
-}
-
-.ha-dot.green {
-    background: #28c840;
-}
-
-.ha-url-bar {
-    height: 24px;
-    background: #fff;
-    border: 1px solid #e6ebf1;
-    border-radius: 6px;
-    flex: 1;
-    margin-left: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.ha-url-text {
-    font-size: 11px;
-    color: #8898aa;
-}
-
-.ha-body {
-    flex: 1;
-    position: relative;
-    padding: 30px;
-    font-family: 'Inter', sans-serif;
-    background: #fff;
-}
-
+/* Ensure stages have full size */
 .ha-stage {
     position: absolute;
     top: 0;
