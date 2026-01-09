@@ -385,6 +385,10 @@
     gap: 8px;
     opacity: 0;
     transform: scale(0.9);
+}
+
+/* Only animate when the stage is active */
+.stage-generate.active .ha-test-card {
     animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
