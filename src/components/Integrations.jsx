@@ -13,8 +13,8 @@ const Integrations = () => {
         <section className="section integrations-section">
             <div className="container">
                 <div className="section-header center">
-                    <h2>Integrate seamlessly with your workflow</h2>
-                    <p className="section-subtitle">Connect AgentCertify with your existing CI/CD pipelines and issue trackers.</p>
+                    <h2>She joins your team seamlessly</h2>
+                    <p className="section-subtitle">No complex onboarding. She connects with your stack like she’s been there from Day 1.</p>
                 </div>
                 <div className="integrations-grid">
                     {integrations.map((tool) => (

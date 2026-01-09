@@ -43,7 +43,7 @@ const ProblemStatement = () => {
             <div className="container">
                 <ScrollReveal animation="slide-left">
                     <div className="section-header center">
-                        <h2>AgentCertify solves real testing problems</h2>
+                        <h2>She handles what you hate</h2>
                     </div>
                 </ScrollReveal>
                 <div className="problem-grid">

@@ -16,7 +16,7 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-content">
         <div className="logo">
-          Agent<span style={{ color: 'var(--color-primary)' }}>Certify</span>
+          Madame<span style={{ color: 'var(--color-primary)' }}>QA</span>
         </div>
         <div className="nav-links">
           <a href="#login" className="nav-link">Login</a>
