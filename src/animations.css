@@ -1,0 +1,70 @@
+/* Base styles for scroll animations */
+.reveal-wrapper {
+    opacity: 0;
+    will-change: opacity, transform;
+    transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal-wrapper.visible {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+    filter: blur(0);
+}
+
+/* 1. Slide In Left: Translate X -24px -> 0 */
+.anim-slide-left {
+    transform: translateX(-24px);
+}
+
+/* 2. Slide In Right: Translate X +24px -> 0 */
+.anim-slide-right {
+    transform: translateX(24px);
+}
+
+/* 3. Fade Up: Translate Y +20px -> 0 */
+.anim-fade-up {
+    transform: translateY(20px);
+}
+
+/* 4. Blur Reveal: Grayscale/Blur -> Clear */
+.anim-blur-in {
+    filter: blur(4px);
+    transform: scale(0.98);
+}
+
+/* 5. Scale Up (CTA): Scale 0.95 -> 1 */
+.anim-scale-up {
+    transform: scale(0.95);
+}
+
+/* Stagger Delays */
+.delay-100 {
+    transition-delay: 0.1s;
+}
+
+.delay-200 {
+    transition-delay: 0.2s;
+}
+
+.delay-300 {
+    transition-delay: 0.3s;
+}
+
+.delay-400 {
+    transition-delay: 0.4s;
+}
+
+.delay-500 {
+    transition-delay: 0.5s;
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .reveal-wrapper {
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+    }
+}

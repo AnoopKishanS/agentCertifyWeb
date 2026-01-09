@@ -1,0 +1,144 @@
+.how-it-works-section .section-header {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.hiw-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.hiw-steps {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 300px;
+    /* Large gap to allow scrolling */
+    padding-bottom: 300px;
+    /* Extra space at bottom */
+}
+
+.hiw-step {
+    opacity: 0.3;
+    transition: opacity 0.5s ease;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hiw-step.active {
+    opacity: 1;
+}
+
+.hiw-step h3 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+    color: var(--color-primary);
+}
+
+.hiw-step p {
+    font-size: 1.1rem;
+    color: var(--color-text-main);
+}
+
+.hiw-visual-container {
+    flex: 1;
+    position: relative;
+}
+
+.hiw-sticky-visual {
+    position: sticky;
+    top: 150px;
+    /* Offset from top */
+    height: 400px;
+    /* Height of the visual */
+    width: 100%;
+}
+
+.mock-screen {
+    background: #1e1e2e;
+    border-radius: 12px;
+    box-shadow: var(--shadow-card);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.mock-header {
+    background: #28293d;
+    padding: 12px;
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid #3d3e52;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red {
+    background: #ff5f57;
+}
+
+.yellow {
+    background: #febc2e;
+}
+
+.green {
+    background: #28c840;
+}
+
+.mock-content {
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.console-text {
+    font-family: 'Courier New', Courier, monospace;
+    color: #00d4ff;
+    font-size: 1.5rem;
+}
+
+.cursor {
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .hiw-container {
+        flex-direction: column-reverse;
+    }
+
+    .hiw-steps {
+        gap: 100px;
+        padding-bottom: 100px;
+    }
+
+    .hiw-sticky-visual {
+        position: relative;
+        top: 0;
+        height: 300px;
+        margin-bottom: 40px;
+    }
+}

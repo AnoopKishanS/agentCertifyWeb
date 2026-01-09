@@ -1,0 +1,66 @@
+.problem-section {
+    text-align: center;
+}
+
+.section-header.center {
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: var(--color-text-main);
+    letter-spacing: -0.5px;
+}
+
+.problem-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.problem-card {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.problem-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-card);
+}
+
+.problem-icon {
+    width: 48px;
+    height: 48px;
+    background-color: rgba(99, 91, 255, 0.1);
+    /* Primary color low opacity */
+    color: var(--color-primary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.problem-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    color: var(--color-text-main);
+}
+
+.problem-card p {
+    color: var(--color-text-light);
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+    .problem-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,481 @@
+.hero-animation-container {
+    width: 100%;
+    height: 450px;
+    /* Increased height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* No perspective here, parent Hero has it */
+}
+
+/* Floating Badges for Depth */
+.ha-floating-badge {
+    position: absolute;
+    background: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--color-primary);
+    z-index: 10;
+    animation: floatBadge 4s ease-in-out infinite;
+}
+
+.badge-1 {
+    top: 40px;
+    right: -20px;
+    animation-delay: 0s;
+}
+
+.badge-2 {
+    bottom: 60px;
+    left: -20px;
+    animation-delay: 2s;
+}
+
+@keyframes floatBadge {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.ha-window {
+    width: 100%;
+    max-width: 600px;
+    /* Increased Width */
+    height: 380px;
+    /* Increased Height */
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    /* Stripe-like border/shadow */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+.ha-header {
+    height: 48px;
+    /* Taller header */
+    background: #f7f9fc;
+    border-bottom: 1px solid #eef0f5;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 8px;
+}
+
+.ha-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.ha-dot.red {
+    background: #ff5f57;
+}
+
+.ha-dot.yellow {
+    background: #febc2e;
+}
+
+.ha-dot.green {
+    background: #28c840;
+}
+
+.ha-url-bar {
+    height: 24px;
+    background: #fff;
+    border: 1px solid #e6ebf1;
+    border-radius: 6px;
+    flex: 1;
+    margin-left: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ha-url-text {
+    font-size: 11px;
+    color: #8898aa;
+}
+
+.ha-body {
+    flex: 1;
+    position: relative;
+    padding: 30px;
+    font-family: 'Inter', sans-serif;
+    background: #fff;
+}
+
+.ha-stage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    padding: 20px;
+}
+
+.ha-stage.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+.ha-status-pill {
+    margin-top: 24px;
+    font-size: 13px;
+    color: var(--color-primary);
+    background: rgba(206, 29, 255, 0.05);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* Connect Stage - Stream Effect */
+.ha-connection-stream {
+    width: 150px;
+    height: 4px;
+    background: #eef0f5;
+    border-radius: 2px;
+    margin: 0 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.stream-particle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+    animation: streamFlow 1.5s infinite linear;
+    opacity: 0;
+}
+
+.p1 {
+    animation-delay: 0s;
+}
+
+.p2 {
+    animation-delay: 0.5s;
+}
+
+.p3 {
+    animation-delay: 1.0s;
+}
+
+@keyframes streamFlow {
+    0% {
+        left: -40px;
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 150px;
+        opacity: 0;
+    }
+}
+
+.stage-connect {
+    flex-direction: row;
+    /* Horizontal layout for connect */
+}
+
+/* Analyze Stage - Complex */
+.analyze-layout {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.ha-wireframe-lg {
+    width: 220px;
+    height: 160px;
+    background: #fff;
+    border: 1px solid #e6ebf1;
+    border-radius: 8px;
+    position: relative;
+    padding: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+}
+
+.wf-nav {
+    height: 12px;
+    background: #f0f4f8;
+    margin-bottom: 12px;
+    border-radius: 4px;
+}
+
+.wf-hero-lg {
+    height: 60px;
+    background: #f7f9fc;
+    margin-bottom: 12px;
+    border-radius: 4px;
+}
+
+.wf-row {
+    display: flex;
+    gap: 8px;
+    height: 40px;
+}
+
+.wf-col {
+    flex: 1;
+    background: #f7f9fc;
+    border-radius: 4px;
+}
+
+.ha-scan-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(206, 29, 255, 0.1) 1px, transparent 1px);
+    background-size: 100% 20px;
+    animation: scanDown 2s infinite linear;
+    mask-image: linear-gradient(to bottom, transparent, black, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black, transparent);
+}
+
+@keyframes scanDown {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(100%);
+    }
+}
+
+/* Nodes popping up on wireframe */
+.detected-node {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(206, 29, 255, 0.2);
+    animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    opacity: 0;
+}
+
+.dn-1 {
+    top: 20px;
+    left: 20px;
+    animation-delay: 0.5s;
+}
+
+.dn-2 {
+    top: 80px;
+    right: 40px;
+    animation-delay: 0.8s;
+}
+
+.dn-3 {
+    bottom: 30px;
+    left: 50%;
+    animation-delay: 1.1s;
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Tree Structure */
+.ha-structure-tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+}
+
+.tree-node {
+    width: 30px;
+    height: 30px;
+    background: #f0f4f8;
+    border-radius: 8px;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.tree-node.root {
+    background: var(--color-primary);
+}
+
+.tree-node.child {
+    width: 20px;
+    height: 20px;
+    animation: popIn 0.3s forwards;
+    opacity: 0;
+}
+
+.tree-branch {
+    width: 2px;
+    height: 20px;
+    background: #e6ebf1;
+    margin: 2px 0;
+}
+
+.c1 {
+    animation-delay: 1.3s !important;
+}
+
+.c2 {
+    animation-delay: 1.5s !important;
+}
+
+.c3 {
+    animation-delay: 1.7s !important;
+}
+
+/* Generate Stage - Grid */
+.test-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    width: 100%;
+}
+
+.ha-test-card {
+    background: #fff;
+    border: 1px solid #e6ebf1;
+    border-radius: 6px;
+    padding: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+}
+
+.tc-tag {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: #f0f4f8;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.tc-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #0a2540;
+}
+
+/* Execute Stage - Split */
+.ha-dashboard-split {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    align-items: center;
+}
+
+.ha-run-list {
+    flex: 1;
+}
+
+.ha-run-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #f7f9fc;
+}
+
+.ri-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #e6ebf1;
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    margin-right: 12px;
+    animation: spin 1s infinite linear;
+}
+
+.ri-spinner.spin-done {
+    border: none;
+    background: #28c840;
+    color: #fff;
+    animation: none;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.ha-stats-panel {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-donut {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: conic-gradient(#28c840 0% 98%, #ff5f57 98% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.stat-donutch::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.stat-inner {
+    position: absolute;
+    z-index: 2;
+    font-weight: 800;
+    font-size: 18px;
+    color: #0a2540;
+}
