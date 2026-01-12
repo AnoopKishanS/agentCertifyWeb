@@ -56,8 +56,8 @@ const TargetAudience = () => {
     return (
         <section className="industry-carousel-section">
             <div className="industry-header">
-                <h2>Who MadameQA is for</h2>
-                <p>Trusted by teams across industries to deliver quality software faster</p>
+                <h2>Every Industry needs <span style={{ color: 'var(--color-primary)' }}>her</span>.</h2>
+                <p>She adapts her protocols to your specific domain requirements.</p>
             </div>
 
             <div className="industry-carousel-viewport">
@@ -72,20 +72,61 @@ const TargetAudience = () => {
                             <div className="industry-card-content">
                                 <div className="industry-content-wrapper">
                                     <div className="industry-illustration">
-                                        <div className="illustration-placeholder">
-                                            <svg width="400" height="400" viewBox="0 0 300 300" fill="none">
-                                                {/* Increased size */}
-                                                <circle cx="150" cy="150" r="120" fill={`url(#gradient${idx})`} opacity="0.1" />
-                                                <circle cx="150" cy="150" r="90" fill={`url(#gradient${idx})`} opacity="0.2" />
-                                                <circle cx="150" cy="150" r="60" fill={`url(#gradient${idx})`} opacity="0.3" />
-                                                <defs>
-                                                    <linearGradient id={`gradient${idx}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                                                        <stop offset="0%" stopColor="#FD7B41" />
-                                                        <stop offset="100%" stopColor="#EDBF9B" />
-                                                    </linearGradient>
-                                                </defs>
-                                            </svg>
-                                        </div>
+                                        {industry.name === 'E-Commerce' ? (
+                                            <div className="illustration-3d-wrapper">
+                                                <img
+                                                    src="/assets/ecommerce-3d.png"
+                                                    alt="Ecommerce 3D Illustration"
+                                                    className="illustration-3d illustration-ecommerce"
+                                                />
+                                            </div>
+                                        ) : industry.name === 'Healthcare' ? (
+                                            <div className="illustration-3d-wrapper">
+                                                <img
+                                                    src="/assets/healthcare-3d.png"
+                                                    alt="Healthcare 3D Illustration"
+                                                    className="illustration-3d"
+                                                />
+                                            </div>
+                                        ) : industry.name === 'FinTech' ? (
+                                            <div className="illustration-3d-wrapper">
+                                                <img
+                                                    src="/assets/fintech-3d.png"
+                                                    alt="FinTech 3D Illustration"
+                                                    className="illustration-3d"
+                                                />
+                                            </div>
+                                        ) : industry.name === 'Enterprise' ? (
+                                            <div className="illustration-3d-wrapper">
+                                                <img
+                                                    src="/assets/enterprise-3d.png"
+                                                    alt="Enterprise 3D Illustration"
+                                                    className="illustration-3d"
+                                                />
+                                            </div>
+                                        ) : industry.name === 'SaaS & Cloud' ? (
+                                            <div className="illustration-3d-wrapper">
+                                                <img
+                                                    src="/assets/cloud-3d.png"
+                                                    alt="SaaS & Cloud 3D Illustration"
+                                                    className="illustration-3d"
+                                                />
+                                            </div>
+                                        ) : (
+                                            <div className="illustration-placeholder">
+                                                <svg width="400" height="400" viewBox="0 0 300 300" fill="none">
+                                                    <circle cx="150" cy="150" r="120" fill={`url(#gradient${idx})`} opacity="0.1" />
+                                                    <circle cx="150" cy="150" r="90" fill={`url(#gradient${idx})`} opacity="0.2" />
+                                                    <circle cx="150" cy="150" r="60" fill={`url(#gradient${idx})`} opacity="0.3" />
+                                                    <defs>
+                                                        <linearGradient id={`gradient${idx}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                                                            <stop offset="0%" stopColor="#FD7B41" />
+                                                            <stop offset="100%" stopColor="#EDBF9B" />
+                                                        </linearGradient>
+                                                    </defs>
+                                                </svg>
+                                            </div>
+                                        )}
                                     </div>
                                     <div className="industry-text-content">
                                         <h3>{industry.name}</h3>
@@ -102,26 +143,16 @@ const TargetAudience = () => {
                     ))}
                 </div>
 
-                {/* Navigation arrows */}
-                <button className="carousel-nav prev" onClick={prevSlide}>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <polyline points="15 18 9 12 15 6"></polyline>
-                    </svg>
-                </button>
-                <button className="carousel-nav next" onClick={nextSlide}>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                </button>
-
-                {/* Progress indicator */}
-                <div className="carousel-progress">
-                    {industries.map((_, idx) => (
-                        <div
+                {/* New Tab Navigation */}
+                <div className="carousel-tabs">
+                    {industries.map((industry, idx) => (
+                        <button
                             key={idx}
-                            className={`progress-dot ${idx === currentIndex ? 'active' : ''}`}
+                            className={`carousel-tab-item ${idx === currentIndex ? 'active' : ''}`}
                             onClick={() => goToSlide(idx)}
-                        />
+                        >
+                            <span className="tab-name">{industry.name}</span>
+                        </button>
                     ))}
                 </div>
             </div>
