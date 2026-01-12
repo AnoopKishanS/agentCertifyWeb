@@ -56,7 +56,7 @@ const integrations = [
 
 const Features = () => {
     return (
-        <section className="section feature-section">
+        <section id="features" className="section feature-section">
             <div className="container">
                 <ScrollReveal animation="slide-right">
                     <div className="section-header">

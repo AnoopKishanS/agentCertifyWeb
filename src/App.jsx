@@ -8,6 +8,7 @@ import HowItWorks from './components/HowItWorks';
 import TargetAudience from './components/TargetAudience';
 import Pricing from './components/Pricing';
 import Footer from './components/Footer';
+import ScrollToTopButton from './components/ScrollToTopButton';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <TargetAudience />
       <Pricing />
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }

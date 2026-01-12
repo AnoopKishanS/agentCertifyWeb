@@ -54,7 +54,7 @@ const TargetAudience = () => {
     };
 
     return (
-        <section className="industry-carousel-section">
+        <section id="industry" className="industry-carousel-section">
             <div className="industry-header">
                 <h2>Every Industry needs <span style={{ color: 'var(--color-primary)' }}>her</span>.</h2>
                 <p>She adapts her protocols to your specific domain requirements.</p>

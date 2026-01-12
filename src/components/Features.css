@@ -1,36 +1,59 @@
 .feature-section {
     background-color: var(--color-bg-base);
-    padding: 100px 20px !important;
+    /* Dynamic padding relative to viewport height to ensure fit */
+    padding: clamp(40px, 8vh, 100px) 20px !important;
+    height: 100vh;
+    /* Enforce full height constraint */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    /* Prevent spillover */
 }
 
 .feature-section .section-header {
-    margin-bottom: 70px;
+    margin-bottom: clamp(30px, 6vh, 70px);
     text-align: left;
+    flex-shrink: 0;
 }
 
 .feature-section .section-header h2 {
-    font-size: 2.75rem;
+    font-size: clamp(2rem, 4vw, 2.75rem);
     font-weight: 700;
     color: var(--color-text-main);
     letter-spacing: -1px;
+    margin: 0;
 }
 
 .feature-row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 36px;
+    gap: clamp(16px, 3vh, 36px);
+    width: 100%;
+    /* Ensure grid takes height but allows cards to shrink */
+    flex: 1;
+    min-height: 0;
+    /* Vital for nested flex/grid scrolling issues */
+}
+
+.feature-item-wrapper {
+    height: 100%;
 }
 
 .feature-item {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 40px 36px;
+    justify-content: flex-start;
+    /* Dynamic padding based on viewport */
+    padding: clamp(20px, 3vh, 40px) clamp(20px, 2vw, 36px);
     border-radius: 12px;
-    /* Consistent radius */
     background: #ffffff;
     border: 1px solid #E8E8E6;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+    /* Fill wrapper */
+    overflow: hidden;
 }
 
 .feature-item:hover {
@@ -41,39 +64,51 @@
 }
 
 .feature-icon-wrapper {
-    margin-bottom: 28px;
+    margin-bottom: clamp(16px, 3vh, 28px);
 }
 
 .feature-icon {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 3vh, 2rem);
     display: inline-block;
-    padding: 14px;
+    padding: clamp(10px, 1.5vh, 14px);
     background: #F7F7F6;
-    /* Light grey */
     border-radius: 14px;
     line-height: 1;
     color: var(--color-primary);
 }
 
+.feature-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+}
+
 .feature-content h3 {
-    font-size: 1.5rem;
+    font-size: clamp(1.25rem, 2vh, 1.5rem);
     font-weight: 600;
-    margin-bottom: 16px;
+    margin-bottom: clamp(8px, 1.5vh, 16px);
     color: var(--color-text-main);
     letter-spacing: -0.02em;
 }
 
 .feature-content p {
     color: #64748b;
-    line-height: 1.65;
+    line-height: 1.5;
     font-weight: 400;
+    font-size: clamp(0.9rem, 1.5vh, 1rem);
+    /* Allow text ellipsis if absolutely necessary, or just rely on flex shrinking */
+    overflow-y: auto;
+    /* Scroll text if really small screen */
 }
 
 .mini-integration-list {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
-    margin-top: 20px;
+    margin-top: auto;
+    /* Push to bottom */
+    padding-top: 16px;
 }
 
 .mini-pill {
@@ -94,11 +129,32 @@
 }
 
 @media (max-width: 768px) {
-    .feature-row {
-        grid-template-columns: 1fr;
+    .feature-section {
+        height: auto;
+        /* Allow scroll on mobile */
+        min-height: 100vh;
+        display: block;
+        padding: 80px 20px !important;
+        overflow: visible;
     }
 
-    .feature-section {
-        padding: 60px 20px !important;
+    .feature-row {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .feature-item {
+        height: auto;
+    }
+}
+
+/* Landscape Mode Tweak for short screens */
+@media (max-height: 700px) and (min-width: 768px) {
+    .feature-row {
+        gap: 16px;
+    }
+
+    .feature-content p {
+        font-size: 0.85rem;
     }
 }
