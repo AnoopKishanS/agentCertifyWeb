@@ -9,17 +9,19 @@
     padding: 0;
     /* Remove all padding */
     margin: 0;
+    scroll-snap-align: start;
 }
 
 .industry-header {
     position: absolute;
     /* Overlay header */
-    top: 40px;
+    top: 70px;
     left: 0;
     width: 100%;
     text-align: center;
     z-index: 20;
     pointer-events: none;
+    padding-top: 10px;
     /* Let clicks pass through */
 }
 

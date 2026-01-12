@@ -1,5 +1,6 @@
 import React from 'react';
 import ScrollReveal from './ScrollReveal';
+import Footer from './Footer';
 import './Pricing.css';
 
 const plans = [
@@ -49,7 +50,7 @@ const plans = [
 
 const Pricing = () => {
     return (
-        <section className="section bg-alt pricing-section">
+        <section id="pricing" className="section bg-alt pricing-section">
             <div className="container">
                 <ScrollReveal animation="slide-left">
                     <div className="section-header center">
@@ -94,7 +95,7 @@ const Pricing = () => {
                     ))}
                 </div>
             </div>
-        </section>
+        </section >
     );
 };
 

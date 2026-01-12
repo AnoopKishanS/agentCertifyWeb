@@ -39,6 +39,12 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  height: 100%;
+}
+
 body {
   font-family: var(--font-family);
   color: var(--color-text-main);
@@ -77,6 +83,11 @@ button {
 
 .section {
   padding: var(--spacing-section-padding);
+  min-height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .bg-alt {
@@ -210,6 +221,11 @@ button {
   padding: 100px 0 120px;
   background: radial-gradient(circle at 50% 0, #f6f9fc 0%, #fff 100%);
   overflow: hidden;
+  min-height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero-container {
@@ -284,6 +300,33 @@ button {
   background-color: var(--color-text-main);
   transition: all 0.3s ease;
   border-radius: 2px;
+}
+
+/* Scroll To Top Button */
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--color-primary);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  border: none;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
+
+.scroll-to-top-btn:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+  opacity: 1;
 }
 
 /* Responsive */
