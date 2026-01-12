@@ -5,16 +5,16 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer-cta">
-                <h1>Talk to Her</h1>
-                <button className="btn btn-primary btn-lg">Contact Sales</button>
+                <h1>Ready to upgrade?</h1>
+                <button className="btn btn-primary btn-lg">Get Certified Today</button>
             </div>
 
             <div className="footer-grid-container">
                 <div className="container">
                     <div className="footer-grid">
                         <div className="footer-col">
-                            <h4>Madame<span style={{ color: 'var(--color-primary)' }}>QA</span></h4>
-                            <p className="footer-desc">Automated AI testing for modern engineering teams.</p>
+                            <h4>Agent<span style={{ color: 'var(--color-primary)' }}>Certify</span></h4>
+                            <p className="footer-desc">Autonomous AI validation for high-velocity engineering teams.</p>
                             <div className="social-links">
                                 {/* Social icons placeholders */}
                                 <span>Twitter</span>
@@ -45,7 +45,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="footer-bottom">
-                        <p>&copy; {new Date().getFullYear()} MadameQA. All rights reserved.</p>
+                        <p>&copy; {new Date().getFullYear()} AgentCertify. All rights reserved.</p>
                     </div>
                 </div>
             </div>

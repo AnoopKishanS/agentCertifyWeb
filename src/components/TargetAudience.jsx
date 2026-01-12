@@ -56,8 +56,8 @@ const TargetAudience = () => {
     return (
         <section id="industry" className="industry-carousel-section">
             <div className="industry-header">
-                <h2>Every Industry needs <span style={{ color: 'var(--color-primary)' }}>her</span>.</h2>
-                <p>She adapts her protocols to your specific domain requirements.</p>
+                <h2>Every Industry needs <span style={{ color: 'var(--color-primary)' }}>AgentCertify</span>.</h2>
+                <p>It adapts validation protocols to your specific domain requirements.</p>
             </div>
 
             <div className="industry-carousel-viewport">
@@ -120,8 +120,8 @@ const TargetAudience = () => {
                                                     <circle cx="150" cy="150" r="60" fill={`url(#gradient${idx})`} opacity="0.3" />
                                                     <defs>
                                                         <linearGradient id={`gradient${idx}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                                                            <stop offset="0%" stopColor="#FD7B41" />
-                                                            <stop offset="100%" stopColor="#EDBF9B" />
+                                                            <stop offset="0%" stopColor="#5E5653" />
+                                                            <stop offset="100%" stopColor="#AB978C" />
                                                         </linearGradient>
                                                     </defs>
                                                 </svg>

@@ -47,8 +47,8 @@
     /* Jumbo size */
     font-weight: 800;
     /* Reduced from 900 */
-    background: linear-gradient(135deg, #FD7B41 0%, #EDBF9B 100%);
-    /* Orange to Sand */
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%);
+    /* Muted Blue to Tan */
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

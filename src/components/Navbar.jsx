@@ -17,9 +17,9 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-content">
         <div className="logo">
-          Madame<span style={{ color: 'var(--color-primary)' }}>QA</span>
+          Agent<span style={{ color: 'var(--color-primary)' }}>Certify</span>
         </div>
-        <button 
+        <button
           className="mobile-menu-toggle"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
@@ -33,7 +33,7 @@ const Navbar = () => {
           <a href="#features" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Features</a>
           <a href="#pricing" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Pricing</a>
           <a href="#login" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Login</a>
-          <a href="#start" className="btn btn-primary nav-cta" onClick={() => setMobileMenuOpen(false)}>Hire Her</a>
+          <a href="#start" className="btn btn-primary nav-cta" onClick={() => setMobileMenuOpen(false)}>Get Started</a>
         </div>
       </div>
     </nav>

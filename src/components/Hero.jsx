@@ -22,14 +22,14 @@ const Hero = () => {
                 <div className="hero-content">
                     <ScrollReveal animation="fade-up" delay="100">
                         <h1 className="hero-title">
-                            Meet <span style={{ color: 'var(--color-primary)' }}>MadameQA</span>, the Sentinel who <br />
-                            <span className="text-gradient">understands your App Better Than You</span>
+                            Meet <span style={{ color: 'var(--color-primary)' }}>AgentCertify</span>, the AI engine that <br />
+                            <span className="text-gradient">Understands Your App Better Than You</span>
                         </h1>
                     </ScrollReveal>
 
                     <ScrollReveal animation="slide-right" delay="200">
                         <p className="hero-subtitle">
-                            She observes like a person, validates like a machine. MadameQA is the autonomous teammate who doesn't just run tests—she understands your vision.
+                            It observes with human-like intuition and validates with machine-like precision. AgentCertify is the autonomous platform that doesn't just run tests—it deeply understands your product's logic.
                         </p>
                     </ScrollReveal>
 

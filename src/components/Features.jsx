@@ -15,8 +15,8 @@ const features = [
         isIntegration: true
     },
     {
-        title: 'She builds a mental map',
-        desc: 'She doesn’t just click. She learns your architecture, understanding dependencies.',
+        title: 'State-Aware Mapping',
+        desc: 'It doesn’t just click. It learns your architecture, understanding complex dependencies automatically.',
         icon: (
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="11" cy="11" r="8"></circle>
@@ -25,8 +25,8 @@ const features = [
         )
     },
     {
-        title: 'She anticipates user behavior',
-        desc: 'She dreams up scenarios you forgot about—improbable edge cases and chaotic user flows—to ensure bulletproof reliability.',
+        title: 'Autonomous Flow Discovery',
+        desc: 'It anticipates scenarios you might miss—edge cases and chaotic user flows—to ensure high-fidelity reliability.',
         icon: (
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
@@ -34,8 +34,8 @@ const features = [
         )
     },
     {
-        title: 'She validates with purpose',
-        desc: 'She executes purposeful tests, checking not just for crashes, but for experience degradations and logical fallacies.',
+        title: 'Intelligent Logic Checks',
+        desc: 'It executes purposeful tests, checking not just for crashes, but for experience degradations and logical fallacies.',
         icon: (
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
@@ -60,7 +60,7 @@ const Features = () => {
             <div className="container">
                 <ScrollReveal animation="slide-right">
                     <div className="section-header">
-                        <h2>What <span style={{ color: 'var(--color-primary)' }}>she</span>'s truly capable of...</h2>
+                        <h2>What <span style={{ color: 'var(--color-primary)' }}>AgentCertify</span> is truly capable of...</h2>
                     </div>
                 </ScrollReveal>
 

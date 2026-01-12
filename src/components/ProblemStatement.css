@@ -41,15 +41,14 @@
 .problem-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 20px 40px rgba(60, 64, 68, 0.08);
-    border-color: #FD7B41;
+    border-color: var(--color-secondary);
 }
 
 .problem-icon {
     width: 56px;
     height: 56px;
     background: #F7F7F6;
-    color: #FD7B41;
-    /* Orange */
+    color: var(--color-secondary);
     border-radius: 16px;
     /* Softer icon radius */
     display: flex;

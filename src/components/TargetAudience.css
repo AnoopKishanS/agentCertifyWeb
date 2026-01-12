@@ -28,20 +28,17 @@
 .industry-header h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #3C4044;
-    /* Charcoal */
+    color: var(--color-text-main);
     letter-spacing: -1px;
     margin-bottom: 8px;
-    text-shadow: 0 4px 12px rgba(255, 255, 255, 0.8);
-    /* Ensure legibility */
+    text-shadow: 0 4px 12px rgba(233, 230, 231, 0.8);
 }
 
 .industry-header p {
     font-size: 1.1rem;
-    color: #64686c;
-    /* Soft grey text */
+    color: var(--color-text-light);
     font-weight: 500;
-    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
+    text-shadow: 0 2px 8px rgba(233, 230, 231, 0.8);
 }
 
 .industry-carousel-viewport {
@@ -81,9 +78,8 @@
 }
 
 .carousel-nav:hover {
-    background: #FD7B41;
-    /* Taupe accent */
-    border-color: #FD7B41;
+    background: var(--color-secondary);
+    border-color: var(--color-secondary);
     color: #ffffff;
     transform: translateY(-50%) scale(1.05);
 }
@@ -142,7 +138,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 70% 50%, rgba(253, 123, 65, 0.03) 0%, transparent 60%);
+    background: radial-gradient(circle at 70% 50%, rgba(123, 127, 138, 0.03) 0%, transparent 60%);
     z-index: -1;
 }
 
@@ -179,7 +175,7 @@
     height: auto;
     max-height: 700px;
     object-fit: contain;
-    filter: drop-shadow(0 30px 60px rgba(253, 123, 65, 0.2));
+    filter: drop-shadow(0 30px 60px rgba(94, 86, 83, 0.2));
     /* Deeper shadow */
     margin-right: -40px;
     /* Pull slightly right to balance */
@@ -208,7 +204,7 @@
     transform: translate(-50%, -50%);
     width: 300px;
     height: 300px;
-    background: rgba(253, 123, 65, 0.15);
+    background: rgba(123, 127, 138, 0.15);
     /* Orange Pulse */
     border-radius: 50%;
     z-index: -1;
@@ -218,7 +214,7 @@
 .illustration-3d-wrapper::after {
     animation-delay: 2s;
     /* Staggered pulse */
-    background: rgba(253, 123, 65, 0.1);
+    background: rgba(123, 127, 138, 0.1);
 }
 
 @keyframes ripple {
@@ -248,7 +244,7 @@
 
 .industry-text-content {
     flex: 1;
-    color: #3C4044;
+    color: var(--color-text-main);
     padding-left: 60px;
     /* Spacing from illustration */
     padding-top: 80px;
@@ -259,8 +255,7 @@
     font-size: 4rem;
     /* Larger size for full screen */
     font-weight: 700;
-    background: linear-gradient(135deg, #FD7B41 0%, #3C4044 100%);
-    /* Orange to Charcoal */
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -297,9 +292,9 @@
 }
 
 .use-case-pill:hover {
-    background: #FD7B41;
+    background: var(--color-secondary);
     color: #ffffff;
-    border-color: #FD7B41;
+    border-color: var(--color-secondary);
     transform: translateY(-2px);
 }
 
@@ -340,7 +335,7 @@
 
 .carousel-tab-item.active {
     background: #fff;
-    color: #FD7B41;
+    color: var(--color-secondary);
     /* Orange */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     /* Lifted */

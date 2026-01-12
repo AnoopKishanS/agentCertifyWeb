@@ -54,9 +54,9 @@ const Pricing = () => {
             <div className="container">
                 <ScrollReveal animation="slide-left">
                     <div className="section-header center">
-                        <h2>Flexible Plans to Hire Her</h2>
+                        <h2>Flexible Plans for Modern QA</h2>
                         <p style={{ maxWidth: '600px', margin: '0 auto 40px' }}>
-                            Deploy MadameQA to your team for a fraction of the cost of a traditional QA engineer, with 24/7 availability.
+                            Deploy AgentCertify across your entire tech stack for a fraction of the cost of manual labor, with 24/7 autonomous availability.
                         </p>
                     </div>
                 </ScrollReveal>
@@ -87,7 +87,7 @@ const Pricing = () => {
                                 </div>
                                 <div className="card-footer">
                                     <button className={`btn ${plan.highlight ? 'btn-primary' : 'btn-secondary'}`} style={{ width: '100%' }}>
-                                        {plan.price === 'Custom' ? 'Contact Sales' : 'Hire MadameQA'}
+                                        {plan.price === 'Custom' ? 'Contact Sales' : 'Adopt AgentCertify'}
                                     </button>
                                 </div>
                             </div>

@@ -38,7 +38,7 @@ const HeroAnimation = () => {
                         <div className="stream-particle up-p2"></div>
                     </div>
                     <div className="ha-agent-icon">
-                        <span><span style={{ color: 'var(--color-primary)' }}>Madame</span>'s Consciousness</span>
+                        <span><span style={{ color: 'var(--color-primary)' }}>AgentCertify</span>'s Consciousness</span>
                     </div>
                     <div className="ha-status-pill">Establishing Bidirectional Link</div>
                 </div>

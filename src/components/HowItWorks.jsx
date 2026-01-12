@@ -5,26 +5,26 @@ import './HowItWorks.css';
 const steps = [
     {
         id: 1,
-        title: 'She studies your world',
-        desc: 'She quietly navigates your application, observing every user flow and UI nuance with the curiosity of a dedicated engineer.',
+        title: 'Analytical Mapping',
+        desc: 'AgentCertify intelligently navigates your application, observing every user flow and UI nuance with the precision of a dedicated engineer.',
         visual: '> Initializing cognitive mapping protocol...\n> Discovered 47 user flows, 23 edge states\n> Building contextual understanding\n> Architecture analysis: COMPLETE'
     },
     {
         id: 2,
-        title: 'She imagines the breaks',
-        desc: 'Where others test happy paths, she creatively drafts edge cases and scenarios tailored to break your specific logic.',
+        title: 'Adversarial Synthesis',
+        desc: 'Beyond simple paths, it automatically drafts complex edge cases and scenarios tailored to stress your specific business logic.',
         visual: '> Synthesizing adversarial test scenarios...\n> Generated 142 intelligent test cases\n> Targeting critical failure points\n> Edge case coverage: 94.7%'
     },
     {
         id: 3,
-        title: 'She executes relentlessly',
-        desc: 'She runs thousands of tests across parallel universes (cloud environments), validating your code with ruthless precision.',
+        title: 'Parallel Validation',
+        desc: 'It executes thousands of tests across parallel cloud environments, validating your code with extreme precision and speed.',
         visual: '> Executing across 12 parallel environments\n> Auth Module: PASS | Payment Gateway: PASS\n> User Profile: PASS | API Routes: PASS\n> Validating 1,247 assertions...'
     },
     {
         id: 4,
-        title: 'She reports the truth',
-        desc: 'No vague errors. She hands you a dossier of exactly what failed, why it failed, and often, how to fix it.',
+        title: 'Certification Clarity',
+        desc: 'No more vague logs. It provides a comprehensive report of exactly what failed, why, and the root cause of the issue.',
         visual: '> Test Suite Complete: 142/142 PASSED\n> Code Coverage: 94.7%\n> Zero regressions detected\n> Status: Production Ready'
     }
 ];
@@ -66,7 +66,7 @@ const HowItWorks = () => {
             <div className="container">
                 <ScrollReveal animation="slide-left">
                     <div className="section-header">
-                        <h2>Watch <span style={{ color: 'var(--color-primary)' }}>her</span> work!</h2>
+                        <h2>Watch <span style={{ color: 'var(--color-primary)' }}>it</span> work!</h2>
                     </div>
                 </ScrollReveal>
 

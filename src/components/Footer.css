@@ -1,6 +1,6 @@
 /* Footer Layout - Unified Section */
 .footer {
-    background: radial-gradient(circle at 50% 50%, #fff5f0 0%, #ffffff 90%);
+    background: radial-gradient(circle at 50% 50%, #DAD7D8 0%, var(--color-bg-base) 90%);
     /* Background on main container */
     border-top: 1px solid var(--color-border);
     padding: 0;
@@ -36,11 +36,11 @@
 
 .footer-grid-container {
     padding: 60px 0 40px;
-    background: #f7f9fa;
+    background: var(--color-bg-alt);
     /* Distinct background for links area */
     width: 100%;
     flex-shrink: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-top: 1px solid var(--color-border);
 }
 
 .footer-grid {

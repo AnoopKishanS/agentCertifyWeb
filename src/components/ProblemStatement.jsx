@@ -43,7 +43,7 @@ const ProblemStatement = () => {
             <div className="container">
                 <ScrollReveal animation="slide-left">
                     <div className="section-header center">
-                        <h2><span style={{ color: 'var(--color-primary)' }}>She</span> handles what you hate...</h2>
+                        <h2><span style={{ color: 'var(--color-primary)' }}>AgentCertify</span> handles the overhead you hate...</h2>
                     </div>
                 </ScrollReveal>
                 <div className="problem-grid">

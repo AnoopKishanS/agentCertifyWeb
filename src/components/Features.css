@@ -58,8 +58,8 @@
 
 .feature-item:hover {
     box-shadow: 0 12px 30px rgba(60, 64, 68, 0.08);
-    border-color: #FD7B41;
-    /* Orange accent */
+    border-color: var(--color-secondary);
+    /* Muted Blue accent */
     transform: translateY(-4px);
 }
 
