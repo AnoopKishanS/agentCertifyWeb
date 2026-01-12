@@ -23,7 +23,7 @@ const Hero = () => {
                     <ScrollReveal animation="fade-up" delay="100">
                         <h1 className="hero-title">
                             Meet <span style={{ color: 'var(--color-primary)' }}>MadameQA</span>, the Sentinel who <br />
-                            <span className="text-gradient">Understands Your Code Better Than You</span>
+                            <span className="text-gradient">understands your App Better Than You</span>
                         </h1>
                     </ScrollReveal>
 

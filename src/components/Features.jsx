@@ -16,7 +16,7 @@ const features = [
     },
     {
         title: 'She builds a mental map',
-        desc: 'She doesn’t just click. She learns your architecture, understanding dependencies and risks like a senior developer.',
+        desc: 'She doesn’t just click. She learns your architecture, understanding dependencies.',
         icon: (
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="11" cy="11" r="8"></circle>
