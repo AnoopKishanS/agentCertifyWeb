@@ -21,22 +21,25 @@ const Hero = () => {
             <div className="container hero-container">
                 <div className="hero-content">
                     <ScrollReveal animation="fade-up" delay="100">
+                        <p className="hero-tagline" style={{ color: 'var(--color-primary)', fontWeight: 'bold', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                            Smarter Testing. Faster Releases. Zero Hassle.
+                        </p>
                         <h1 className="hero-title">
-                            Meet <span style={{ color: 'var(--color-primary)' }}>MadameQA</span>, the Sentinel who <br />
-                            <span className="text-gradient">understands your App Better Than You</span>
+                            The AI testing platform that <br />
+                            <span className="text-gradient">really understands your application</span>
                         </h1>
                     </ScrollReveal>
 
                     <ScrollReveal animation="slide-right" delay="200">
                         <p className="hero-subtitle">
-                            She observes like a person, validates like a machine. MadameQA is the autonomous teammate who doesn't just run tests—she understands your vision.
+                            AI-powered testing that understands your application, automatically generates test cases, and keeps them updated — so your team ships faster with confidence.
                         </p>
                     </ScrollReveal>
 
                     <ScrollReveal animation="scale-up" delay="300">
                         <div className="hero-actions">
-                            <button className="btn btn-primary btn-lg">Get Started</button>
-                            <button className="btn btn-secondary btn-lg">Request a Demo</button>
+                            <button className="btn btn-primary btn-lg">Start Testing Smarter</button>
+                            <button className="btn btn-secondary btn-lg">Book a Demo</button>
                         </div>
                     </ScrollReveal>
                 </div>

@@ -4,8 +4,27 @@ import './Features.css';
 
 const features = [
     {
-        title: 'Integrate seamlessly',
-        desc: 'Connect with Jira, GitHub, Slack, and GitLab to sync your workflow.',
+        title: 'Intelligent Automation',
+        desc: 'AI-driven discovery and testing eliminate manual scripting, ensuring 100% logic coverage.',
+        icon: (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+        )
+    },
+    {
+        title: 'Continuous Quality Monitoring',
+        desc: 'Get actionable insights into usability, performance, accessibility, and security with every run.',
+        icon: (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+            </svg>
+        )
+    },
+    {
+        title: 'Seamless Integrations',
+        desc: 'Compatible with CI/CD workflows and project management tools like Jira, GitHub, and Slack.',
         icon: (
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
@@ -15,33 +34,12 @@ const features = [
         isIntegration: true
     },
     {
-        title: 'She builds a mental map',
-        desc: 'She doesn’t just click. She learns your architecture, understanding dependencies.',
+        title: 'Enterprise Security',
+        desc: 'Role-based access, data isolation, and compliance-ready architecture for total peace of mind.',
         icon: (
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <path d="m21 21-4.35-4.35"></path>
-            </svg>
-        )
-    },
-    {
-        title: 'She anticipates user behavior',
-        desc: 'She dreams up scenarios you forgot about—improbable edge cases and chaotic user flows—to ensure bulletproof reliability.',
-        icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-            </svg>
-        )
-    },
-    {
-        title: 'She validates with purpose',
-        desc: 'She executes purposeful tests, checking not just for crashes, but for experience degradations and logical fallacies.',
-        icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
-                <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
-                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
-                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
             </svg>
         )
     }
@@ -51,7 +49,8 @@ const integrations = [
     { name: 'Jira', color: '#0052CC' },
     { name: 'GitHub', color: '#181717' },
     { name: 'Slack', color: '#4A154B' },
-    { name: 'GitLab', color: '#FC6D26' }
+    { name: 'GitLab', color: '#FC6D26' },
+    { name: 'Jenkins', color: '#D24939' }
 ];
 
 const Features = () => {
@@ -60,7 +59,7 @@ const Features = () => {
             <div className="container">
                 <ScrollReveal animation="slide-right">
                     <div className="section-header">
-                        <h2>What <span style={{ color: 'var(--color-primary)' }}>she</span>'s truly capable of...</h2>
+                        <h2>Advanced <span style={{ color: 'var(--color-primary)' }}>Features</span></h2>
                     </div>
                 </ScrollReveal>
 
