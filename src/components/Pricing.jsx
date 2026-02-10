@@ -6,9 +6,9 @@ import './Pricing.css';
 const plans = [
     {
         name: 'Starter',
-        price: 'Flexible',
+        price: 'Standard',
         period: '',
-        desc: 'Ideal for small teams looking to start their automation journey.',
+        desc: 'Ideal for small teams',
         features: [
             'Autonomous User Flow Discovery',
             'Up to 500 Test Executions / mo',
@@ -19,9 +19,9 @@ const plans = [
     },
     {
         name: 'Professional',
-        price: 'Usage-Based',
+        price: 'Growth',
         period: '',
-        desc: 'Growing organizations needing scale and speed.',
+        desc: 'Growing organizations',
         features: [
             'Everything in Starter',
             'Unlimited Parallel Executions',
@@ -36,7 +36,7 @@ const plans = [
         name: 'Enterprise',
         price: 'Custom',
         period: '',
-        desc: 'Advanced security, compliance, and global scale.',
+        desc: 'Advanced security & scale',
         features: [
             'Everything in Professional',
             'On-Premise / VPC Deployment',
@@ -44,6 +44,20 @@ const plans = [
             'Dedicated Success Manager',
             'Custom Invoicing & SLAs',
             '24/7 Premium Support'
+        ]
+    },
+    {
+        name: 'Flexible Pricing',
+        price: 'Usage-Based',
+        period: '',
+        desc: 'Pay for what you use. Scale as you grow.',
+        features: [
+            'On-Demand Test Executions',
+            'No Monthly Commitments',
+            'Burst Capacity Support',
+            'Dynamic Resource Scaling',
+            'Real-time Usage Billing',
+            'Full Enterprise API Access'
         ]
     }
 ];
@@ -54,9 +68,9 @@ const Pricing = () => {
             <div className="container">
                 <ScrollReveal animation="slide-left">
                     <div className="section-header center">
-                        <h2 className="text-gradient">Flexible Pricing</h2>
+                        <h2 className="text-gradient">Choose Your Plan</h2>
                         <p style={{ maxWidth: '600px', margin: '0 auto 40px' }}>
-                            Pay for what you use. Scale as you grow.
+                            Flexible options tailored to your engineering needs.
                         </p>
                     </div>
                 </ScrollReveal>

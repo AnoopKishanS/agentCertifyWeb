@@ -11,7 +11,6 @@ import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton';
 
 import AboutSolvik from './components/AboutSolvik';
-import Contact from './components/Contact';
 
 function App() {
   return (
@@ -23,7 +22,6 @@ function App() {
       <HowItWorks />
       <TargetAudience />
       <Pricing />
-      <Contact />
       <Footer />
       <ScrollToTopButton />
     </div>
