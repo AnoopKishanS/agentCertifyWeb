@@ -21,9 +21,6 @@ const Hero = () => {
             <div className="container hero-container">
                 <div className="hero-content">
                     <ScrollReveal animation="fade-up" delay="100">
-                        <p className="hero-tagline" style={{ color: 'var(--color-primary)', fontWeight: 'bold', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
-                            Smarter Testing. Faster Releases. Zero Hassle.
-                        </p>
                         <h1 className="hero-title">
                             The AI testing platform that <br />
                             <span className="text-gradient">really understands your application</span>
@@ -31,15 +28,18 @@ const Hero = () => {
                     </ScrollReveal>
 
                     <ScrollReveal animation="slide-right" delay="200">
+                        <p className="hero-subtitle" style={{ fontWeight: '600', color: 'var(--color-primary)', marginBottom: '10px' }}>
+                            Smarter Testing. Faster Releases. Zero Hassle.
+                        </p>
                         <p className="hero-subtitle">
-                            AI-powered testing that understands your application, automatically generates test cases, and keeps them updated — so your team ships faster with confidence.
+                            AI-powered testing that understands your application, automatically generates test cases, and keeps them updated.
                         </p>
                     </ScrollReveal>
 
                     <ScrollReveal animation="scale-up" delay="300">
                         <div className="hero-actions">
-                            <button className="btn btn-primary btn-lg">Start Testing Smarter</button>
-                            <button className="btn btn-secondary btn-lg">Book a Demo</button>
+                            <button className="btn btn-primary btn-lg">Get Started</button>
+                            <button className="btn btn-secondary btn-lg">Request a Demo</button>
                         </div>
                     </ScrollReveal>
                 </div>

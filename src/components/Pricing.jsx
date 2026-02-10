@@ -6,28 +6,29 @@ import './Pricing.css';
 const plans = [
     {
         name: 'Starter',
-        price: 'Ideal',
+        price: 'Flexible',
         period: '',
-        desc: 'For small teams needing intelligent test automation.',
+        desc: 'Ideal for small teams looking to start their automation journey.',
         features: [
-            'Basic User Flow Discovery',
-            'AI Test Generation',
-            'Standard Quality Insights',
+            'Autonomous User Flow Discovery',
+            'Up to 500 Test Executions / mo',
+            'Full Maintenance Support',
             'Slack & Jira Integration',
-            'Email Support'
+            'Standard Quality Insights'
         ]
     },
     {
         name: 'Professional',
-        price: 'Scale',
+        price: 'Usage-Based',
         period: '',
-        desc: 'For growing organizations shipping daily with confidence.',
+        desc: 'Growing organizations needing scale and speed.',
         features: [
-            'Deep Application Mapping',
+            'Everything in Starter',
+            'Unlimited Parallel Executions',
+            'Priority CI/CD Support',
+            'Deep Semantic Application Mapping',
             'Self-Healing Test Scripts',
-            'Continuous Integration',
-            'Advanced Quality Metrics',
-            'Priority Support Channel'
+            'Advanced Security Insights'
         ],
         highlight: true
     },
@@ -35,13 +36,14 @@ const plans = [
         name: 'Enterprise',
         price: 'Custom',
         period: '',
-        desc: 'Advanced security, global scale, and dedicated support.',
+        desc: 'Advanced security, compliance, and global scale.',
         features: [
-            'Unlimited Parallel Executions',
-            'On-Premise Deployment',
+            'Everything in Professional',
+            'On-Premise / VPC Deployment',
             'SSO & Granular RBAC',
-            'Custom Compliance Reports',
-            'Dedicated Success Manager'
+            'Dedicated Success Manager',
+            'Custom Invoicing & SLAs',
+            '24/7 Premium Support'
         ]
     }
 ];
@@ -52,9 +54,9 @@ const Pricing = () => {
             <div className="container">
                 <ScrollReveal animation="slide-left">
                     <div className="section-header center">
-                        <h2>Flexible <span style={{ color: 'var(--color-primary)' }}>Pricing</span></h2>
+                        <h2 className="text-gradient">Flexible Pricing</h2>
                         <p style={{ maxWidth: '600px', margin: '0 auto 40px' }}>
-                            Pay for what you use. Scale as you grow. Choose a plan that fits your testing needs.
+                            Pay for what you use. Scale as you grow.
                         </p>
                     </div>
                 </ScrollReveal>
@@ -85,20 +87,13 @@ const Pricing = () => {
                                 </div>
                                 <div className="card-footer">
                                     <button className={`btn ${plan.highlight ? 'btn-primary' : 'btn-secondary'}`} style={{ width: '100%' }}>
-                                        {plan.price === 'Custom' ? 'Contact Sales' : 'Get Started'}
+                                        {plan.name === 'Enterprise' ? 'Contact Sales' : 'Get Started'}
                                     </button>
                                 </div>
                             </div>
                         </ScrollReveal>
                     ))}
                 </div>
-                <ScrollReveal animation="fade-up" delay="500">
-                    <div className="center" style={{ marginTop: '3rem' }}>
-                        <p style={{ fontSize: '1.2rem', fontWeight: '500' }}>
-                            👉 Contact Sales for Custom Plans
-                        </p>
-                    </div>
-                </ScrollReveal>
             </div>
         </section >
     );

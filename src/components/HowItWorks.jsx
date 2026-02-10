@@ -5,33 +5,27 @@ import './HowItWorks.css';
 const steps = [
     {
         id: 1,
-        title: 'Connect App',
-        desc: 'Connect your application in minutes — no complex setup required. Just point Solvik to your URL or repository.',
-        visual: '> Establishing secure connection...\n> Handshake: SUCCESS\n> Environment: PROD\n> Authentication: VERIFIED\n> Connection stabilized.'
+        title: 'Solvik studies your world',
+        desc: 'Solvik quietly navigates your application, observing every user flow and UI nuance with the curiosity of a dedicated engineer.',
+        visual: '> Initializing cognitive mapping protocol...\n> Discovered 47 user flows, 23 edge states\n> Building contextual understanding\n> Architecture analysis: COMPLETE'
     },
     {
         id: 2,
-        title: 'Discover',
-        desc: 'AI automatically understands your workflows, features, and functionality with superhuman depth.',
-        visual: '> Initializing neural discovery...\n> Mapping document Object Model (DOM)\n> Discovered 47 user flows, 23 edge states\n> Architecture analysis: COMPLETE'
+        title: 'Solvik imagines the breaks',
+        desc: 'Where others test happy paths, she creatively drafts edge cases and scenarios tailored to break your specific logic.',
+        visual: '> Synthesizing adversarial test scenarios...\n> Generated 142 intelligent test cases\n> Targeting critical failure points\n> Edge case coverage: 94.7%'
     },
     {
         id: 3,
-        title: 'Generate Tests',
-        desc: 'Instantly create comprehensive, ready-to-run test cases that cover every corner of your app.',
-        visual: '> Synthesizing test scenarios...\n> Generated 142 intelligent test cases\n> Targeting critical failure points\n> Test suite generation: 100%'
+        title: 'Solvik executes relentlessly',
+        desc: 'Solvik runs thousands of tests across parallel universes (cloud environments), validating your code with ruthless precision.',
+        visual: '> Executing across 12 parallel environments\n> Auth Module: PASS | Payment Gateway: PASS\n> User Profile: PASS | API Routes: PASS\n> Validating 1,247 assertions...'
     },
     {
         id: 4,
-        title: 'Evaluate Quality',
-        desc: 'Get actionable insights across usability, security, and performance with every automated run.',
-        visual: '> Executing quality audit...\n> Usability: 92% | Security: 98%\n> Performance: OPTIMAL\n> Accessibility: WCAG 2.1 Compliant'
-    },
-    {
-        id: 5,
-        title: 'Continuous Updates',
-        desc: 'Tests automatically evolve as your application changes, so you never have to worry about maintenance.',
-        visual: '> Detecting application changes...\n> New UI elements identified\n> Updating 12 test cases automatically\n> System synchronized with latest build.'
+        title: 'Solvik reports the truth',
+        desc: 'No vague errors. Solvik hands you a dossier of exactly what failed, why it failed, and often, how to fix it.',
+        visual: '> Test Suite Complete: 142/142 PASSED\n> Code Coverage: 94.7%\n> Zero regressions detected\n> Status: Production Ready'
     }
 ];
 
@@ -68,11 +62,11 @@ const HowItWorks = () => {
     }, []);
 
     return (
-        <section id="product" className="section bg-alt how-it-works-section">
+        <section id="how-it-works" className="section bg-alt how-it-works-section">
             <div className="container">
                 <ScrollReveal animation="slide-left">
                     <div className="section-header">
-                        <h2>Product <span style={{ color: 'var(--color-primary)' }}>Overview</span></h2>
+                        <h2>Watch <span style={{ color: 'var(--color-primary)' }}>Solvik</span> work!</h2>
                     </div>
                 </ScrollReveal>
 

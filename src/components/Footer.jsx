@@ -4,37 +4,36 @@ import './Footer.css';
 const Footer = () => {
     return (
         <footer className="footer">
+            <div className="footer-cta">
+                <h1>Transform Your Testing</h1>
+                <button className="btn btn-primary btn-lg">Get Started</button>
+            </div>
+
             <div className="footer-grid-container">
                 <div className="container">
                     <div className="footer-grid">
                         <div className="footer-col">
-                            <h4>Solvik</h4>
-                            <p className="footer-desc" style={{ maxWidth: '250px' }}>AI-powered testing that understands your application automatically.</p>
-                            <div className="social-links" style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}>
-                                <a href="#">Twitter</a>
-                                <a href="#">GitHub</a>
-                                <a href="#">LinkedIn</a>
+                            <h4>Sol<span style={{ color: 'var(--color-primary)' }}>vik</span></h4>
+                            <p className="footer-desc">AI-powered testing that really understands your application.</p>
+                            <div className="social-links">
+                                {/* Social icons placeholders */}
+                                <span>Twitter</span>
+                                <span>GitHub</span>
+                                <span>LinkedIn</span>
                             </div>
                         </div>
                         <div className="footer-col">
-                            <h5>Product</h5>
-                            <a href="#home">Home</a>
-                            <a href="#product">Product</a>
+                            <h5>Platform</h5>
+                            <a href="#about">Solvik</a>
                             <a href="#features">Features</a>
+                            <a href="#how-it-works">How it Works</a>
+                            <a href="#industry">Industry</a>
                             <a href="#pricing">Pricing</a>
                         </div>
                         <div className="footer-col">
-                            <h5>Resources</h5>
-                            <a href="#blog">Blog</a>
-                            <a href="#">Documentation</a>
-                            <a href="#">Security</a>
-                        </div>
-                        <div className="footer-col">
-                            <h5>Company</h5>
-                            <a href="#about">About Us</a>
-                            <a href="#contact">Contact</a>
-                            <a href="#">Privacy Policy</a>
-                            <a href="#">Terms of Service</a>
+                            <h5>Contact</h5>
+                            <a href="mailto:info@solvik.ai">info@solvik.ai</a>
+                            <span>Phone: Coming Soon</span>
                         </div>
                     </div>
                     <div className="footer-bottom">

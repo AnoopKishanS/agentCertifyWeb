@@ -1,118 +1,83 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ScrollReveal from './ScrollReveal';
+import './Contact.css';
 
 const Contact = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        company: '',
-        dateTime: '',
-        message: ''
-    });
-
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Form submitted:', formData);
-        alert('Thank you! Your demo request has been sent.');
-    };
-
     return (
         <section id="contact" className="section contact-section">
             <div className="container">
                 <ScrollReveal animation="fade-up">
                     <div className="section-header center">
-                        <h2>Let’s Transform Your <span style={{ color: 'var(--color-primary)' }}>Testing</span> Together</h2>
-                        <p>Smarter testing starts here. Let’s show you how.</p>
+                        <h2 className="text-gradient">Let’s Transform Your Testing Together</h2>
+                        <p>Have questions? We’re here to help you scale your engineering quality.</p>
                     </div>
                 </ScrollReveal>
 
-                <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem', marginTop: '3rem' }}>
-                    <ScrollReveal animation="slide-right">
-                        <div className="contact-info">
-                            <h3 style={{ marginBottom: '1.5rem' }}>Get in Touch</h3>
-                            <div className="info-item" style={{ marginBottom: '2rem' }}>
-                                <h4 style={{ color: 'var(--color-primary)', marginBottom: '0.5rem' }}>Sales & Support</h4>
-                                <p style={{ opacity: '0.8' }}>Email: info@solvik.ai</p>
-                                <p style={{ opacity: '0.8' }}>Our team will get back to you shortly.</p>
+                <div className="contact-grid">
+                    <ScrollReveal animation="slide-right" delay="100" className="contact-info">
+                        <div className="contact-card">
+                            <div className="contact-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg>
                             </div>
+                            <h3>Sales Queries</h3>
+                            <p>Interested in our custom plans or enterprise features? Reach out to our sales team.</p>
+                            <a href="mailto:info@solvik.ai" className="contact-link">info@solvik.ai</a>
+                        </div>
 
-                            <div className="demo-highlights" style={{ background: 'rgba(255, 255, 255, 0.03)', padding: '2rem', borderRadius: '20px', border: '1px solid rgba(255, 255, 255, 0.05)' }}>
-                                <h4 style={{ marginBottom: '1rem' }}>What You’ll Experience in a Demo:</h4>
-                                <ul style={{ listStyle: 'none', padding: '0', opacity: '0.8', lineHeight: '1.8' }}>
-                                    <li>✓ How Solvik understands your application automatically</li>
-                                    <li>✓ Instant test generation with AI</li>
-                                    <li>✓ Real-time quality insights</li>
-                                    <li>✓ How your team can release faster with confidence</li>
-                                </ul>
+                        <div className="contact-card">
+                            <div className="contact-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                                </svg>
                             </div>
+                            <h3>Technical Support</h3>
+                            <p>Need help with your current deployment? Our engineers are ready to assist.</p>
+                            <a href="mailto:info@solvik.ai" className="contact-link">info@solvik.ai</a>
                         </div>
                     </ScrollReveal>
 
-                    <ScrollReveal animation="slide-left">
-                        <div className="demo-form-container" style={{ background: 'var(--color-bg-alt)', padding: '3rem', borderRadius: '24px', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
-                            <h3 style={{ marginBottom: '2rem', textAlign: 'center' }}>Book Your Demo Now</h3>
-                            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                                <input
-                                    type="text"
-                                    name="name"
-                                    placeholder="Name"
-                                    required
-                                    style={{ padding: '1rem', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: 'white' }}
-                                    onChange={handleChange}
-                                />
-                                <input
-                                    type="email"
-                                    name="email"
-                                    placeholder="Work Email"
-                                    required
-                                    style={{ padding: '1rem', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: 'white' }}
-                                    onChange={handleChange}
-                                />
-                                <input
-                                    type="text"
-                                    name="company"
-                                    placeholder="Company"
-                                    required
-                                    style={{ padding: '1rem', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: 'white' }}
-                                    onChange={handleChange}
-                                />
-                                <input
-                                    type="text"
-                                    name="dateTime"
-                                    placeholder="Preferred Date & Time"
-                                    required
-                                    style={{ padding: '1rem', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: 'white' }}
-                                    onChange={handleChange}
-                                />
-                                <textarea
-                                    name="message"
-                                    placeholder="Message (Optional)"
-                                    rows="4"
-                                    style={{ padding: '1rem', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: 'white', resize: 'none' }}
-                                    onChange={handleChange}
-                                ></textarea>
-                                <button type="submit" className="btn btn-primary" style={{ width: '100%', padding: '1.2rem', fontSize: '1.1rem' }}>
-                                    Schedule Demo
-                                </button>
-                            </form>
+                    <ScrollReveal animation="slide-left" delay="200" className="contact-details">
+                        <div className="details-wrapper">
+                            <div className="detail-item">
+                                <div className="detail-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </div>
+                                <div className="detail-text">
+                                    <label>Email</label>
+                                    <p>info@solvik.ai</p>
+                                </div>
+                            </div>
+                            <div className="detail-item">
+                                <div className="detail-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <div className="detail-text">
+                                    <label>Office Address</label>
+                                    <p>Coming Soon</p>
+                                </div>
+                            </div>
+                            <div className="detail-item">
+                                <div className="detail-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                    </svg>
+                                </div>
+                                <div className="detail-text">
+                                    <label>Phone</label>
+                                    <p>Coming Soon</p>
+                                </div>
+                            </div>
                         </div>
                     </ScrollReveal>
                 </div>
-
-                <ScrollReveal animation="fade-up" delay="400">
-                    <div className="final-cta center" style={{ marginTop: '5rem', padding: '4rem', background: 'linear-gradient(135deg, var(--color-primary-dark), var(--color-bg-alt))', borderRadius: '30px' }}>
-                        <h2 style={{ marginBottom: '1rem' }}>Ready to transform your testing process?</h2>
-                        <p style={{ fontSize: '1.2rem', marginBottom: '2.5rem', opacity: '0.9' }}>Start your Solvik journey today.</p>
-                        <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center' }}>
-                            <button className="btn btn-primary btn-lg">Try Now</button>
-                            <button className="btn btn-secondary btn-lg">Schedule Demo</button>
-                        </div>
-                    </div>
-                </ScrollReveal>
             </div>
         </section>
     );

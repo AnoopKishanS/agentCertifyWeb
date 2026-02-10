@@ -4,42 +4,44 @@ import './Features.css';
 
 const features = [
     {
-        title: 'Intelligent Automation',
-        desc: 'AI-driven discovery and testing eliminate manual scripting, ensuring 100% logic coverage.',
+        title: 'Test case creation in hours, not months',
+        desc: 'Solvik automatically discovers your application and generates comprehensive test cases in a fraction of the time.',
+        icon: (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+        )
+    },
+    {
+        title: 'Self-maintaining automated tests',
+        desc: 'Tests that evolve with your application. Solvik detects UI changes and updates scripts automatically to prevent breakage.',
+        icon: (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 2v6h-6"></path>
+                <path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path>
+                <path d="M3 22v-6h6"></path>
+                <path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path>
+            </svg>
+        )
+    },
+    {
+        title: 'Complete quality insights',
+        desc: 'Go beyond functional testing with deep analysis of performance, accessibility, and security across all user flows.',
+        icon: (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+        )
+    },
+    {
+        title: 'Faster releases, reduced effort',
+        desc: 'Eliminate manual testing bottlenecks and ship with confidence. Turn mundane QA tasks into intelligent automation.',
         icon: (
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-            </svg>
-        )
-    },
-    {
-        title: 'Continuous Quality Monitoring',
-        desc: 'Get actionable insights into usability, performance, accessibility, and security with every run.',
-        icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <path d="m21 21-4.35-4.35"></path>
-            </svg>
-        )
-    },
-    {
-        title: 'Seamless Integrations',
-        desc: 'Compatible with CI/CD workflows and project management tools like Jira, GitHub, and Slack.',
-        icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-            </svg>
-        ),
-        isIntegration: true
-    },
-    {
-        title: 'Enterprise Security',
-        desc: 'Role-based access, data isolation, and compliance-ready architecture for total peace of mind.',
-        icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
             </svg>
         )
     }
@@ -49,8 +51,7 @@ const integrations = [
     { name: 'Jira', color: '#0052CC' },
     { name: 'GitHub', color: '#181717' },
     { name: 'Slack', color: '#4A154B' },
-    { name: 'GitLab', color: '#FC6D26' },
-    { name: 'Jenkins', color: '#D24939' }
+    { name: 'GitLab', color: '#FC6D26' }
 ];
 
 const Features = () => {
@@ -58,8 +59,8 @@ const Features = () => {
         <section id="features" className="section feature-section">
             <div className="container">
                 <ScrollReveal animation="slide-right">
-                    <div className="section-header">
-                        <h2>Advanced <span style={{ color: 'var(--color-primary)' }}>Features</span></h2>
+                    <div className="section-header center">
+                        <h2 className="text-gradient">Why Solvik</h2>
                     </div>
                 </ScrollReveal>
 

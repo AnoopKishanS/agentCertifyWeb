@@ -17,7 +17,7 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-content">
         <div className="logo">
-          Solvik
+          Sol<span style={{ color: 'var(--color-primary)' }}>vik</span>
         </div>
         <button
           className="mobile-menu-toggle"
@@ -29,16 +29,11 @@ const Navbar = () => {
           <span></span>
         </button>
         <div className={`nav-links ${mobileMenuOpen ? 'mobile-open' : ''}`}>
-          <a href="#home" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Home</a>
-          <a href="#product" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Product</a>
           <a href="#features" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Features</a>
-          <a href="#industries" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Industries</a>
-          <a href="#use-cases" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Use Cases</a>
+          <a href="#how-it-works" className="nav-link" onClick={() => setMobileMenuOpen(false)}>How it Works</a>
+          <a href="#industry" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Industry</a>
           <a href="#pricing" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Pricing</a>
-          <a href="#security" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Security & Enterprise</a>
-          <a href="#about" className="nav-link" onClick={() => setMobileMenuOpen(false)}>About Us</a>
-          <a href="#contact" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Contact / Demo Request</a>
-          <a href="#contact" className="btn btn-primary nav-cta" onClick={() => setMobileMenuOpen(false)}>Book Demo</a>
+          <a href="#contact" className="btn btn-primary nav-cta" onClick={() => setMobileMenuOpen(false)}>Contact Us</a>
         </div>
       </div>
     </nav>

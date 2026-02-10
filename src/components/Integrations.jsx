@@ -13,8 +13,8 @@ const Integrations = () => {
         <section className="section integrations-section">
             <div className="container">
                 <div className="section-header center">
-                    <h2><span style={{ color: 'var(--color-primary)' }}>She</span> joins your team... seamlessly.</h2>
-                    <p className="section-subtitle">No complex onboarding. She connects with your stack like she’s been there from Day 1.</p>
+                    <h2><span style={{ color: 'var(--color-primary)' }}>Solvik</span> joins your team... seamlessly.</h2>
+                    <p className="section-subtitle">No complex onboarding. Solvik connects with your stack like she’s been there from Day 1.</p>
                 </div>
                 <div className="integrations-grid">
                     {integrations.map((tool) => (
