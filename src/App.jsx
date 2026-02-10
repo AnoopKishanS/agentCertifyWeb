@@ -10,16 +10,20 @@ import Pricing from './components/Pricing';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton';
 
+import AboutSolvik from './components/AboutSolvik';
+import Contact from './components/Contact';
+
 function App() {
   return (
     <div className="App">
       <Navbar />
       <Hero />
-      <ProblemStatement />
+      <AboutSolvik />
       <Features />
       <HowItWorks />
       <TargetAudience />
       <Pricing />
+      <Contact />
       <Footer />
       <ScrollToTopButton />
     </div>

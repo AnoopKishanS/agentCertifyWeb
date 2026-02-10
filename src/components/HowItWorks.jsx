@@ -5,26 +5,26 @@ import './HowItWorks.css';
 const steps = [
     {
         id: 1,
-        title: 'She studies your world',
-        desc: 'She quietly navigates your application, observing every user flow and UI nuance with the curiosity of a dedicated engineer.',
+        title: 'Solvik studies your world',
+        desc: 'Solvik quietly navigates your application, observing every user flow and UI nuance with the curiosity of a dedicated engineer.',
         visual: '> Initializing cognitive mapping protocol...\n> Discovered 47 user flows, 23 edge states\n> Building contextual understanding\n> Architecture analysis: COMPLETE'
     },
     {
         id: 2,
-        title: 'She imagines the breaks',
+        title: 'Solvik imagines the breaks',
         desc: 'Where others test happy paths, she creatively drafts edge cases and scenarios tailored to break your specific logic.',
         visual: '> Synthesizing adversarial test scenarios...\n> Generated 142 intelligent test cases\n> Targeting critical failure points\n> Edge case coverage: 94.7%'
     },
     {
         id: 3,
-        title: 'She executes relentlessly',
-        desc: 'She runs thousands of tests across parallel universes (cloud environments), validating your code with ruthless precision.',
+        title: 'Solvik executes relentlessly',
+        desc: 'Solvik runs thousands of tests across parallel universes (cloud environments), validating your code with ruthless precision.',
         visual: '> Executing across 12 parallel environments\n> Auth Module: PASS | Payment Gateway: PASS\n> User Profile: PASS | API Routes: PASS\n> Validating 1,247 assertions...'
     },
     {
         id: 4,
-        title: 'She reports the truth',
-        desc: 'No vague errors. She hands you a dossier of exactly what failed, why it failed, and often, how to fix it.',
+        title: 'Solvik reports the truth',
+        desc: 'No vague errors. Solvik hands you a dossier of exactly what failed, why it failed, and often, how to fix it.',
         visual: '> Test Suite Complete: 142/142 PASSED\n> Code Coverage: 94.7%\n> Zero regressions detected\n> Status: Production Ready'
     }
 ];
@@ -62,11 +62,11 @@ const HowItWorks = () => {
     }, []);
 
     return (
-        <section className="section bg-alt how-it-works-section">
+        <section id="how-it-works" className="section bg-alt how-it-works-section">
             <div className="container">
                 <ScrollReveal animation="slide-left">
                     <div className="section-header">
-                        <h2>Watch <span style={{ color: 'var(--color-primary)' }}>her</span> work!</h2>
+                        <h2>Watch <span style={{ color: 'var(--color-primary)' }}>Solvik</span> work!</h2>
                     </div>
                 </ScrollReveal>
 

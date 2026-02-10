@@ -5,30 +5,30 @@ import './Pricing.css';
 
 const plans = [
     {
-        name: 'Startup',
-        price: '$1,000',
-        period: '/ mo',
-        desc: 'For small teams needing autonomous quality assurance.',
+        name: 'Starter',
+        price: 'Flexible',
+        period: '',
+        desc: 'Ideal for small teams looking to start their automation journey.',
         features: [
-            '1 Autonomous QA Agent',
-            'Up to 1,000 Test Executions / mo',
-            'Basic User Flow Discovery',
+            'Autonomous User Flow Discovery',
+            'Up to 500 Test Executions / mo',
+            'Full Maintenance Support',
             'Slack & Jira Integration',
-            'Weekly Quality Reports'
+            'Standard Quality Insights'
         ]
     },
     {
-        name: 'Scale',
-        price: '$2,500',
-        period: '/ mo',
-        desc: 'For growing engineering organizations shipping daily.',
+        name: 'Professional',
+        price: 'Usage-Based',
+        period: '',
+        desc: 'Growing organizations needing scale and speed.',
         features: [
-            '3 Autonomous QA Agents',
-            'Up to 10,000 Test Executions / mo',
+            'Everything in Starter',
+            'Unlimited Parallel Executions',
+            'Priority CI/CD Support',
             'Deep Semantic Application Mapping',
             'Self-Healing Test Scripts',
-            'CI/CD Pipeline Integration',
-            'Priority Support Channel'
+            'Advanced Security Insights'
         ],
         highlight: true
     },
@@ -36,14 +36,14 @@ const plans = [
         name: 'Enterprise',
         price: 'Custom',
         period: '',
-        desc: 'Global scale, security compliance, and dedicated support.',
+        desc: 'Advanced security, compliance, and global scale.',
         features: [
-            'Unlimited Autonomous QA Agents',
-            'Unlimited Parallel Executions',
+            'Everything in Professional',
             'On-Premise / VPC Deployment',
             'SSO & Granular RBAC',
             'Dedicated Success Manager',
-            'Custom Invoicing & SLAs'
+            'Custom Invoicing & SLAs',
+            '24/7 Premium Support'
         ]
     }
 ];
@@ -54,9 +54,9 @@ const Pricing = () => {
             <div className="container">
                 <ScrollReveal animation="slide-left">
                     <div className="section-header center">
-                        <h2>Flexible Plans to Hire Her</h2>
+                        <h2 className="text-gradient">Flexible Pricing</h2>
                         <p style={{ maxWidth: '600px', margin: '0 auto 40px' }}>
-                            Deploy MadameQA to your team for a fraction of the cost of a traditional QA engineer, with 24/7 availability.
+                            Pay for what you use. Scale as you grow.
                         </p>
                     </div>
                 </ScrollReveal>
@@ -87,7 +87,7 @@ const Pricing = () => {
                                 </div>
                                 <div className="card-footer">
                                     <button className={`btn ${plan.highlight ? 'btn-primary' : 'btn-secondary'}`} style={{ width: '100%' }}>
-                                        {plan.price === 'Custom' ? 'Contact Sales' : 'Hire MadameQA'}
+                                        {plan.name === 'Enterprise' ? 'Contact Sales' : 'Get Started'}
                                     </button>
                                 </div>
                             </div>

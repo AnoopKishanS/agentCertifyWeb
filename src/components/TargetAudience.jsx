@@ -56,8 +56,8 @@ const TargetAudience = () => {
     return (
         <section id="industry" className="industry-carousel-section">
             <div className="industry-header">
-                <h2>Every Industry needs <span style={{ color: 'var(--color-primary)' }}>her</span>.</h2>
-                <p>She adapts her protocols to your specific domain requirements.</p>
+                <h2>Every Industry needs <span style={{ color: 'var(--color-primary)' }}>Solvik</span>.</h2>
+                <p>Solvik adapts Solvik protocols to your specific domain requirements.</p>
             </div>
 
             <div className="industry-carousel-viewport">

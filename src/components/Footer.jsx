@@ -5,16 +5,16 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer-cta">
-                <h1>Talk to Her</h1>
-                <button className="btn btn-primary btn-lg">Contact Sales</button>
+                <h1>Transform Your Testing</h1>
+                <button className="btn btn-primary btn-lg">Get Started</button>
             </div>
 
             <div className="footer-grid-container">
                 <div className="container">
                     <div className="footer-grid">
                         <div className="footer-col">
-                            <h4>Madame<span style={{ color: 'var(--color-primary)' }}>QA</span></h4>
-                            <p className="footer-desc">Automated AI testing for modern engineering teams.</p>
+                            <h4>Sol<span style={{ color: 'var(--color-primary)' }}>vik</span></h4>
+                            <p className="footer-desc">AI-powered testing that really understands your application.</p>
                             <div className="social-links">
                                 {/* Social icons placeholders */}
                                 <span>Twitter</span>
@@ -23,29 +23,21 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="footer-col">
-                            <h5>Product</h5>
-                            <a href="#">Features</a>
-                            <a href="#">Integrations</a>
-                            <a href="#">Pricing</a>
-                            <a href="#">Changelog</a>
+                            <h5>Platform</h5>
+                            <a href="#about">Solvik</a>
+                            <a href="#features">Features</a>
+                            <a href="#how-it-works">How it Works</a>
+                            <a href="#industry">Industry</a>
+                            <a href="#pricing">Pricing</a>
                         </div>
                         <div className="footer-col">
-                            <h5>Resources</h5>
-                            <a href="#">Documentation</a>
-                            <a href="#">API Reference</a>
-                            <a href="#">Blog</a>
-                            <a href="#">Community</a>
-                        </div>
-                        <div className="footer-col">
-                            <h5>Company</h5>
-                            <a href="#">About</a>
-                            <a href="#">Careers</a>
-                            <a href="#">Legal</a>
-                            <a href="#">Contact</a>
+                            <h5>Contact</h5>
+                            <a href="mailto:info@solvik.ai">info@solvik.ai</a>
+                            <span>Phone: Coming Soon</span>
                         </div>
                     </div>
                     <div className="footer-bottom">
-                        <p>&copy; {new Date().getFullYear()} MadameQA. All rights reserved.</p>
+                        <p>&copy; {new Date().getFullYear()} Solvik. All rights reserved.</p>
                     </div>
                 </div>
             </div>

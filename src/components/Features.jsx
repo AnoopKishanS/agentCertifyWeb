@@ -4,44 +4,44 @@ import './Features.css';
 
 const features = [
     {
-        title: 'Integrate seamlessly',
-        desc: 'Connect with Jira, GitHub, Slack, and GitLab to sync your workflow.',
+        title: 'Test case creation in hours, not months',
+        desc: 'Solvik automatically discovers your application and generates comprehensive test cases in a fraction of the time.',
         icon: (
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-            </svg>
-        ),
-        isIntegration: true
-    },
-    {
-        title: 'She builds a mental map',
-        desc: 'She doesn’t just click. She learns your architecture, understanding dependencies.',
-        icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <path d="m21 21-4.35-4.35"></path>
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
             </svg>
         )
     },
     {
-        title: 'She anticipates user behavior',
-        desc: 'She dreams up scenarios you forgot about—improbable edge cases and chaotic user flows—to ensure bulletproof reliability.',
+        title: 'Self-maintaining automated tests',
+        desc: 'Tests that evolve with your application. Solvik detects UI changes and updates scripts automatically to prevent breakage.',
+        icon: (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 2v6h-6"></path>
+                <path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path>
+                <path d="M3 22v-6h6"></path>
+                <path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path>
+            </svg>
+        )
+    },
+    {
+        title: 'Complete quality insights',
+        desc: 'Go beyond functional testing with deep analysis of performance, accessibility, and security across all user flows.',
+        icon: (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+        )
+    },
+    {
+        title: 'Faster releases, reduced effort',
+        desc: 'Eliminate manual testing bottlenecks and ship with confidence. Turn mundane QA tasks into intelligent automation.',
         icon: (
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-            </svg>
-        )
-    },
-    {
-        title: 'She validates with purpose',
-        desc: 'She executes purposeful tests, checking not just for crashes, but for experience degradations and logical fallacies.',
-        icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
-                <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
-                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
-                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
             </svg>
         )
     }
@@ -59,8 +59,8 @@ const Features = () => {
         <section id="features" className="section feature-section">
             <div className="container">
                 <ScrollReveal animation="slide-right">
-                    <div className="section-header">
-                        <h2>What <span style={{ color: 'var(--color-primary)' }}>she</span>'s truly capable of...</h2>
+                    <div className="section-header center">
+                        <h2 className="text-gradient">Why Solvik</h2>
                     </div>
                 </ScrollReveal>
 

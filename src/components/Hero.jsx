@@ -22,14 +22,17 @@ const Hero = () => {
                 <div className="hero-content">
                     <ScrollReveal animation="fade-up" delay="100">
                         <h1 className="hero-title">
-                            Meet <span style={{ color: 'var(--color-primary)' }}>MadameQA</span>, the Sentinel who <br />
-                            <span className="text-gradient">understands your App Better Than You</span>
+                            The AI testing platform that <br />
+                            <span className="text-gradient">really understands your application</span>
                         </h1>
                     </ScrollReveal>
 
                     <ScrollReveal animation="slide-right" delay="200">
+                        <p className="hero-subtitle" style={{ fontWeight: '600', color: 'var(--color-primary)', marginBottom: '10px' }}>
+                            Smarter Testing. Faster Releases. Zero Hassle.
+                        </p>
                         <p className="hero-subtitle">
-                            She observes like a person, validates like a machine. MadameQA is the autonomous teammate who doesn't just run tests—she understands your vision.
+                            AI-powered testing that understands your application, automatically generates test cases, and keeps them updated.
                         </p>
                     </ScrollReveal>
 
