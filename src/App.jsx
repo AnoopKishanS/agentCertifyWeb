@@ -1,31 +1,35 @@
-import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ModalProvider } from './context/ModalContext'; // Import Context Provider
 import './animations.css'; // Global animations
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import ProblemStatement from './components/ProblemStatement';
-import Features from './components/Features';
-import HowItWorks from './components/HowItWorks';
-import TargetAudience from './components/TargetAudience';
-import Pricing from './components/Pricing';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton';
+import GetStartedModal from './components/GetStartedModal'; // Import Modal Component
 
-import AboutSolvik from './components/AboutSolvik';
+// Pages
+import Home from './pages/Home';
+import BlogPage from './pages/BlogPage';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <Hero />
-      <AboutSolvik />
-      <Features />
-      <HowItWorks />
-      <TargetAudience />
-      <Pricing />
-      <Footer />
-      <ScrollToTopButton />
-    </div>
+    <ModalProvider>
+      <Router>
+        <div className="App">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/blog" element={<BlogPage />} />
+          </Routes>
+          <Footer />
+          <ScrollToTopButton />
+          <GetStartedModal />
+        </div>
+      </Router>
+    </ModalProvider>
   );
 }
+
+
+
 
 export default App;

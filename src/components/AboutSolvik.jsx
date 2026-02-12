@@ -8,13 +8,18 @@ const AboutSolvik = () => {
             <div className="container">
                 <div className="about-grid">
                     <ScrollReveal animation="slide-left" className="about-content">
-                        <div className="section-header">
-                            <h2 className="text-gradient">Solvik</h2>
-                        </div>
+                        <span className="about-label">WHAT IS SOLVIK</span>
+                        <h2 className="about-primary-statement">An AI-first software testing platform</h2>
                         <p className="about-description">
-                            Solvik is an AI-first software testing platform designed to eliminate testing bottlenecks. It automatically discovers your application, generates comprehensive test cases, evaluates quality, and maintains tests as your app evolves — turning months of manual work into minutes of intelligent automation.
+                            Solvik eliminates testing bottlenecks by automatically discovering your application,
+                            generating test cases, evaluating quality, and maintaining tests as your app evolves.
+                        </p>
+                        <div className="about-outcome-separator"></div>
+                        <p className="about-outcome">
+                            Turn months of manual testing into minutes of intelligent automation.
                         </p>
                     </ScrollReveal>
+
                     <ScrollReveal animation="fade-up" delay="200" className="about-visual">
                         <div className="ai-brain-card">
                             <div className="pulse-circle"></div>

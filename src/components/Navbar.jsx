@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import '../index.css';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,12 +15,31 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Handle hash scrolling
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    } else if (location.pathname === '/') {
+      // Scroll to top if on home and no hash
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // Scroll to top on other page navigations
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
+
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-content">
-        <div className="logo">
+        <Link to="/" className="logo">
           Sol<span style={{ color: 'var(--color-primary)' }}>vik</span>
-        </div>
+        </Link>
         <button
           className="mobile-menu-toggle"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -29,10 +50,12 @@ const Navbar = () => {
           <span></span>
         </button>
         <div className={`nav-links ${mobileMenuOpen ? 'mobile-open' : ''}`}>
-          <a href="#features" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Features</a>
-          <a href="#how-it-works" className="nav-link" onClick={() => setMobileMenuOpen(false)}>How it Works</a>
-          <a href="#industry" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Industry</a>
-          <a href="#pricing" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Pricing</a>
+          <Link to="/" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+          <Link to="/#features" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Features</Link>
+          <Link to="/#how-it-works" className="nav-link" onClick={() => setMobileMenuOpen(false)}>How it Works</Link>
+          <Link to="/#industry" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Industry</Link>
+          <Link to="/#pricing" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
+          <Link to="/blog" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Blog</Link>
         </div>
       </div>
     </nav>
@@ -40,3 +63,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
