@@ -10,16 +10,60 @@
     align-items: center;
 }
 
-.about-content .section-header {
-    text-align: left;
-    margin-bottom: 30px;
+/* New About Styles */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.about-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--color-text-light);
+    opacity: 0.8;
+}
+
+.about-primary-statement {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    font-weight: 800;
+    color: var(--color-text-main);
+    background: linear-gradient(90deg, var(--color-text-main), var(--color-primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    margin: 0;
 }
 
 .about-description {
     font-size: 1.25rem;
-    line-height: 1.8;
-    color: var(--color-text-dim);
+    line-height: 1.6;
+    color: var(--color-text-light);
+    max-width: 90%;
+    margin-top: 8px;
 }
+
+.about-outcome-separator {
+    width: 60px;
+    height: 4px;
+    background: var(--color-primary);
+    border-radius: 2px;
+    margin: 24px 0 16px;
+    opacity: 0.3;
+}
+
+.about-outcome {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    line-height: 1.4;
+}
+
 
 .about-visual {
     display: flex;

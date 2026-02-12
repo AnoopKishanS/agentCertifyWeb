@@ -38,7 +38,7 @@ const HeroAnimation = () => {
                         <div className="stream-particle up-p2"></div>
                     </div>
                     <div className="ha-agent-icon">
-                        <span><span style={{ color: 'var(--color-primary)' }}>Madame</span>'s Consciousness</span>
+                        <span><span style={{ color: 'var(--color-primary)' }}>Solvik</span>'s Consciousness</span>
                     </div>
                     <div className="ha-status-pill">Establishing Bidirectional Link</div>
                 </div>
@@ -77,7 +77,7 @@ const HeroAnimation = () => {
                             <line x1="40" y1="150" x2="80" y2="80" className="neural-path" />
                         </svg>
                     </div>
-                    <div className="ha-status-pill">Synthesizing Cognitive Map</div>
+                    <div className="ha-status-pill">Discovering Application</div>
                 </div>
 
                 {/* Step 2: Generate Tests */}

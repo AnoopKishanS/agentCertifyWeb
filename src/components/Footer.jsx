@@ -29,6 +29,8 @@ const Footer = () => {
                             <a href="#how-it-works">How it Works</a>
                             <a href="#industry">Industry</a>
                             <a href="#pricing">Pricing</a>
+                            <a href="#blog">Blog</a>
+
                         </div>
                         <div className="footer-col">
                             <h5>Contact</h5>

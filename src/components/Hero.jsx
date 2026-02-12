@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import HeroAnimation from './HeroAnimation';
 import ScrollReveal from './ScrollReveal';
+import { useModal } from '../context/ModalContext';
 
 const Hero = () => {
+    const { openModal } = useModal();
     const [offset, setOffset] = useState(0);
 
     useEffect(() => {
@@ -22,24 +24,24 @@ const Hero = () => {
                 <div className="hero-content">
                     <ScrollReveal animation="fade-up" delay="100">
                         <h1 className="hero-title">
-                            The AI testing platform that <br />
-                            <span className="text-gradient">really understands your application</span>
+                            Modern Testing,<br />
+                            <span className="text-gradient">Built on Intelligence</span>
                         </h1>
                     </ScrollReveal>
 
                     <ScrollReveal animation="slide-right" delay="200">
                         <p className="hero-subtitle" style={{ fontWeight: '600', color: 'var(--color-primary)', marginBottom: '10px' }}>
-                            Smarter Testing. Faster Releases. Zero Hassle.
+                            Where Applications Meet AI Testing
                         </p>
                         <p className="hero-subtitle">
-                            AI-powered testing that understands your application, automatically generates test cases, and keeps them updated.
+                            Solvik automatically discovers your application, generates and maintains tests, and delivers continuous quality insights—end to end.
                         </p>
                     </ScrollReveal>
 
                     <ScrollReveal animation="scale-up" delay="300">
                         <div className="hero-actions">
-                            <button className="btn btn-primary btn-lg">Get Started</button>
-                            <button className="btn btn-secondary btn-lg">Request a Demo</button>
+                            <button className="btn btn-primary btn-lg" onClick={openModal}>Get Started</button>
+                            <button className="btn btn-secondary btn-lg" onClick={openModal}>Request a Demo</button>
                         </div>
                     </ScrollReveal>
                 </div>
@@ -52,5 +54,6 @@ const Hero = () => {
         </section>
     );
 };
+
 
 export default Hero;
