@@ -79,6 +79,7 @@ button {
   max-width: var(--spacing-container-max);
   margin: 0 auto;
   padding: 0 20px;
+  width: 80%;
 }
 
 .section {

@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import GetStartedModal from './components/GetStartedModal'; // Import Modal Component
+import Chatbot from './components/Chatbot';
 
 // Pages
 import Home from './pages/Home';
@@ -23,6 +24,7 @@ function App() {
           <Footer />
           <ScrollToTopButton />
           <GetStartedModal />
+          <Chatbot />
         </div>
       </Router>
     </ModalProvider>

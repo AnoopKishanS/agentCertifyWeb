@@ -34,7 +34,7 @@ const Hero = () => {
                             Where Applications Meet AI Testing
                         </p>
                         <p className="hero-subtitle">
-                            Solvik automatically discovers your application, generates and maintains tests, and delivers continuous quality insights—end to end.
+                            Solvik automatically discovers your application, generates, executes, and maintains test cases—delivering continuous quality insights end to end.
                         </p>
                     </ScrollReveal>
 
