@@ -8,6 +8,7 @@ import ROISection from '../components/ROISection';
 import HowItWorks from '../components/HowItWorks';
 import TargetAudience from '../components/TargetAudience';
 import Pricing from '../components/Pricing';
+import BlogPreview from '../components/BlogPreview';
 
 const Home = () => {
     return (
@@ -23,6 +24,7 @@ const Home = () => {
             <ROISection />
             <TargetAudience />
             <Pricing />
+            <BlogPreview />
         </>
     );
 };
