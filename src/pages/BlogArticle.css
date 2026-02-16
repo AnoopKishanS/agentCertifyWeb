@@ -44,6 +44,8 @@ html:has(.blog-article-page) {
 
 .article-header-compact {
   margin-bottom: 60px;
+  padding-top: 24px;
+  border-top: 3px solid var(--color-primary);
 }
 
 .article-meta-compact {
@@ -56,7 +58,7 @@ html:has(.blog-article-page) {
 
 .meta-category {
   font-weight: 600;
-  color: var(--color-text-main);
+  color: var(--color-primary);
   text-transform: capitalize;
 }
 
@@ -74,9 +76,12 @@ html:has(.blog-article-page) {
   font-size: 3.5rem;
   font-weight: 800;
   letter-spacing: -2px;
-  color: var(--color-text-main);
   line-height: 1.1;
   margin-bottom: 24px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #ff8c5a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .article-description {

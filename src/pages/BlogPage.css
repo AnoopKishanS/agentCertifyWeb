@@ -15,9 +15,9 @@ html:has(.blog-page) {
 
 .blog-hero {
   padding: 140px 20px 80px;
-  background: linear-gradient(135deg, #ffffff 0%, #fef8f5 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #fef8f5 50%, #fdf5f0 100%);
   text-align: center;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 2px solid rgba(253, 123, 65, 0.2);
 }
 
 .blog-hero .container {
@@ -52,8 +52,11 @@ html:has(.blog-page) {
   font-size: 4rem;
   font-weight: 800;
   letter-spacing: -2px;
-  color: var(--color-text-main);
   margin-bottom: 16px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #ff8c5a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .blog-hero-subtitle {
@@ -62,6 +65,11 @@ html:has(.blog-page) {
   max-width: 600px;
   margin: 0 auto;
   font-weight: 400;
+}
+
+.blog-hero-subtitle strong {
+  color: var(--color-primary);
+  font-weight: 600;
 }
 
 .blog-content {
@@ -84,12 +92,14 @@ html:has(.blog-page) {
   background: white;
   border-radius: 16px;
   border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
   transition: all 0.3s ease;
 }
 
 .blog-post-item:hover {
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-  border-color: rgba(253, 123, 65, 0.3);
+  box-shadow: 0 8px 32px rgba(253, 123, 65, 0.12);
+  border-color: var(--color-primary);
+  border-left-color: var(--color-primary);
   transform: translateY(-2px);
 }
 
