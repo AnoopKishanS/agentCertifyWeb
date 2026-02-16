@@ -10,6 +10,8 @@ import Chatbot from './components/Chatbot';
 // Pages
 import Home from './pages/Home';
 import BlogPage from './pages/BlogPage';
+import AboutUs from './pages/AboutUs';
+import Product from './pages/Product';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/blog" element={<BlogPage />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/product" element={<Product />} />
           </Routes>
           <Footer />
           <ScrollToTopButton />

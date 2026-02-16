@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useModal } from '../context/ModalContext';
 import '../index.css';
 
 const Navbar = () => {
+  const { openModal } = useModal();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -25,14 +27,19 @@ const Navbar = () => {
           element.scrollIntoView({ behavior: 'smooth' });
         }, 100);
       }
-    } else if (location.pathname === '/') {
-      // Scroll to top if on home and no hash
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      // Scroll to top on other page navigations
+      // For all other transitions (including back to home), jump to top
       window.scrollTo(0, 0);
     }
   }, [location]);
+
+  const [dropdownOpen, setDropdownOpen] = useState(null);
+
+  const toggleDropdown = (name) => {
+    if (window.innerWidth <= 768) {
+      setDropdownOpen(dropdownOpen === name ? null : name);
+    }
+  };
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
@@ -51,10 +58,10 @@ const Navbar = () => {
         </button>
         <div className={`nav-links ${mobileMenuOpen ? 'mobile-open' : ''}`}>
           <Link to="/" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-          <Link to="/#features" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Features</Link>
-          <Link to="/#how-it-works" className="nav-link" onClick={() => setMobileMenuOpen(false)}>How it Works</Link>
-          <Link to="/#industry" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Industry</Link>
-          <Link to="/#pricing" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
+          <Link to="/product" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Product</Link>
+          <a href="/#industry" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Industry</a>
+          <a href="/#pricing" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Pricing</a>
+          <Link to="/about" className="nav-link" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
           <Link to="/blog" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Blog</Link>
         </div>
       </div>

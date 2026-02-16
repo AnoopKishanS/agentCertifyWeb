@@ -3,8 +3,8 @@ import Blog from '../components/Blog';
 
 const BlogPage = () => {
     return (
-        <div style={{ paddingTop: 'var(--nav-height)' }}>
-            <Blog />
+        <div className="subpage">
+            <Blog detailed={true} />
         </div>
     );
 };
