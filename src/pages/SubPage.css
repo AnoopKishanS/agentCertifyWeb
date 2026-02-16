@@ -1,13 +1,12 @@
 .subpage {
     background-color: var(--color-bg-base);
     padding-top: var(--nav-height);
-    scroll-snap-type: none;
     min-height: 100vh;
 }
 
-/* Jumbotron hero (same style as blog hero) for all subpages */
+/* Jumbotron hero: one scroll = one section (snap) */
 .subpage-jumbotron {
-    min-height: 280px;
+    min-height: 100vh;
     padding: calc(var(--nav-height) + 48px) 24px 80px;
     background: linear-gradient(135deg, #ffffff 0%, #fef8f5 50%, #fdf5f0 100%);
     text-align: center;
@@ -15,6 +14,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
 .subpage-jumbotron .container {
@@ -129,14 +130,16 @@
 }
 
 .subpage-section {
-    min-height: auto;
+    min-height: 100vh;
     padding: 60px 20px;
-    padding-top: 60px;
+    padding-top: calc(var(--nav-height) + 20px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
     position: relative;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
 .subpage-section .container {
@@ -352,6 +355,64 @@
     text-align: center;
 }
 
+/* About page: Mission & Vision – less white space, more structure */
+.about-mission-section {
+    background: linear-gradient(180deg, #fef9f7 0%, #fdf5f0 50%, var(--color-bg-alt) 100%);
+    border-top: 3px solid rgba(253, 123, 65, 0.25);
+}
+
+.about-mission-container .section-title {
+    margin-bottom: 40px;
+}
+
+.content-grid-about {
+    max-width: 880px;
+    margin: 0 auto 0;
+    gap: 32px;
+}
+
+.about-mission-card {
+    padding: 40px 36px;
+}
+
+.about-mission-card .block-title {
+    font-size: 1.125rem;
+    margin-bottom: 14px;
+}
+
+.about-mission-card .block-text {
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+/* About page: Why We Built Solvik & Teams */
+.about-story-section {
+    background: var(--color-bg-alt);
+    border-top: 1px solid var(--color-border);
+}
+
+.about-why-block {
+    padding: 40px 48px !important;
+    margin-bottom: 48px !important;
+    background: linear-gradient(135deg, rgba(253, 123, 65, 0.06) 0%, rgba(60, 64, 68, 0.04) 100%);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.about-why-block .section-title {
+    margin-bottom: 16px;
+}
+
+.about-why-block .block-text {
+    font-size: 1.05rem;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.content-grid-teams .content-block {
+    padding: 28px 24px;
+}
+
 @media (max-width: 992px) {
     .subpage-breadcrumb {
         width: 90%;
@@ -379,6 +440,18 @@
     .content-grid,
     .feature-grid {
         grid-template-columns: 1fr;
+    }
+
+    .content-grid-about {
+        max-width: 100%;
+    }
+
+    .about-mission-card {
+        padding: 28px 24px;
+    }
+
+    .about-why-block {
+        padding: 28px 20px !important;
     }
 
     .page-title {

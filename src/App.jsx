@@ -33,6 +33,8 @@ function AppRoutes() {
     };
   }, [location.pathname]);
 
+  const isSubpage = location.pathname === '/product' || location.pathname === '/about';
+
   return (
     <>
       <Navbar />
@@ -43,7 +45,7 @@ function AppRoutes() {
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogArticle />} />
       </Routes>
-      <Footer />
+      {!isSubpage && <Footer />}
       <ScrollToTopButton />
       <GetStartedModal />
       <Chatbot />

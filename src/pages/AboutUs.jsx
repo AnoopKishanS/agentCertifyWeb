@@ -18,18 +18,20 @@ const AboutUs = () => {
                 </div>
             </section>
             {/* Section 1: Mission & Vision */}
-            <section className="subpage-section">
-                <div className="container">
+            <section className="subpage-section about-mission-section">
+                <div className="container about-mission-container">
                     <ScrollReveal animation="fade-up">
+                        <p className="section-label">Who we are</p>
+                        <h2 className="section-title">Our Mission & Vision</h2>
                         <div className="content-grid content-grid-about">
-                            <section className="content-block content-block-accent">
-                                <h2 className="block-title">Our Mission</h2>
+                            <section className="content-block content-block-accent about-mission-card">
+                                <h3 className="block-title">Our Mission</h3>
                                 <p className="block-text">
                                     To redefine software testing through intelligent automation — helping teams build reliable applications faster without testing becoming a bottleneck.
                                 </p>
                             </section>
-                            <section className="content-block content-block-accent">
-                                <h2 className="block-title">Our Vision</h2>
+                            <section className="content-block content-block-accent about-mission-card">
+                                <h3 className="block-title">Our Vision</h3>
                                 <p className="block-text">
                                     A world where testing keeps pace with innovation, enabling organizations to deliver high-quality software continuously.
                                 </p>
@@ -40,11 +42,11 @@ const AboutUs = () => {
             </section>
 
             {/* Section 2: Why We Built Solvik & Leadership */}
-            <section className="subpage-section bg-alt">
+            <section className="subpage-section about-story-section">
                 <div className="container">
                     <ScrollReveal animation="fade-up">
                         <p className="section-label">Our story</p>
-                        <section className="content-block full-width-section" style={{ textAlign: 'center', marginBottom: '60px' }}>
+                        <section className="content-block full-width-section about-why-block">
                             <h2 className="section-title">Why We Built Solvik</h2>
                             <p className="block-text">
                                 Traditional testing struggles to keep up with rapid development cycles. Solvik was created to bridge this gap by automating discovery, test creation, maintenance, and quality evaluation using AI.
@@ -53,7 +55,7 @@ const AboutUs = () => {
 
                         <p className="section-label">Teams</p>
                         <h2 className="section-title">Leadership & Technical</h2>
-                        <div className="content-grid">
+                        <div className="content-grid content-grid-teams">
                             <section className="content-block content-block-accent">
                                 <h3 className="block-title">Leadership Team</h3>
                                 <p className="block-text">Our leadership brings decades of experience in software engineering, AI, and quality assurance.</p>
