@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { ModalProvider } from './context/ModalContext'; // Import Context Provider
 import './animations.css'; // Global animations
 import Navbar from './components/Navbar';
@@ -10,21 +11,48 @@ import Chatbot from './components/Chatbot';
 // Pages
 import Home from './pages/Home';
 import BlogPage from './pages/BlogPage';
+import BlogArticle from './pages/BlogArticle';
+
+function AppRoutes() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const isBlogRoute = location.pathname.startsWith('/blog');
+    if (isBlogRoute) {
+      document.documentElement.classList.add('blog-route');
+      document.body.classList.add('blog-route');
+    } else {
+      document.documentElement.classList.remove('blog-route');
+      document.body.classList.remove('blog-route');
+    }
+    return () => {
+      document.documentElement.classList.remove('blog-route');
+      document.body.classList.remove('blog-route');
+    };
+  }, [location.pathname]);
+
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:slug" element={<BlogArticle />} />
+      </Routes>
+      <Footer />
+      <ScrollToTopButton />
+      <GetStartedModal />
+      <Chatbot />
+    </>
+  );
+}
 
 function App() {
   return (
     <ModalProvider>
       <Router>
         <div className="App">
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/blog" element={<BlogPage />} />
-          </Routes>
-          <Footer />
-          <ScrollToTopButton />
-          <GetStartedModal />
-          <Chatbot />
+          <AppRoutes />
         </div>
       </Router>
     </ModalProvider>
