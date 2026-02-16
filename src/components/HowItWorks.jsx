@@ -12,7 +12,7 @@ const steps = [
     {
         id: 2,
         title: 'Solvik imagines the breaks',
-        desc: 'Where others test happy paths, she creatively drafts edge cases and scenarios tailored to break your specific logic.',
+        desc: 'Where others test happy paths, Solvik creatively drafts edge cases and scenarios tailored to break your specific logic.',
         visual: '> Synthesizing adversarial test scenarios...\n> Generated 142 intelligent test cases\n> Targeting critical failure points\n> Edge case coverage: 94.7%'
     },
     {
