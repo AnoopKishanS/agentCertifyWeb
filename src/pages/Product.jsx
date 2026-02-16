@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ScrollReveal from '../components/ScrollReveal';
+import ImpactSnapshot from '../components/ImpactSnapshot';
 import './SubPage.css';
 
 const Product = () => {
@@ -49,6 +50,8 @@ const Product = () => {
                     </ScrollReveal>
                 </div>
             </section>
+
+            <ImpactSnapshot />
 
             {/* Section 3: Core Capabilities */}
             <section className="subpage-section">
