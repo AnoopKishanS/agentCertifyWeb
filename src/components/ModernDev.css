@@ -1,0 +1,251 @@
+.modern-dev-section {
+    padding: 100px 20px;
+    background: var(--color-bg-alt);
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modern-dev-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.modern-dev-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: linear-gradient(135deg, rgba(253, 123, 65, 0.1), rgba(237, 191, 155, 0.1));
+    color: var(--color-primary);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(253, 123, 65, 0.2);
+}
+
+.modern-dev-title {
+    font-size: 2.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+    margin-bottom: 24px;
+    color: var(--color-text-main);
+}
+
+.modern-dev-description {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.modern-dev-features {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.dev-feature {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.dev-feature-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.dev-feature h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text-main);
+    margin-bottom: 4px;
+}
+
+.dev-feature p {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+.modern-dev-visual {
+    position: relative;
+}
+
+.code-window {
+    background: #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border: 1px solid #333;
+}
+
+.code-window-header {
+    background: #2d2d2d;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #333;
+}
+
+.window-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot-red {
+    background: #ff5f56;
+}
+
+.dot-yellow {
+    background: #ffbd2e;
+}
+
+.dot-green {
+    background: #27c93f;
+}
+
+.window-title {
+    font-size: 0.85rem;
+    color: #999;
+    font-family: 'Courier New', monospace;
+}
+
+.code-window-body {
+    padding: 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+.code-line {
+    display: flex;
+    gap: 16px;
+    padding: 4px 0;
+    transition: background 0.2s ease;
+}
+
+.code-line.highlight {
+    background: rgba(253, 123, 65, 0.1);
+    border-left: 3px solid var(--color-primary);
+    padding-left: 8px;
+    margin-left: -8px;
+}
+
+.line-number {
+    color: #666;
+    user-select: none;
+    min-width: 20px;
+    text-align: right;
+}
+
+.code-text {
+    color: #d4d4d4;
+}
+
+.code-key {
+    color: #569cd6;
+}
+
+.code-value {
+    color: #ce9178;
+}
+
+.stats-overlay {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.stat-badge {
+    background: white;
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    border: 1px solid var(--color-border);
+}
+
+.stat-icon {
+    font-size: 1.5rem;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    font-weight: 500;
+}
+
+@media (max-width: 968px) {
+    .modern-dev-content {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .modern-dev-title {
+        font-size: 2.25rem;
+    }
+
+    .modern-dev-description {
+        font-size: 1rem;
+    }
+
+    .code-window-body {
+        font-size: 0.8rem;
+        padding: 16px;
+    }
+
+    .stats-overlay {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .modern-dev-title {
+        font-size: 1.85rem;
+    }
+
+    .modern-dev-features {
+        gap: 20px;
+    }
+
+    .dev-feature {
+        flex-direction: column;
+        gap: 12px;
+    }
+}

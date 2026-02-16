@@ -1,9 +1,11 @@
 import React from 'react';
 import Hero from '../components/Hero';
+import IntroAnimation from '../components/IntroAnimation';
 import AboutSolvik from '../components/AboutSolvik';
-import Features from '../components/Features';
+import WhySolvik from '../components/WhySolvik';
+import ModernDev from '../components/ModernDev';
+import ROISection from '../components/ROISection';
 import HowItWorks from '../components/HowItWorks';
-import UseCases from '../components/UseCases';
 import TargetAudience from '../components/TargetAudience';
 import Pricing from '../components/Pricing';
 
@@ -13,10 +15,12 @@ const Home = () => {
             <section id="home">
                 <Hero />
             </section>
+            <IntroAnimation />
             <AboutSolvik />
-            <Features />
+            <WhySolvik />
             <HowItWorks />
-            <UseCases />
+            <ModernDev />
+            <ROISection />
             <TargetAudience />
             <Pricing />
         </>

@@ -1,0 +1,50 @@
+.intro-animation-section {
+    padding: 80px 20px;
+    background: var(--color-bg-base);
+    min-height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.intro-animation-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.intro-animation-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+    color: var(--color-text-main);
+}
+
+.intro-animation-subtitle {
+    font-size: 1.15rem;
+    color: var(--color-text-light);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.intro-animation-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .intro-animation-title {
+        font-size: 2rem;
+    }
+
+    .intro-animation-subtitle {
+        font-size: 1rem;
+    }
+
+    .intro-animation-wrapper {
+        max-width: 100%;
+    }
+}
