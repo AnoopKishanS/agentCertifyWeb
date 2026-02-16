@@ -12,6 +12,8 @@ import Chatbot from './components/Chatbot';
 import Home from './pages/Home';
 import BlogPage from './pages/BlogPage';
 import BlogArticle from './pages/BlogArticle';
+import Product from './pages/Product';
+import AboutUs from './pages/AboutUs';
 
 function AppRoutes() {
   const location = useLocation();
@@ -36,6 +38,8 @@ function AppRoutes() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/product" element={<Product />} />
+        <Route path="/about" element={<AboutUs />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogArticle />} />
       </Routes>

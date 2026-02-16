@@ -12,6 +12,12 @@
     scroll-snap-align: start;
 }
 
+/* On subpages (no CTA): no extra height, no gap under footer */
+.footer.footer-no-cta {
+    min-height: 0;
+    scroll-snap-align: none;
+}
+
 .footer-cta {
     text-align: center;
     flex: 1;

@@ -1,0 +1,409 @@
+.subpage {
+    background-color: var(--color-bg-base);
+    padding-top: var(--nav-height);
+    scroll-snap-type: none;
+    min-height: 100vh;
+}
+
+/* Jumbotron hero (same style as blog hero) for all subpages */
+.subpage-jumbotron {
+    min-height: 280px;
+    padding: calc(var(--nav-height) + 48px) 24px 80px;
+    background: linear-gradient(135deg, #ffffff 0%, #fef8f5 50%, #fdf5f0 100%);
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subpage-jumbotron .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: var(--spacing-container-max);
+    margin: 0 auto;
+}
+
+.subpage-jumbotron .subpage-breadcrumb {
+    align-self: flex-start;
+    width: auto;
+    max-width: none;
+    padding: 0 0 20px 0;
+    margin-bottom: 0;
+}
+
+.subpage-jumbotron-title {
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    color: var(--color-text-main);
+    margin: 0 0 12px 0;
+}
+
+.subpage-jumbotron-title.text-gradient {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #ff8c5a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subpage-jumbotron-subtitle {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--color-text-light);
+    max-width: 560px;
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+/* Breadcrumb: clear subpage context */
+.subpage-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 12px 20px;
+    max-width: var(--spacing-container-max);
+    margin: 0 auto;
+    width: 80%;
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+}
+
+.subpage-breadcrumb a {
+    color: var(--color-text-light);
+    transition: color var(--transition-fast);
+}
+
+.subpage-breadcrumb a:hover {
+    color: var(--color-primary);
+}
+
+.subpage-breadcrumb-sep {
+    color: var(--color-border);
+    user-select: none;
+}
+
+.subpage-breadcrumb [aria-current="page"] {
+    color: var(--color-text-main);
+    font-weight: 600;
+}
+
+/* Page/section labels: overline style so it's clearly a subpage */
+.subpage-label,
+.section-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+}
+
+.section-label {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 48px;
+    letter-spacing: -0.02em;
+    color: var(--color-text-main);
+}
+
+.section-title.text-gradient {
+    margin-bottom: 16px;
+}
+
+.subpage-section .container.subpage-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+}
+
+.subpage-section {
+    min-height: auto;
+    padding: 60px 20px;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.subpage-section .container {
+    width: 80%;
+    margin: 0 auto;
+    max-width: var(--spacing-container-max);
+}
+
+.product-hero-visual {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-hero-visual::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(253, 123, 65, 0.15) 0%, transparent 70%);
+    z-index: -1;
+    filter: blur(40px);
+    animation: animateGlow 10s infinite alternate;
+}
+
+@keyframes animateGlow {
+    from {
+        transform: scale(1) translate(0, 0);
+        opacity: 0.5;
+    }
+
+    to {
+        transform: scale(1.2) translate(10px, -10px);
+        opacity: 0.8;
+    }
+}
+
+.subpage-header {
+    margin-bottom: 20px;
+}
+
+.subpage-header.center {
+    text-align: center;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+}
+
+.page-subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+    max-width: 800px;
+}
+
+.subpage-header.center .page-subtitle {
+    margin: 0 auto;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.content-block {
+    padding: 24px;
+    background: var(--color-bg-alt);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--color-border);
+    transition: all var(--transition-fast);
+}
+
+.content-block:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-card);
+}
+
+/* Accent block: left border for hierarchy without emojis */
+.content-block-accent {
+    border-left: 3px solid var(--color-primary);
+    padding-left: 21px;
+}
+
+/* Step number (replaces emoji numbers) */
+.step-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.block-icon {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.block-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--color-text-main);
+}
+
+.block-text {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+.block-list {
+    list-style: none;
+    margin-top: 16px;
+}
+
+.block-list li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 10px;
+    color: var(--color-text-light);
+}
+
+.block-list li::before {
+    content: "•";
+    color: var(--color-primary);
+    position: absolute;
+    left: 0;
+    font-weight: 900;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+.full-width-section {
+    grid-column: 1 / -1;
+    padding: 60px;
+    background: linear-gradient(135deg, rgba(253, 123, 65, 0.05) 0%, rgba(60, 64, 68, 0.05) 100%);
+    border-radius: 24px;
+    text-align: center;
+}
+
+.demo-form-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--color-border);
+}
+
+.demo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text-main);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    padding: 12px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 15px;
+    transition: all 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(253, 123, 65, 0.1);
+}
+
+.contact-info {
+    margin-top: 40px;
+    padding: 30px;
+    background: var(--color-bg-alt);
+    border-radius: 12px;
+    text-align: center;
+}
+
+@media (max-width: 992px) {
+    .subpage-breadcrumb {
+        width: 90%;
+    }
+
+    .subpage-section .container,
+    .subpage-section .container.subpage-hero-grid {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+        width: 90%;
+        gap: 60px;
+    }
+
+    .subpage-header {
+        text-align: center !important;
+    }
+
+    .product-hero-visual {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .content-grid,
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-title {
+        font-size: 2.25rem;
+    }
+
+    .subpage-jumbotron-title {
+        font-size: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 32px;
+    }
+
+    .full-width-section {
+        padding: 30px 20px;
+    }
+
+    .demo-form-container {
+        padding: 24px;
+    }
+
+    .subpage-breadcrumb {
+        font-size: 0.8125rem;
+        padding: 10px 16px;
+    }
+}

@@ -57,6 +57,8 @@ const Navbar = () => {
           <Link to="/#roi" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Savings</Link>
           <Link to="/#industry" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Industries</Link>
           <Link to="/#pricing" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
+          <Link to="/product" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Product</Link>
+          <Link to="/about" className="nav-link" onClick={() => setMobileMenuOpen(false)}>About</Link>
           <Link to="/blog" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Blog</Link>
         </div>
       </div>

@@ -51,6 +51,12 @@ body.blog-route {
   scroll-snap-type: none !important;
 }
 
+/* Disable scroll-snap on subpages (Product, About) for normal scrolling */
+html:has(.subpage),
+body:has(.subpage) {
+  scroll-snap-type: none !important;
+}
+
 body {
   font-family: var(--font-family);
   color: var(--color-text-main);

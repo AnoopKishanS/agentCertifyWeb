@@ -1,13 +1,19 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
+    const { pathname } = useLocation();
+    const isHome = pathname === '/';
+
     return (
-        <footer className="footer">
-            <div className="footer-cta">
-                <h1>Transform Your Testing</h1>
-                <button className="btn btn-primary btn-lg">Get Started</button>
-            </div>
+        <footer className={`footer ${!isHome ? 'footer-no-cta' : ''}`}>
+            {isHome && (
+                <div className="footer-cta">
+                    <h1>Transform Your Testing</h1>
+                    <button className="btn btn-primary btn-lg">Get Started</button>
+                </div>
+            )}
 
             <div className="footer-grid-container">
                 <div className="container">
