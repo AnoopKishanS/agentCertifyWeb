@@ -16,7 +16,7 @@ const Hero = () => {
         { type: 'API', label: 'Testing' },
         { type: 'RWD', label: 'Testing' },
         { type: 'UX Heuristics', label: 'Analysis' },
-        { type: '508 Compliance', label: 'Check' },
+        { type: '508 Accessibility', label: 'Compliance' },
         { type: 'Security', label: 'Testing' },
         { type: 'Coverage', label: 'Analysis' }
     ];
