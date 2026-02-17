@@ -12,13 +12,13 @@ const steps = [
     {
         id: 2,
         title: 'Solvik imagines the breaks',
-        desc: 'Where others test happy paths, she creatively drafts edge cases and scenarios tailored to break your specific logic.',
+        desc: 'Where others test happy paths, solvik creatively drafts edge cases and scenarios tailored to break your specific logic.',
         visual: '> Synthesizing adversarial test scenarios...\n> Generated 142 intelligent test cases\n> Targeting critical failure points\n> Edge case coverage: 94.7%'
     },
     {
         id: 3,
         title: 'Solvik executes relentlessly',
-        desc: 'Solvik runs thousands of tests across parallel universes (cloud environments), validating your code with ruthless precision.',
+        desc: 'Solvik runs and maintains thousands of tests across parallel universes (cloud environments), validating your code with ruthless precision.',
         visual: '> Executing across 12 parallel environments\n> Auth Module: PASS | Payment Gateway: PASS\n> User Profile: PASS | API Routes: PASS\n> Validating 1,247 assertions...'
     },
     {
@@ -66,7 +66,7 @@ const HowItWorks = () => {
             <div className="container">
                 <ScrollReveal animation="slide-left">
                     <div className="section-header">
-                        <h2>Watch <span style={{ color: 'var(--color-primary)' }}>Solvik</span> work!</h2>
+                        <h2>See <span style={{ color: 'var(--color-primary)' }}>Solvik</span> in action!</h2>
                     </div>
                 </ScrollReveal>
 

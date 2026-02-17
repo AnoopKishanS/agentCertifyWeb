@@ -6,7 +6,7 @@ import './Hero.css';
 const Hero = () => {
     const { openModal } = useModal();
     const [currentTagline, setCurrentTagline] = useState(0);
-    
+
     const taglines = [
         { type: 'Automation', label: 'Testing' },
         { type: 'AI Vision', label: 'Testing' },
@@ -38,7 +38,7 @@ const Hero = () => {
                 <div className="hero-content">
                     <ScrollReveal animation="fade-up" delay="0">
                         <h1 className="hero-title">
-                            Testing that thinks.<br />
+                            Testing<br />that thinks.<br />
                             <span className="hero-title-highlight">Quality that scales.</span>
                         </h1>
                     </ScrollReveal>
@@ -88,8 +88,8 @@ const Hero = () => {
                             <p className="brand-tagline-fixed">One Platform to Do It All</p>
                             <div className="brand-tagline-container">
                                 {taglines.map((tagline, index) => (
-                                    <p 
-                                        className={`brand-tagline ${index === currentTagline ? 'active' : ''}`} 
+                                    <p
+                                        className={`brand-tagline ${index === currentTagline ? 'active' : ''}`}
                                         key={index}
                                     >
                                         <span className="tagline-type">{tagline.type}</span>{' '}
