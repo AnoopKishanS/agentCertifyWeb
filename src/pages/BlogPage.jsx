@@ -53,7 +53,7 @@ const BlogPage = () => {
                     </button>
                     <h1 className="blog-hero-title">The Blog</h1>
                     <p className="blog-hero-subtitle">
-                        Insights on AI, workforce management, and building better software
+                        Solvik Insights on AI, workforce management, and building better software
                     </p>
                 </div>
             </div>
@@ -84,7 +84,7 @@ const BlogPage = () => {
                                     <p className="post-description">{post.description}</p>
                                     <div className="post-footer">
                                         <span className="post-author">By Agent Solvik</span>
-                                        <button 
+                                        <button
                                             className="read-more-btn"
                                             onClick={() => navigate(`/blog/${post.slug}`)}
                                         >

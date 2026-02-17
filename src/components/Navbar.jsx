@@ -50,16 +50,16 @@ const Navbar = () => {
           <span></span>
         </button>
         <div className={`nav-links ${mobileMenuOpen ? 'mobile-open' : ''}`}>
-          <Link to="/#about" className="nav-link" onClick={() => setMobileMenuOpen(false)}>What</Link>
-          <Link to="/#why-solvik" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Why</Link>
+          <Link to="/#about" className="nav-link" onClick={() => setMobileMenuOpen(false)}>What we do</Link>
+          {/* <Link to="/#why-solvik" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Why</Link>
           <Link to="/#how-it-works" className="nav-link" onClick={() => setMobileMenuOpen(false)}>How</Link>
-          <Link to="/#modern-dev" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Platform</Link>
-          <Link to="/#roi" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Savings</Link>
+          <Link to="/#modern-dev" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Platform</Link> */}
+          <Link to="/#roi" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Smart ROI</Link>
           <Link to="/#industry" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Industries</Link>
-          <Link to="/#pricing" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
           <Link to="/product" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Product</Link>
+          <Link to="/#pricing" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
           <Link to="/about" className="nav-link" onClick={() => setMobileMenuOpen(false)}>About</Link>
-          <Link to="/blog" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Blog</Link>
+          <Link to="/blog" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Resources</Link>
         </div>
       </div>
     </nav>
