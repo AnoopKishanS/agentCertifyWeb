@@ -50,7 +50,7 @@ const Navbar = () => {
           <span></span>
         </button>
         <div className={`nav-links ${mobileMenuOpen ? 'mobile-open' : ''}`}>
-          <Link to="/#about" className="nav-link" onClick={() => setMobileMenuOpen(false)}>What we do</Link>
+          <Link to="/#about" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Explore Solvik</Link>
           {/* <Link to="/#why-solvik" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Why</Link>
           <Link to="/#how-it-works" className="nav-link" onClick={() => setMobileMenuOpen(false)}>How</Link>
           <Link to="/#modern-dev" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Platform</Link> */}
