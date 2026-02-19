@@ -27,7 +27,7 @@ const HeroAnimation = () => {
                 {/* Step 0: Connect */}
                 <div className={`ha-stage stage-connect ${step === 0 ? 'active' : ''}`}>
                     <div className="ha-app-icon">
-                        <span className="ha-icon-label">Your App</span>
+                        <span className="ha-icon-label">www.YourApp.com</span>
                     </div>
                     <div className="ha-connection-stream">
                         {/* Downward stream */}

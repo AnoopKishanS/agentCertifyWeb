@@ -53,7 +53,7 @@ const BlogPage = () => {
                     </button>
                     <h1 className="blog-hero-title">The Blog</h1>
                     <p className="blog-hero-subtitle">
-                        Solvik Insights on AI, workforce management, and building better software
+                        Solvik Insights on AI, and building better software
                     </p>
                 </div>
             </div>
