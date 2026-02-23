@@ -1,11 +1,14 @@
 .intro-animation-section {
-    padding: 80px 20px;
-    background: var(--color-bg-base);
+    padding: 100px 20px;
+    background: #F9F9F8;
+    /* Specific off-white for contrast against white card */
     min-height: 100vh;
     scroll-snap-align: start;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+    z-index: 1;
 }
 
 .intro-animation-header {

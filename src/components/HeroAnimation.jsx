@@ -33,26 +33,38 @@ const HeroAnimation = () => {
                         </div>
                         <div className="ha-db-grid">
                             <div className="ha-db-card card-large">
-                                <div className="ha-db-card-label">Quality Insights</div>
-                                <div className="ha-db-insights-list">
-                                    <div className="insight-row">
-                                        <span className="i-dot blue"></span>
-                                        <span className="i-text">Discovery: 42 new flows mapped</span>
-                                    </div>
-                                    <div className="insight-row">
-                                        <span className="i-dot orange"></span>
-                                        <span className="i-text">Regression: 12 potential breaks detected</span>
-                                    </div>
-                                    <div className="insight-row">
-                                        <span className="i-dot green"></span>
-                                        <span className="i-text">Performance: 15% speed improvement</span>
-                                    </div>
+                                <div className="ha-db-card-label">Coverage Trends</div>
+                                <div className="ha-db-line-chart">
+                                    <svg viewBox="0 0 200 60" preserveAspectRatio="none">
+                                        <polyline
+                                            fill="none"
+                                            stroke="var(--color-primary)"
+                                            strokeWidth="2.5"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            points="0,50 20,48 40,42 60,45 80,30 100,32 120,20 140,22 160,10 180,12 200,5"
+                                            className="chart-line-path"
+                                        />
+                                        <path d="M0,50 20,48 40,42 60,45 80,30 100,32 120,20 140,22 160,10 180,12 200,5 V60 H0 Z" fill="url(#chartGradient)" opacity="0.1" />
+                                        <defs>
+                                            <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="0%" stopColor="var(--color-primary)" />
+                                                <stop offset="100%" stopColor="transparent" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
                                 </div>
                             </div>
                             <div className="ha-db-side-cards">
                                 <div className="ha-db-card card-small">
-                                    <div className="ha-db-card-label">Test Cases</div>
-                                    <div className="ha-db-card-value">1,247</div>
+                                    <div className="ha-db-card-label">Quality Index</div>
+                                    <div className="ha-db-visual-status">
+                                        <div className="status-grid">
+                                            {[...Array(9)].map((_, i) => (
+                                                <div key={i} className={`status-dot ${i < 7 ? 'active' : ''}`}></div>
+                                            ))}
+                                        </div>
+                                    </div>
                                 </div>
                                 <div className="ha-db-card card-small">
                                     <div className="ha-db-card-label">Coverage</div>

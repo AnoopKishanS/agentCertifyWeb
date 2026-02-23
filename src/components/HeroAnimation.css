@@ -223,70 +223,84 @@
     margin-top: 5px;
 }
 
-.ha-db-insights-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 5px;
-}
-
-.insight-row {
+.ha-db-line-chart {
+    flex: 1;
     display: flex;
     align-items: center;
-    gap: 10px;
-    opacity: 0;
-    transform: translateX(-10px);
+    position: relative;
+    padding-top: 5px;
 }
 
-.stage-dashboard.active .insight-row {
-    animation: insightSlideIn 0.5s ease forwards;
+.ha-db-line-chart svg {
+    width: 100%;
+    height: 100%;
 }
 
-.stage-dashboard.active .insight-row:nth-child(1) {
-    animation-delay: 0.4s;
+.chart-line-path {
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
 }
 
-.stage-dashboard.active .insight-row:nth-child(2) {
+.stage-dashboard.active .chart-line-path {
+    animation: drawChartLine 2.5s ease-out forwards;
     animation-delay: 0.5s;
 }
 
-.stage-dashboard.active .insight-row:nth-child(3) {
-    animation-delay: 0.6s;
-}
-
-@keyframes insightSlideIn {
+@keyframes drawChartLine {
     to {
-        opacity: 1;
-        transform: translateX(0);
+        stroke-dashoffset: 0;
     }
 }
 
-.i-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    flex-shrink: 0;
+.ha-db-visual-status {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
 }
 
-.i-dot.blue {
-    background: #3b82f6;
-    box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
 }
 
-.i-dot.orange {
-    background: #f59e0b;
-    box-shadow: 0 0 8px rgba(245, 158, 11, 0.5);
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 2px;
 }
 
-.i-dot.green {
-    background: #10b981;
-    box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+.status-dot.active {
+    background: var(--color-primary);
+    box-shadow: 0 0 6px rgba(253, 123, 65, 0.4);
+    animation: dotPulse 2s infinite alternate;
 }
 
-.i-text {
-    font-size: 11px;
-    color: #475569;
-    font-weight: 500;
+.status-dot:nth-child(2).active {
+    animation-delay: 0.2s;
+}
+
+.status-dot:nth-child(3).active {
+    animation-delay: 0.4s;
+}
+
+.status-dot:nth-child(5).active {
+    animation-delay: 0.6s;
+}
+
+@keyframes dotPulse {
+    from {
+        opacity: 0.6;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.1);
+    }
 }
 
 /* Connect Stage - Vertical Stream Effect */
