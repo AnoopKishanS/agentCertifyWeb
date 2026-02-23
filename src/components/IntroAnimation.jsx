@@ -10,14 +10,14 @@ const IntroAnimation = () => {
                 <ScrollReveal animation="fade-up">
                     <div className="intro-animation-header">
                         <h2 className="intro-animation-title">
-                            See <span className="text-gradient">Solvik</span> in Action
+                            See <span style={{ color: 'var(--color-primary)' }}>Solvik</span> in Action
                         </h2>
                         <p className="intro-animation-subtitle">
                             From connection to execution—watch how Solvik transforms your testing workflow
                         </p>
                     </div>
                 </ScrollReveal>
-                
+
                 <ScrollReveal animation="scale-up" delay="200">
                     <div className="intro-animation-wrapper">
                         <HeroAnimation />
