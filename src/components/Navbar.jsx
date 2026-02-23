@@ -38,7 +38,7 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-content">
         <Link to="/" className="logo">
-          Sol<span style={{ color: 'var(--color-primary)' }}>vik</span>
+          <span style={{ color: 'var(--color-primary)' }}>Solvik</span>
         </Link>
         <button
           className="mobile-menu-toggle"

@@ -19,7 +19,7 @@ const Footer = () => {
                 <div className="container">
                     <div className="footer-grid">
                         <div className="footer-col">
-                            <h4>Sol<span style={{ color: 'var(--color-primary)' }}>vik</span></h4>
+                            <h4><span style={{ color: 'var(--color-primary)' }}>Solvik</span></h4>
                             <p className="footer-desc">AI-powered testing that really understands your application.</p>
                             <div className="social-links-container">
                                 <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Twitter">

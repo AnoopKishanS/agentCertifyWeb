@@ -4,10 +4,10 @@ import './HeroAnimation.css';
 const HeroAnimation = () => {
     const [step, setStep] = useState(0);
 
-    // Cycle through 4 steps: 0=Connect, 1=Analyze (Complex), 2=Generate, 3=Execute
+    // Cycle through 5 steps: 0=Dashboard, 1=Connect, 2=Analyze (Complex), 3=Generate, 4=Execute
     useEffect(() => {
         const timer = setInterval(() => {
-            setStep((prev) => (prev + 1) % 4);
+            setStep((prev) => (prev + 1) % 5);
         }, 4000); // Increased duration to 4s to let animations play out
         return () => clearInterval(timer);
     }, []);
@@ -24,27 +24,82 @@ const HeroAnimation = () => {
 
             {/* Frameless animation content - no window shell */}
             <div className="ha-content">
-                {/* Step 0: Connect */}
-                <div className={`ha-stage stage-connect ${step === 0 ? 'active' : ''}`}>
-                    <div className="ha-app-icon">
-                        <span className="ha-icon-label">www.YourApp.com</span>
+                {/* Step 0: Dashboard */}
+                <div className={`ha-stage stage-dashboard ${step === 0 ? 'active' : ''}`}>
+                    <div className="ha-dashboard-preview">
+                        <div className="ha-db-header">
+                            <div className="ha-db-searchbar"></div>
+                            <div className="ha-db-profile"></div>
+                        </div>
+                        <div className="ha-db-grid">
+                            <div className="ha-db-card card-large">
+                                <div className="ha-db-card-label">Quality Insights</div>
+                                <div className="ha-db-insights-list">
+                                    <div className="insight-row">
+                                        <span className="i-dot blue"></span>
+                                        <span className="i-text">Discovery: 42 new flows mapped</span>
+                                    </div>
+                                    <div className="insight-row">
+                                        <span className="i-dot orange"></span>
+                                        <span className="i-text">Regression: 12 potential breaks detected</span>
+                                    </div>
+                                    <div className="insight-row">
+                                        <span className="i-dot green"></span>
+                                        <span className="i-text">Performance: 15% speed improvement</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="ha-db-side-cards">
+                                <div className="ha-db-card card-small">
+                                    <div className="ha-db-card-label">Test Cases</div>
+                                    <div className="ha-db-card-value">1,247</div>
+                                </div>
+                                <div className="ha-db-card card-small">
+                                    <div className="ha-db-card-label">Coverage</div>
+                                    <div className="ha-db-card-value">94.7%</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div className="ha-connection-stream">
-                        {/* Downward stream */}
-                        <div className="stream-particle down-p1"></div>
-                        <div className="stream-particle down-p2"></div>
-                        {/* Upward stream */}
-                        <div className="stream-particle up-p1"></div>
-                        <div className="stream-particle up-p2"></div>
-                    </div>
-                    <div className="ha-agent-icon">
-                        <span><span style={{ color: 'var(--color-primary)' }}>Solvik</span>'s Consciousness</span>
-                    </div>
-                    <div className="ha-status-pill">Establishing Bidirectional Link</div>
+                    <div className="ha-status-pill">Live Intelligence: Analysis complete for 47 user flows</div>
                 </div>
 
-                {/* Step 1: Mapping & Intelligence - Cosmic Graph */}
-                <div className={`ha-stage stage-analyze ${step === 1 ? 'active' : ''}`}>
+                {/* Step 1: Connect */}
+                <div className={`ha-stage stage-connect ${step === 1 ? 'active' : ''}`}>
+                    <div className="ha-converge-container">
+                        <div className="ha-input-items">
+                            <div className="ha-input-item url-src">
+                                <span className="ha-icon-label">www.YourApp.com</span>
+                            </div>
+                            <div className="ha-input-item brd-src">
+                                <span className="ha-icon-label">BRD Document</span>
+                            </div>
+                            <div className="ha-input-item demo-src">
+                                <span className="ha-icon-label">Video Demo</span>
+                            </div>
+                        </div>
+
+                        <div className="ha-streams-hub">
+                            {/* Animated paths logic in CSS */}
+                            <div className="stream-line l1"></div>
+                            <div className="stream-line l2"></div>
+                            <div className="stream-line l3"></div>
+
+                            {/* Particles */}
+                            <div className="particle-flow p1"></div>
+                            <div className="particle-flow p2"></div>
+                            <div className="particle-flow p3"></div>
+                        </div>
+
+                        <div className="ha-agent-icon center-hub">
+                            <span><span style={{ color: 'var(--color-primary)' }}>Solvik</span>'s Consciousness</span>
+                        </div>
+                    </div>
+                    <div className="ha-status-pill">Synthesizing Application Intelligence</div>
+                </div>
+
+                {/* Step 2: Mapping & Intelligence - Cosmic Graph */}
+                <div className={`ha-stage stage-analyze ${step === 2 ? 'active' : ''}`}>
                     <div className="orbit-container">
                         {/* Central Cognitive Core */}
                         <div className="cognitive-core"></div>
@@ -80,8 +135,8 @@ const HeroAnimation = () => {
                     <div className="ha-status-pill">Discovering Application</div>
                 </div>
 
-                {/* Step 2: Generate Tests */}
-                <div className={`ha-stage stage-generate ${step === 2 ? 'active' : ''}`}>
+                {/* Step 3: Generate Tests */}
+                <div className={`ha-stage stage-generate ${step === 3 ? 'active' : ''}`}>
                     <div className="test-grid">
                         <div className="ha-test-card c1 unit">
                             <div className="tc-header">
@@ -115,8 +170,8 @@ const HeroAnimation = () => {
                     <div className="ha-status-pill">Test Cases Generated</div>
                 </div>
 
-                {/* Step 3: Execute */}
-                <div className={`ha-stage stage-execute ${step === 3 ? 'active' : ''}`}>
+                {/* Step 4: Execute */}
+                <div className={`ha-stage stage-execute ${step === 4 ? 'active' : ''}`}>
                     <div className="ha-dashboard-split">
                         <div className="ha-run-list">
                             <div className="ha-run-item pass">

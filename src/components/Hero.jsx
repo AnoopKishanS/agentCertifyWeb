@@ -7,23 +7,25 @@ const Hero = () => {
     const { openModal } = useModal();
     const [currentTagline, setCurrentTagline] = useState(0);
 
-    const taglines = [
-        { type: 'Automation', label: 'Testing' },
-        { type: 'AI Vision', label: 'Testing' },
-        { type: 'Smoke', label: 'Testing' },
-        { type: 'Regression', label: 'Testing' },
-        { type: 'Integration', label: 'Testing' },
-        { type: 'API', label: 'Testing' },
-        { type: 'RWD', label: 'Testing' },
-        { type: 'UX Heuristics', label: 'Analysis' },
-        { type: '508 Accessibility', label: 'Compliance' },
-        { type: 'Security', label: 'Testing' },
-        { type: 'Coverage', label: 'Analysis' }
+    const personas = [
+        { persona: "QA Engineers", capability: "Automation Testing" },
+        { persona: "Developers", capability: "API Testing" },
+        { persona: "Product Teams", capability: "UX Heuristics Analysis" },
+        { persona: "Security Teams", capability: "Security Testing" },
+        { persona: "Compliance Teams", capability: "508 Accessibility Compliance" },
+        { persona: "Engineering Leaders", capability: "Regression Testing" },
+        { persona: "Startups", capability: "Smoke Testing" },
+        { persona: "Growth Teams", capability: "Coverage Analysis" },
+        { persona: "Frontend Teams", capability: "RWD Testing" },
+        { persona: "AI Teams", capability: "AI Vision Testing" },
+        { persona: "Platform Teams", capability: "Integration Testing" },
+        { persona: "IT Operations", capability: "System Health Validation" },
+        { persona: "Release Managers", capability: "Pre-Release Risk Assessment" }
     ];
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentTagline((prev) => (prev + 1) % taglines.length);
+            setCurrentTagline((prev) => (prev + 1) % personas.length);
         }, 3000);
         return () => clearInterval(interval);
     }, []);
@@ -38,8 +40,8 @@ const Hero = () => {
                 <div className="hero-content">
                     <ScrollReveal animation="fade-up" delay="0">
                         <h1 className="hero-title">
-                            Testing<br />that thinks.<br />
-                            <span className="hero-title-highlight">Quality that scales.</span>
+                            AI-Powered <br />Testing.<br />
+                            <span className="hero-title-highlight">Built To Scale.</span>
                         </h1>
                     </ScrollReveal>
 
@@ -54,12 +56,6 @@ const Hero = () => {
                             <button className="hero-btn hero-btn-primary" onClick={openModal}>
                                 Start Testing Free
                             </button>
-                            <button className="hero-btn hero-btn-secondary" onClick={openModal}>
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                                </svg>
-                                Watch Demo
-                            </button>
                         </div>
                     </ScrollReveal>
 
@@ -70,11 +66,11 @@ const Hero = () => {
                                 <span className="proof-text">Tests Generated Daily</span>
                             </div>
                             <div className="proof-item">
-                                <span className="proof-number">99.8%</span>
-                                <span className="proof-text">Uptime</span>
+                                <span className="proof-number">70%</span>
+                                <span className="proof-text">Lower QA Cost</span>
                             </div>
                             <div className="proof-item">
-                                <span className="proof-number">280hrs</span>
+                                <span className="proof-number">160hrs</span>
                                 <span className="proof-text">Saved per Month</span>
                             </div>
                         </div>
@@ -85,15 +81,30 @@ const Hero = () => {
                     <div className="hero-visual">
                         <div className="hero-brand">
                             <span className="brand-text">Solvik</span>
-                            <p className="brand-tagline-fixed">One Platform to Do It All</p>
+                            <p className="brand-tagline-fixed">The Testing Hub</p>
+                            <div className="hero-persona-cycle-visual">
+                                {personas.map((item, index) => (
+                                    <div
+                                        key={index}
+                                        className={`persona-item ${index === currentTagline ? 'active' : ''}`}
+                                    >
+                                        <span className="tagline-label">FOR</span>{' '}
+                                        <span className="tagline-type">{item.persona}</span>
+                                    </div>
+                                ))}
+                            </div>
                             <div className="brand-tagline-container">
-                                {taglines.map((tagline, index) => (
+                                {personas.map((item, index) => (
                                     <p
                                         className={`brand-tagline ${index === currentTagline ? 'active' : ''}`}
                                         key={index}
                                     >
-                                        <span className="tagline-type">{tagline.type}</span>{' '}
-                                        <span className="tagline-label">{tagline.label}</span>
+                                        <span className="tagline-type">
+                                            {item.capability.substring(0, item.capability.lastIndexOf(' '))}
+                                        </span>{' '}
+                                        <span className="tagline-label">
+                                            {item.capability.substring(item.capability.lastIndexOf(' ') + 1)}
+                                        </span>
                                     </p>
                                 ))}
                             </div>

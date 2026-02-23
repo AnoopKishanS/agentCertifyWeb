@@ -18,9 +18,9 @@ const Home = () => {
             </section>
             <IntroAnimation />
             <AboutSolvik />
-            <WhySolvik />
-            <HowItWorks />
+            {/* <WhySolvik /> */}
             <ModernDev />
+            <HowItWorks />
             <ROISection />
             <TargetAudience />
             <Pricing />

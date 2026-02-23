@@ -107,6 +107,188 @@
     border: 1px solid #E8E8E6;
 }
 
+/* Dashboard Stage */
+.stage-dashboard {
+    flex-direction: column;
+    padding: 20px;
+}
+
+.ha-dashboard-preview {
+    width: 90%;
+    height: 70%;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.ha-db-header {
+    height: 40px;
+    background: #fff;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    gap: 15px;
+}
+
+.ha-db-searchbar {
+    flex: 1;
+    height: 12px;
+    background: #f1f5f9;
+    border-radius: 6px;
+}
+
+.ha-db-profile {
+    width: 20px;
+    height: 20px;
+    background: #e2e8f0;
+    border-radius: 50%;
+}
+
+.ha-db-grid {
+    flex: 1;
+    display: flex;
+    padding: 15px;
+    gap: 15px;
+}
+
+.ha-db-card {
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.stage-dashboard.active .ha-db-card {
+    animation: dbCardFadeIn 0.5s ease forwards;
+}
+
+.stage-dashboard.active .card-large {
+    animation-delay: 0.1s;
+}
+
+.stage-dashboard.active .ha-db-side-cards .card-small:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.stage-dashboard.active .ha-db-side-cards .card-small:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+@keyframes dbCardFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-large {
+    flex: 2;
+    gap: 10px;
+}
+
+.ha-db-side-cards {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card-small {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.ha-db-card-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+}
+
+.ha-db-card-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-top: 5px;
+}
+
+.ha-db-insights-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.insight-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.stage-dashboard.active .insight-row {
+    animation: insightSlideIn 0.5s ease forwards;
+}
+
+.stage-dashboard.active .insight-row:nth-child(1) {
+    animation-delay: 0.4s;
+}
+
+.stage-dashboard.active .insight-row:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.stage-dashboard.active .insight-row:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes insightSlideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.i-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.i-dot.blue {
+    background: #3b82f6;
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+}
+
+.i-dot.orange {
+    background: #f59e0b;
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.5);
+}
+
+.i-dot.green {
+    background: #10b981;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+}
+
+.i-text {
+    font-size: 11px;
+    color: #475569;
+    font-weight: 500;
+}
+
 /* Connect Stage - Vertical Stream Effect */
 .ha-connection-stream {
     width: 4px;
@@ -206,6 +388,170 @@
     flex-direction: column;
     gap: 24px;
     padding: 30px 20px;
+}
+
+.ha-converge-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.ha-input-items {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.ha-input-item {
+    width: 120px;
+    height: 60px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.ha-input-item.url-src {
+    background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+}
+
+.ha-input-item.brd-src {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+}
+
+.ha-input-item.demo-src {
+    background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);
+}
+
+.ha-streams-hub {
+    width: 100%;
+    height: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.stream-line {
+    position: absolute;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: rgba(253, 123, 65, 0.1);
+}
+
+.l1 {
+    left: calc(50% - 100px);
+    transform: rotate(-30deg);
+    transform-origin: top;
+}
+
+.l2 {
+    left: 50%;
+}
+
+.l3 {
+    left: calc(50% + 100px);
+    transform: rotate(30deg);
+    transform-origin: top;
+}
+
+.particle-flow {
+    position: absolute;
+    width: 4px;
+    height: 20px;
+    background: linear-gradient(180deg, transparent, var(--color-primary), transparent);
+    border-radius: 2px;
+    opacity: 0;
+}
+
+.p1 {
+    left: calc(50% - 100px);
+    animation: flowDiagLeft 1.5s infinite linear;
+}
+
+.p2 {
+    left: 50%;
+    animation: flowStraight 1.5s infinite linear;
+}
+
+.p3 {
+    left: calc(50% + 100px);
+    animation: flowDiagRight 1.5s infinite linear;
+}
+
+@keyframes flowStraight {
+    0% {
+        top: -20px;
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 60px;
+        opacity: 0;
+    }
+}
+
+@keyframes flowDiagLeft {
+    0% {
+        transform: translate(0, -20px) rotate(-30deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(35px, 60px) rotate(-30deg);
+        opacity: 0;
+    }
+}
+
+@keyframes flowDiagRight {
+    0% {
+        transform: translate(0, -20px) rotate(30deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-35px, 60px) rotate(30deg);
+        opacity: 0;
+    }
+}
+
+.ha-agent-icon.center-hub {
+    width: 240px;
+    z-index: 10;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
 
 .ha-app-icon,
