@@ -6,7 +6,7 @@ const steps = [
     {
         id: 1,
         title: 'Solvik studies your world',
-        desc: 'Solvik quietly navigates your application, observing every user flow and UI nuance with the curiosity of a dedicated engineer.',
+        desc: 'Solvik quietly understands your application,observing every user flow, documentation and UI nuance with the curiosity of a dedicated engineer.',
         visual: '> Initializing cognitive mapping protocol...\n> Discovered 47 user flows, 23 edge states\n> Building contextual understanding\n> Architecture analysis: COMPLETE'
     },
     {
