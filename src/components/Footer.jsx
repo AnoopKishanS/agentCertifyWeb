@@ -37,12 +37,12 @@ const Footer = () => {
                         </div>
                         <div className="footer-col">
                             <h5>Platform</h5>
-                            <Link to="/product" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Solvik</Link>
-                            <Link to="/#modern-dev" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Features</Link>
-                            <Link to="/#how-it-works" className="nav-link" onClick={() => setMobileMenuOpen(false)}>How it Works</Link>
-                            <Link to="/#industry" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Industry</Link>
-                            <Link to="/#pricing" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
-                            <Link to="/blog" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Blog</Link>
+                            <Link to="/product" className="nav-link">Solvik</Link>
+                            <Link to="/#modern-dev" className="nav-link">Features</Link>
+                            <Link to="/#how-it-works" className="nav-link">How it Works</Link>
+                            <Link to="/#industry" className="nav-link">Industry</Link>
+                            <Link to="/#pricing" className="nav-link">Pricing</Link>
+                            <Link to="/blog" className="nav-link">Blog</Link>
                         </div>
                         <div className="footer-col">
                             <h5>Contact</h5>
