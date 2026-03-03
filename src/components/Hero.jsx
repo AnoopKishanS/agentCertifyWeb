@@ -37,7 +37,7 @@ const Hero = () => {
             </div>
 
             <div className="container hero-container">
-                <div className="hero-content">
+                <div className="hero-text-header">
                     <ScrollReveal animation="fade-up" delay="0">
                         <h1 className="hero-title">
                             AI-Powered <br />Testing.<br />
@@ -50,7 +50,46 @@ const Hero = () => {
                             The end-to-end AI testing platform built for teams who refuse to slow down.
                         </p>
                     </ScrollReveal>
+                </div>
 
+                <div className="hero-brand-visual">
+                    <ScrollReveal animation="fade-up" delay="400">
+                        <div className="hero-visual">
+                            <div className="hero-brand">
+                                <span className="brand-text">Solvik</span>
+                                <p className="brand-tagline-fixed">The Testing Hub</p>
+                                <div className="hero-persona-cycle-visual">
+                                    {personas.map((item, index) => (
+                                        <div
+                                            key={index}
+                                            className={`persona-item ${index === currentTagline ? 'active' : ''}`}
+                                        >
+                                            <span className="tagline-label">FOR</span>{' '}
+                                            <span className="tagline-type">{item.persona}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                                <div className="brand-tagline-container">
+                                    {personas.map((item, index) => (
+                                        <p
+                                            className={`brand-tagline ${index === currentTagline ? 'active' : ''}`}
+                                            key={index}
+                                        >
+                                            <span className="tagline-type">
+                                                {item.capability.substring(0, item.capability.lastIndexOf(' '))}
+                                            </span>{' '}
+                                            <span className="tagline-label">
+                                                {item.capability.substring(item.capability.lastIndexOf(' ') + 1)}
+                                            </span>
+                                        </p>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </ScrollReveal>
+                </div>
+
+                <div className="hero-actions-section">
                     <ScrollReveal animation="fade-up" delay="200">
                         <div className="hero-cta">
                             <button className="hero-btn hero-btn-primary" onClick={openModal}>
@@ -76,41 +115,6 @@ const Hero = () => {
                         </div>
                     </ScrollReveal>
                 </div>
-
-                <ScrollReveal animation="fade-up" delay="400">
-                    <div className="hero-visual">
-                        <div className="hero-brand">
-                            <span className="brand-text">Solvik</span>
-                            <p className="brand-tagline-fixed">The Testing Hub</p>
-                            <div className="hero-persona-cycle-visual">
-                                {personas.map((item, index) => (
-                                    <div
-                                        key={index}
-                                        className={`persona-item ${index === currentTagline ? 'active' : ''}`}
-                                    >
-                                        <span className="tagline-label">FOR</span>{' '}
-                                        <span className="tagline-type">{item.persona}</span>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="brand-tagline-container">
-                                {personas.map((item, index) => (
-                                    <p
-                                        className={`brand-tagline ${index === currentTagline ? 'active' : ''}`}
-                                        key={index}
-                                    >
-                                        <span className="tagline-type">
-                                            {item.capability.substring(0, item.capability.lastIndexOf(' '))}
-                                        </span>{' '}
-                                        <span className="tagline-label">
-                                            {item.capability.substring(item.capability.lastIndexOf(' ') + 1)}
-                                        </span>
-                                    </p>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </ScrollReveal>
             </div>
         </section>
     );

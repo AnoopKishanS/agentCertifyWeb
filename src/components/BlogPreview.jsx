@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ScrollReveal from './ScrollReveal';
 import './BlogPreview.css';
@@ -28,6 +28,16 @@ const recentPosts = [
 ];
 
 const BlogPreview = () => {
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const visiblePosts = isMobile ? recentPosts.slice(0, 2) : recentPosts;
+
     return (
         <section id="blog-preview" className="blog-preview-section">
             <div className="container">
@@ -39,7 +49,7 @@ const BlogPreview = () => {
                 </ScrollReveal>
 
                 <div className="blog-preview-grid">
-                    {recentPosts.map((post, index) => (
+                    {visiblePosts.map((post, index) => (
                         <ScrollReveal key={post.slug} animation="fade-up" delay={`${index * 100}`}>
                             <Link to={`/blog/${post.slug}`} className="blog-preview-card">
                                 <div className="preview-card-meta">
@@ -63,7 +73,7 @@ const BlogPreview = () => {
                 <ScrollReveal animation="fade-up" delay="300">
                     <div className="blog-preview-cta">
                         <Link to="/blog" className="blog-preview-link">
-                            View all articles
+                            View Articles
                         </Link>
                     </div>
                 </ScrollReveal>
@@ -73,3 +83,4 @@ const BlogPreview = () => {
 };
 
 export default BlogPreview;
+

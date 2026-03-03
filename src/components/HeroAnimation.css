@@ -1041,154 +1041,211 @@
 /* MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
     .hero-animation-container {
-        aspect-ratio: auto;
-        min-height: 480px;
-        /* Give it more vertical space */
-        padding: 5px;
-        /* Reduced padding for mobile */
+        aspect-ratio: 16 / 9;
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        padding: 0;
+        min-height: auto;
     }
 
     .ha-content {
-        padding: 12px;
-        /* Reduced padding */
+        padding: 8px;
+        border-radius: 0;
+        transform: none;
+        /* Let internals scale instead of whole container */
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .ha-stage {
+        padding: 6px;
+        justify-content: center;
     }
 
     .ha-floating-badge {
         display: none;
     }
 
-    /* Connect Stage */
-    .stage-connect {
-        gap: 16px;
-        padding: 20px 15px;
+    .ha-status-pill {
+        margin-top: 6px;
+        font-size: 9px;
+        padding: 3px 8px;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 10;
     }
 
-    .ha-agent-icon {
-        width: 140px;
-        height: 60px;
-        font-size: 11px;
+    /* Dashboard Stage Mobile Scaling */
+    .ha-dashboard-preview {
+        width: 95%;
+        height: 65%;
     }
 
-    .ha-app-icon {
-        width: 70px;
-        height: 60px;
-        font-size: 11px;
+    .ha-db-card-value {
+        font-size: 10px;
     }
 
-    /* Analyze Stage */
-    .orbit-container {
-        width: 240px;
-        height: 240px;
+    .ha-db-card-label {
+        font-size: 6px;
     }
 
-    .ha-wireframe-lg {
+    /* Connect Stage Mobile Scaling */
+    .ha-input-items {
+        gap: 10px;
+    }
+
+    .ha-input-item {
+        width: 80px;
+        height: 40px;
+        padding: 0 5px;
+    }
+
+    .ha-icon-label {
+        font-size: 8px;
+    }
+
+    .ha-agent-icon.center-hub {
         width: 180px;
+        height: 60px;
+        font-size: 10px;
+    }
+
+    .ha-streams-hub {
+        height: 40px;
+    }
+
+    /* Analyze Stage Mobile Scaling */
+    .orbit-container {
+        width: 140px;
+        height: 140px;
+        margin-bottom: 4px;
+    }
+
+    .r1 {
+        width: 60px;
+        height: 60px;
+    }
+
+    .r2 {
+        width: 110px;
+        height: 110px;
+    }
+
+    .neural-web {
+        width: 140px;
         height: 140px;
     }
 
-    /* Generate Stage */
+    /* Generate Stage Mobile Scaling */
     .test-grid {
-        grid-template-columns: 1fr 1fr;
         gap: 8px;
         padding: 5px;
     }
 
     .ha-test-card {
-        padding: 12px;
-        min-height: 70px;
+        padding: 8px;
+        min-height: 50px;
     }
 
     .tc-title {
-        font-size: 12px;
+        font-size: 9px;
     }
 
     .tc-tag {
-        font-size: 9px;
-        padding: 4px 8px;
+        font-size: 8px;
+        padding: 2px 6px;
     }
 
-    /* Execute Stage */
+    /* Execute Stage Mobile Scaling */
     .ha-dashboard-split {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row;
+        gap: 8px;
+        height: 100%;
+        align-items: flex-start;
     }
 
-    .ha-run-list,
+    .ha-run-list {
+        flex: 1.5;
+    }
+
+    .ha-stats-panel {
+        flex: 1;
+    }
+
+    .ha-run-list {
+        width: 100%;
+    }
+
     .ha-stats-panel {
         width: 100%;
     }
 
     .ha-run-item {
-        padding: 10px 12px;
+        padding: 6px 10px;
     }
 
     .ri-text {
-        font-size: 13px;
+        font-size: 10px;
     }
 
-    .ha-status-pill {
+    .stats-card {
+        padding: 8px;
+    }
+
+    .stat-label {
+        font-size: 9px;
+    }
+
+    .stat-value {
         font-size: 11px;
-        padding: 5px 12px;
     }
 }
 
 @media (max-width: 480px) {
     .hero-animation-container {
-        min-height: 550px;
-        /* More height for stacked cards */
-        padding: 0;
-        /* Remove all padding on very small screens */
+        aspect-ratio: 16 / 9;
+        width: 100%;
+        min-height: auto;
+        padding: 4px;
     }
 
     .ha-content {
-        padding: 10px;
-        border-radius: 16px;
+        padding: 4px;
+        border-radius: 0;
+        transform: scale(0.9);
+        transform-origin: center;
     }
 
-    .test-grid {
-        grid-template-columns: 1fr;
-        /* Stack on tiny phones */
-        gap: 6px;
-        padding: 0;
+    .ha-status-pill {
+        font-size: 8px;
+        padding: 2px 6px;
+        margin-top: 4px;
     }
 
-    .ha-test-card {
-        padding: 10px;
-        min-height: 65px;
+    .ha-db-card-value {
+        font-size: 8px;
     }
 
-    .tc-title {
-        font-size: 11px;
-    }
-
-    .orbit-container {
-        width: 200px;
-        height: 200px;
-    }
-
-    .ha-wireframe-lg {
-        width: 140px;
-        height: 120px;
-    }
-
-    .ha-stage {
-        padding: 8px;
-    }
-
-    .ha-agent-icon {
-        width: 120px;
-        height: 50px;
-        font-size: 10px;
-        padding: 0 12px;
-    }
-
-    .ri-spinner {
-        width: 16px;
-        height: 16px;
-        margin-right: 10px;
+    .ha-db-card-label {
+        font-size: 5px;
     }
 
     .ri-text {
-        font-size: 12px;
+        font-size: 7px;
+    }
+
+    .stat-value {
+        font-size: 8px;
+    }
+
+    .stat-label {
+        font-size: 6px;
+    }
+
+    .ha-dashboard-split {
+        flex-direction: row;
+        gap: 4px;
     }
 }
