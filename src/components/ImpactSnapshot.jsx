@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ScrollReveal from './ScrollReveal';
 import './ImpactSnapshot.css';
 
 const ImpactSnapshot = () => {
+    const [activeIdx, setActiveIdx] = useState(0);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
     const stats = [
         {
             value: '100x',
-            label: 'Faster test creation',
+            label: 'Faster Test Creation',
             description: 'Reduced from hours to seconds with AI-powered automation.',
             icon: (
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -51,6 +55,76 @@ const ImpactSnapshot = () => {
         }
     ];
 
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    // Auto-advance on mobile every 4s
+    useEffect(() => {
+        if (!isMobile || !isAutoPlaying) return;
+        const t = setInterval(() => setActiveIdx(prev => (prev + 1) % stats.length), 4000);
+        return () => clearInterval(t);
+    }, [isMobile, isAutoPlaying]);
+
+    const handleDotClick = (idx) => {
+        setActiveIdx(idx);
+        setIsAutoPlaying(false);
+    };
+
+    // ── Mobile: single-viewport active card layout ──
+    if (isMobile) {
+        const stat = stats[activeIdx];
+        return (
+            <section id="impact-snapshot" className="impact-section impact-mobile-section">
+                <div className="container">
+                    <ScrollReveal animation="fade-up">
+                        <div className="impact-section-header">
+                            <span className="impact-eyebrow">Impact</span>
+                            <h2 className="impact-section-title text-gradient">Impact Snapshot</h2>
+                            <p className="impact-section-subheading">Real-world results delivered by Solvik.</p>
+                        </div>
+                    </ScrollReveal>
+
+                    {/* Active card */}
+                    <div className="impact-mobile-card-wrap" key={activeIdx}>
+                        <div className="impact-card impact-mobile-card">
+                            <div className="impact-icon">{stat.icon}</div>
+                            <div className="impact-value">{stat.value}</div>
+                            <h3 className="impact-label">{stat.label}</h3>
+                            <p className="impact-description">{stat.description}</p>
+                        </div>
+                    </div>
+
+                    {/* Dot indicators */}
+                    <div className="impact-mobile-dots">
+                        {stats.map((_, i) => (
+                            <button
+                                key={i}
+                                className={`impact-dot ${i === activeIdx ? 'active' : ''}`}
+                                onClick={() => handleDotClick(i)}
+                                aria-label={`View stat ${i + 1}`}
+                            />
+                        ))}
+                    </div>
+
+                    {/* Progress bar */}
+                    <div className="impact-mobile-progress">
+                        <div
+                            className="impact-mobile-progress-bar"
+                            style={{ width: `${((activeIdx + 1) / stats.length) * 100}%` }}
+                        />
+                    </div>
+
+                    {/* Step counter */}
+                    <p className="impact-mobile-counter">{activeIdx + 1} / {stats.length}</p>
+                </div>
+            </section>
+        );
+    }
+
+    // ── Desktop: 4-column grid ──
     return (
         <section id="impact-snapshot" className="impact-section">
             <div className="container">

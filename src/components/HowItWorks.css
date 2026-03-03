@@ -195,49 +195,167 @@
     }
 }
 
-@media (max-width: 900px) {
-    .hiw-container {
-        flex-direction: column-reverse;
+/* ── Mobile: single-viewport tabbed layout ── */
+.hiw-mobile-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 20px;
+    scroll-snap-align: start;
+}
+
+.hiw-mobile-ticker {
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    background: rgba(253, 123, 65, 0.08);
+    border: 1px solid rgba(253, 123, 65, 0.2);
+    border-radius: 100px;
+    padding: 5px 14px;
+    margin: 0 auto 12px;
+    display: inline-block;
+    width: auto;
+    animation: tickerFade 0.5s ease;
+}
+
+@keyframes tickerFade {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
     }
 
-    .hiw-steps {
-        gap: 100px;
-        padding-bottom: 100px;
-    }
-
-    .hiw-sticky-visual {
-        position: relative;
-        top: 0;
-        height: 300px;
-        margin-bottom: 40px;
-    }
-
-    .console-text {
-        font-size: 0.9rem;
-        line-height: 1.6;
-    }
-
-    .mock-content {
-        padding: 20px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-@media (max-width: 480px) {
-    .console-text {
-        font-size: 0.75rem;
-        line-height: 1.5;
+.hiw-mobile-section .section-header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.hiw-mobile-section .section-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 0;
+}
+
+.hiw-mobile-screen {
+    margin-bottom: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.hiw-mobile-screen .mock-screen {
+    height: 200px;
+}
+
+.hiw-mobile-screen .mock-header {
+    padding: 8px 10px;
+}
+
+.hiw-mobile-screen .dot {
+    width: 8px;
+    height: 8px;
+}
+
+.hiw-mobile-screen .mock-content {
+    padding: 16px;
+}
+
+.hiw-mobile-screen .console-text {
+    font-size: 0.75rem;
+    line-height: 1.6;
+    animation: fadeInConsole 0.4s ease;
+}
+
+@keyframes fadeInConsole {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
     }
 
-    .mock-content {
-        padding: 16px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hiw-mobile-tabs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.hiw-mobile-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    padding: 10px 6px;
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hiw-mobile-tab.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 12px rgba(253, 123, 65, 0.25);
+}
+
+.hiw-tab-num {
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--color-text-light);
+    opacity: 0.5;
+}
+
+.hiw-mobile-tab.active .hiw-tab-num {
+    color: rgba(255, 255, 255, 0.7);
+    opacity: 1;
+}
+
+.hiw-tab-title {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--color-text-main);
+    text-align: center;
+    line-height: 1.2;
+}
+
+.hiw-mobile-tab.active .hiw-tab-title {
+    color: white;
+}
+
+.hiw-mobile-desc {
+    padding: 16px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    animation: fadeInDesc 0.4s ease;
+}
+
+.hiw-mobile-desc p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+@keyframes fadeInDesc {
+    from {
+        opacity: 0;
     }
 
-    .hiw-step h3 {
-        font-size: 2rem;
-    }
-
-    .hiw-step p {
-        font-size: 1rem;
-        margin-left: 0;
+    to {
+        opacity: 1;
     }
 }
