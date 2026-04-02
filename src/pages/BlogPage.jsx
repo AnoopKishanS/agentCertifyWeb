@@ -8,27 +8,27 @@ const blogPosts = [
         title: "Why the Next Era of AI Won't Be About Models — It Will Be About Systems",
         description:
             'From model benchmarks to production systems: reliability, integration, and real-world operations.',
-        category: 'Future of Tech',
+        category: 'Enterprise AI',
         date: 'January 8, 2026',
         readTime: '9 min read',
-        listImage: '/blog/brain-ai-digital-split.png'
+        listImage: '/blog/next-era-ai-systems-cover.png'
     },
     {
         slug: 'ai-agents-tools-to-teammates',
         title: 'The Rise of AI Agents: From Tools to Teammates',
         description:
             'How AI is evolving from assistants to systems that execute work alongside people—and what that means for enterprises.',
-        category: 'Future of Tech',
+        category: 'AI Agents',
         date: 'January 29, 2026',
         readTime: '10 min read',
-        listImage: '/blog/human-robot-collaboration.png'
+        listImage: '/blog/ai-agents-cover.png'
     },
     {
         slug: 'where-ai-delivering-roi-today',
         title: 'Where AI Is Actually Delivering ROI Today',
         description:
             'Three areas where practical deployments are producing measurable returns.',
-        category: 'Future of Tech',
+        category: 'Operations & ROI',
         date: 'February 19, 2026',
         readTime: '11 min read',
         listImage: '/blog/ai-workspace-robot.png'
@@ -38,17 +38,17 @@ const blogPosts = [
         title: 'The Future of Software Engineering in the Age of AI',
         description:
             'Intelligent validation and automation—without replacing the engineers who design systems.',
-        category: 'Future of Tech',
+        category: 'Software Engineering',
         date: 'March 19, 2026',
         readTime: '10 min read',
-        listImage: '/blog/robot-hand-neural-network.png'
+        listImage: '/blog/future-software-engineering-cover.png'
     },
     {
         slug: 'ai-regulated-industries-real-world-constraints',
         title: 'AI in Regulated Industries: Innovation Within Real-World Constraints',
         description:
             'Reliability, safety, and compliance: where AI creates quiet, durable impact.',
-        category: 'Future of Tech',
+        category: 'Regulated Industries',
         date: 'April 2, 2026',
         readTime: '12 min read',
         listImage: '/blog/blog-series-extra.png'

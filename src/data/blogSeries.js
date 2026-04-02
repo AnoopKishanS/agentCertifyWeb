@@ -4,12 +4,12 @@ export const seriesArticles = {
     title: "Why the Next Era of AI Won't Be About Models — It Will Be About Systems",
     description:
       'From model benchmarks to production systems: why reliability, integration, and operations matter more than the next release.',
-    category: 'Future of Tech',
+    category: 'Enterprise AI',
     date: 'January 8, 2026',
     readTime: '9 min read',
-    coverImage: '/blog/brain-ai-digital-split.png',
+    coverImage: '/blog/next-era-ai-systems-cover.png',
     coverAlt:
-      'Digital illustration of a human brain split between glowing neural pathways and binary circuit patterns, representing AI as systems infrastructure.',
+      'Illustration of a person and a humanoid robot connecting via a glowing interface, with abstract charts in the background—human and AI systems working together.',
     tldr:
       'Models keep improving, but the bottleneck is building systems that run reliably in the real world—integrated with data, workflows, compliance, and day-to-day operations.',
     sections: [
@@ -148,11 +148,12 @@ export const seriesArticles = {
     title: 'The Rise of AI Agents: From Tools to Teammates',
     description:
       'How AI is evolving from assistants that help people to systems that execute work alongside them—and what that means for enterprises.',
-    category: 'Future of Tech',
+    category: 'AI Agents',
     date: 'January 29, 2026',
     readTime: '10 min read',
-    coverImage: '/blog/human-robot-collaboration.png',
-    coverAlt: 'A person and a robot work side by side at a laptop, representing human–AI collaboration.',
+    coverImage: '/blog/ai-agents-cover.png',
+    coverAlt:
+      'Isometric illustration of four small AI robots at laptops in a row, representing an automated agent workforce.',
     tldr:
       'AI agents combine reasoning, context, and integration to act inside software environments—not just answer prompts, but monitor, analyze, trigger, and coordinate work across systems.',
     sections: [
@@ -294,7 +295,7 @@ export const seriesArticles = {
     title: 'Where AI Is Actually Delivering ROI Today',
     description:
       'Three areas where practical deployments are producing measurable returns—engineering and QA, operational automation, and optimization in complex environments.',
-    category: 'Future of Tech',
+    category: 'Operations & ROI',
     date: 'February 19, 2026',
     readTime: '11 min read',
     coverImage: '/blog/ai-workspace-robot.png',
@@ -434,11 +435,12 @@ export const seriesArticles = {
     title: 'The Future of Software Engineering in the Age of AI',
     description:
       'How intelligent validation and automation are changing development—without replacing the engineers who design systems.',
-    category: 'Future of Tech',
+    category: 'Software Engineering',
     date: 'March 19, 2026',
     readTime: '10 min read',
-    coverImage: '/blog/robot-hand-neural-network.png',
-    coverAlt: 'A robotic hand reaching toward a glowing digital network, symbolizing intelligent systems in software delivery.',
+    coverImage: '/blog/future-software-engineering-cover.png',
+    coverAlt:
+      'Isometric illustration of a laptop with dashboards, a drone, servers, and people collaborating—connected workflows and intelligent systems in software delivery.',
     tldr:
       'AI augments engineering: smarter validation, broader exploration of failure modes, and more time for architecture and design—while humans stay essential for judgment and innovation.',
     sections: [
@@ -577,7 +579,7 @@ export const seriesArticles = {
     title: 'AI in Regulated Industries: Innovation Within Real-World Constraints',
     description:
       'Why aviation, healthcare, energy, and infrastructure are hard—and how AI can still deliver quiet, durable impact.',
-    category: 'Future of Tech',
+    category: 'Regulated Industries',
     date: 'April 2, 2026',
     readTime: '12 min read',
     coverImage: '/blog/blog-series-extra.png',

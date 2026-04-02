@@ -4,6 +4,21 @@
  */
 export const BLOG_STOCK_IMAGES = [
   {
+    id: 'next-era-ai-systems-cover',
+    path: '/blog/next-era-ai-systems-cover.png',
+    label: 'Human and robot with data visualization (Next era of AI post)',
+  },
+  {
+    id: 'ai-agents-cover',
+    path: '/blog/ai-agents-cover.png',
+    label: 'Robots at laptops in a row (Rise of AI agents post)',
+  },
+  {
+    id: 'future-software-engineering-cover',
+    path: '/blog/future-software-engineering-cover.png',
+    label: 'Isometric laptop, drone, servers, collaboration (Future of software engineering post)',
+  },
+  {
     id: 'robot-hand-neural-network',
     path: '/blog/robot-hand-neural-network.png',
     label: 'Robotic hand reaching toward a digital neural network',

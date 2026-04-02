@@ -9,25 +9,25 @@ const recentPosts = [
         title: "Why the Next Era of AI Won't Be About Models — It Will Be About Systems",
         excerpt:
             'From model benchmarks to production systems: reliability, integration, and real-world operations.',
-        category: 'Future of Tech',
+        category: 'Enterprise AI',
         date: 'January 8, 2026',
-        previewImage: '/blog/brain-ai-digital-split.png'
+        previewImage: '/blog/next-era-ai-systems-cover.png'
     },
     {
         slug: 'ai-agents-tools-to-teammates',
         title: 'The Rise of AI Agents: From Tools to Teammates',
         excerpt:
             'How AI is evolving from assistants to systems that execute work alongside people.',
-        category: 'Future of Tech',
+        category: 'AI Agents',
         date: 'January 29, 2026',
-        previewImage: '/blog/human-robot-collaboration.png'
+        previewImage: '/blog/ai-agents-cover.png'
     },
     {
         slug: 'where-ai-delivering-roi-today',
         title: 'Where AI Is Actually Delivering ROI Today',
         excerpt:
             'Three areas where practical deployments are producing measurable returns.',
-        category: 'Future of Tech',
+        category: 'Operations & ROI',
         date: 'February 19, 2026',
         previewImage: '/blog/ai-workspace-robot.png'
     }
