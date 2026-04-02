@@ -19,6 +19,11 @@ export const BLOG_STOCK_IMAGES = [
     label: 'Robots at laptops in a row (Rise of AI agents post)',
   },
   {
+    id: 'where-ai-roi-cover',
+    path: '/blog/where-ai-roi-cover.png',
+    label: 'ROI / growth illustration (Where AI delivers ROI post)',
+  },
+  {
     id: 'future-software-engineering-cover',
     path: '/blog/future-software-engineering-cover.png',
     label: 'Isometric laptop, drone, servers, collaboration (Future of software engineering post)',

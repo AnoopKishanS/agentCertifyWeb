@@ -303,8 +303,9 @@ export const seriesArticles = {
     category: 'Operations & ROI',
     date: 'February 19, 2026',
     readTime: '2 min read',
-    coverImage: '/blog/ai-workspace-robot.png',
-    coverAlt: 'An AI figure at a desk with connected digital workflow icons.',
+    coverImage: '/blog/where-ai-roi-cover.png',
+    coverAlt:
+      'Illustration of a person with coins, a dollar mark, and a rising bar chart on red—financial growth and ROI.',
     tldr:
       'The strongest ROI stories focus on operational reality: intelligent testing, automating repetitive work, and optimizing constrained systems—not slide-deck hype.',
     sections: [

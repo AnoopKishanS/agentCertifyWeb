@@ -29,7 +29,7 @@ const recentPosts = [
             'Three areas where practical deployments are producing measurable returns.',
         category: 'Operations & ROI',
         date: 'February 19, 2026',
-        previewImage: '/blog/ai-workspace-robot.png'
+        previewImage: '/blog/where-ai-roi-cover.png'
     }
 ];
 

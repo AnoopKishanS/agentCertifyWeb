@@ -31,7 +31,7 @@ const blogPosts = [
         category: 'Operations & ROI',
         date: 'February 19, 2026',
         readTime: '2 min read',
-        listImage: '/blog/ai-workspace-robot.png'
+        listImage: '/blog/where-ai-roi-cover.png'
     },
     {
         slug: 'future-software-engineering-age-of-ai',
