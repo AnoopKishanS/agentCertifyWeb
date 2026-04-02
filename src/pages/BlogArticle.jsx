@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useModal } from '../context/ModalContext';
 import { articles } from '../data/blogArticles';
-import { DEFAULT_COVER_IMAGE } from '../data/blogImages';
 import './BlogArticle.css';
 
 const setMetaTag = (attr, value, isProperty = false) => {
@@ -26,8 +25,8 @@ const BlogArticle = () => {
     const article = articles[slug];
     const shareUrl = typeof window !== 'undefined' ? `${window.location.origin}/blog/${slug}` : '';
     const origin = typeof window !== 'undefined' ? window.location.origin : '';
-    const coverPath = article?.coverImage || DEFAULT_COVER_IMAGE;
-    const coverImageUrl = `${origin}${coverPath}`;
+    const coverImageUrl =
+        article?.coverImage && origin ? `${origin}${article.coverImage}` : '';
     const coverAltText = article?.coverAlt || article?.title || '';
 
     useEffect(() => {
@@ -38,13 +37,17 @@ const BlogArticle = () => {
         setMetaTag('og:description', article.description, true);
         setMetaTag('og:url', shareUrl, true);
         setMetaTag('og:type', 'article', true);
-        setMetaTag('og:image', coverImageUrl, true);
-        setMetaTag('og:image:type', 'image/png', true);
-        setMetaTag('og:image:alt', coverAltText, true);
+        if (coverImageUrl) {
+            setMetaTag('og:image', coverImageUrl, true);
+            setMetaTag('og:image:type', 'image/png', true);
+            setMetaTag('og:image:alt', coverAltText, true);
+        }
         setMetaTag('twitter:card', 'summary_large_image');
         setMetaTag('twitter:title', article.title);
         setMetaTag('twitter:description', article.description);
-        setMetaTag('twitter:image', coverImageUrl);
+        if (coverImageUrl) {
+            setMetaTag('twitter:image', coverImageUrl);
+        }
         setMetaTag('description', article.description);
         return () => {
             document.title = prevTitle;
@@ -54,9 +57,9 @@ const BlogArticle = () => {
             setMetaTag('og:type', 'website', true);
             setMetaTag('twitter:title', DEFAULT_TITLE);
             setMetaTag('twitter:description', DEFAULT_DESC);
-            setMetaTag('twitter:image', `${origin}${DEFAULT_COVER_IMAGE}`);
-            setMetaTag('og:image', `${origin}${DEFAULT_COVER_IMAGE}`, true);
-            setMetaTag('og:image:type', 'image/png', true);
+            setMetaTag('twitter:image', '');
+            setMetaTag('og:image', '', true);
+            setMetaTag('og:image:type', '', true);
             setMetaTag('og:image:alt', '', true);
             setMetaTag('description', DEFAULT_DESC);
         };

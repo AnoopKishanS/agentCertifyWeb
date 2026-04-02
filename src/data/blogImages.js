@@ -54,6 +54,3 @@ export const BLOG_STOCK_IMAGES = [
     label: 'Checklist, audit, and charts (Regulated industries post)',
   },
 ];
-
-/** Fallback when an article omits `coverImage` (site default). */
-export const DEFAULT_COVER_IMAGE = '/blog/robot-hand-neural-network.png';
