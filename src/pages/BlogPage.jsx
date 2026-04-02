@@ -51,7 +51,7 @@ const blogPosts = [
         category: 'Regulated Industries',
         date: 'April 2, 2026',
         readTime: '12 min read',
-        listImage: '/blog/blog-series-extra.png'
+        listImage: '/blog/regulated-industries-cover.png'
     }
 ];
 

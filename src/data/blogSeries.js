@@ -582,8 +582,9 @@ export const seriesArticles = {
     category: 'Regulated Industries',
     date: 'April 2, 2026',
     readTime: '12 min read',
-    coverImage: '/blog/blog-series-extra.png',
-    coverAlt: 'Abstract brain and digital circuits, representing intelligence applied under operational and regulatory constraints.',
+    coverImage: '/blog/regulated-industries-cover.png',
+    coverAlt:
+      'Illustration of people reviewing a large checklist with charts and a magnifying glass—compliance, auditing, and analysis in regulated environments.',
     tldr:
       'In regulated environments, value comes from reliability: monitoring, maintenance, planning, and compliance—not from flashy demos.',
     sections: [

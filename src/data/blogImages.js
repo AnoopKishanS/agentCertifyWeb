@@ -48,6 +48,11 @@ export const BLOG_STOCK_IMAGES = [
     path: '/blog/blog-series-extra.png',
     label: 'Additional series cover art',
   },
+  {
+    id: 'regulated-industries-cover',
+    path: '/blog/regulated-industries-cover.png',
+    label: 'Checklist, audit, and charts (Regulated industries post)',
+  },
 ];
 
 /** Fallback when an article omits `coverImage` (site default). */
