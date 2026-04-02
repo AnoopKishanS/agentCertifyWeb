@@ -1,0 +1,39 @@
+/**
+ * Cover art lives in `public/blog/`. Each article sets `coverImage` + `coverAlt`;
+ * those same values drive Open Graph / Twitter cards (no separate og image fields).
+ */
+export const BLOG_STOCK_IMAGES = [
+  {
+    id: 'robot-hand-neural-network',
+    path: '/blog/robot-hand-neural-network.png',
+    label: 'Robotic hand reaching toward a digital neural network',
+  },
+  {
+    id: 'brain-ai-digital-split',
+    path: '/blog/brain-ai-digital-split.png',
+    label: 'Brain split between neural pathways and binary circuits',
+  },
+  {
+    id: 'ai-workspace-robot',
+    path: '/blog/ai-workspace-robot.png',
+    label: 'AI figure at a desk with connected workflow icons',
+  },
+  {
+    id: 'human-robot-collaboration',
+    path: '/blog/human-robot-collaboration.png',
+    label: 'Human and robot collaborating at a laptop',
+  },
+  {
+    id: 'blog-draft-screenshot',
+    path: '/blog/blog-draft-screenshot.png',
+    label: 'Draft / notes screenshot (reference only)',
+  },
+  {
+    id: 'blog-series-extra',
+    path: '/blog/blog-series-extra.png',
+    label: 'Additional series cover art',
+  },
+];
+
+/** Fallback when an article omits `coverImage` (site default). */
+export const DEFAULT_COVER_IMAGE = '/blog/robot-hand-neural-network.png';

@@ -1,42 +1,39 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import ScrollReveal from './ScrollReveal';
 import './BlogPreview.css';
 
 const recentPosts = [
     {
-        slug: 'omnisight-quality-evaluation-system',
-        title: 'OmniSight® Quality Evaluation System',
-        excerpt: 'Comprehensive assessment: usability, accessibility, responsive design, and security analysis with heuristic-based scoring.',
-        category: 'Product',
-        date: 'October 17, 2025'
-    },
-    {
-        slug: 'ai-transforming-qa',
-        title: 'The Future of Software Testing: How AI Is Transforming QA',
-        excerpt: 'Explore how artificial intelligence is revolutionizing quality assurance and enabling teams to ship faster with confidence.',
+        slug: 'next-era-ai-systems-not-models',
+        title: "Why the Next Era of AI Won't Be About Models — It Will Be About Systems",
+        excerpt:
+            'From model benchmarks to production systems: reliability, integration, and real-world operations.',
         category: 'Future of Tech',
-        date: 'June 2026'
+        date: 'January 8, 2026',
+        previewImage: '/blog/brain-ai-digital-split.png'
     },
     {
-        slug: 'faster-releases-quality',
-        title: 'Faster Releases Without Compromising Quality',
-        excerpt: 'A modern testing approach for continuous deployment while maintaining high quality through intelligent automation.',
-        category: 'Agile & DevOps',
-        date: 'May 2026'
+        slug: 'ai-agents-tools-to-teammates',
+        title: 'The Rise of AI Agents: From Tools to Teammates',
+        excerpt:
+            'How AI is evolving from assistants to systems that execute work alongside people.',
+        category: 'Future of Tech',
+        date: 'January 29, 2026',
+        previewImage: '/blog/human-robot-collaboration.png'
+    },
+    {
+        slug: 'where-ai-delivering-roi-today',
+        title: 'Where AI Is Actually Delivering ROI Today',
+        excerpt:
+            'Three areas where practical deployments are producing measurable returns.',
+        category: 'Future of Tech',
+        date: 'February 19, 2026',
+        previewImage: '/blog/ai-workspace-robot.png'
     }
 ];
 
 const BlogPreview = () => {
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
-    useEffect(() => {
-        const handleResize = () => setIsMobile(window.innerWidth <= 768);
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
-    const visiblePosts = isMobile ? recentPosts.slice(0, 2) : recentPosts;
 
     return (
         <section id="blog-preview" className="blog-preview-section">
@@ -49,9 +46,14 @@ const BlogPreview = () => {
                 </ScrollReveal>
 
                 <div className="blog-preview-grid">
-                    {visiblePosts.map((post, index) => (
+                    {recentPosts.map((post, index) => (
                         <ScrollReveal key={post.slug} animation="fade-up" delay={`${index * 100}`}>
                             <Link to={`/blog/${post.slug}`} className="blog-preview-card">
+                                {post.previewImage ? (
+                                    <div className="preview-card-image-wrap">
+                                        <img src={post.previewImage} alt="" className="preview-card-image" />
+                                    </div>
+                                ) : null}
                                 <div className="preview-card-meta">
                                     <span className="preview-category">{post.category}</span>
                                     <span className="preview-date">{post.date}</span>
@@ -83,4 +85,3 @@ const BlogPreview = () => {
 };
 
 export default BlogPreview;
-

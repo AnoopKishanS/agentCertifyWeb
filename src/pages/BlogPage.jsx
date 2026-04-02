@@ -4,36 +4,54 @@ import './BlogPage.css';
 
 const blogPosts = [
     {
-        slug: 'omnisight-quality-evaluation-system',
-        title: 'OmniSight® Quality Evaluation System',
-        description: 'Comprehensive Assessment: Usability, accessibility, responsive design, and security analysis. Detailed Scoring: Heuristic-based scoring with actionable recommendations. Session Persistence: Complete evaluation history with detailed results.',
-        category: 'Product',
-        date: 'October 17, 2025',
-        readTime: '5 min read'
-    },
-    {
-        slug: 'ai-transforming-qa',
-        title: 'The Future of Software Testing: How AI Is Transforming QA',
-        description: 'Explore how artificial intelligence is revolutionizing quality assurance processes and enabling teams to ship faster with confidence.',
+        slug: 'next-era-ai-systems-not-models',
+        title: "Why the Next Era of AI Won't Be About Models — It Will Be About Systems",
+        description:
+            'From model benchmarks to production systems: reliability, integration, and real-world operations.',
         category: 'Future of Tech',
-        date: 'June 2026',
-        readTime: '8 min read'
+        date: 'January 8, 2026',
+        readTime: '9 min read',
+        listImage: '/blog/brain-ai-digital-split.png'
     },
     {
-        slug: 'faster-releases-quality',
-        title: 'Faster Releases Without Compromising Quality',
-        description: 'A modern testing approach that enables continuous deployment while maintaining high quality standards through intelligent automation.',
-        category: 'Agile & DevOps',
-        date: 'May 2026',
-        readTime: '6 min read'
+        slug: 'ai-agents-tools-to-teammates',
+        title: 'The Rise of AI Agents: From Tools to Teammates',
+        description:
+            'How AI is evolving from assistants to systems that execute work alongside people—and what that means for enterprises.',
+        category: 'Future of Tech',
+        date: 'January 29, 2026',
+        readTime: '10 min read',
+        listImage: '/blog/human-robot-collaboration.png'
     },
     {
-        slug: 'intelligent-test-automation',
-        title: 'Why Intelligent Test Automation Is Essential',
-        description: 'Product teams are discovering that intelligent test automation is no longer optional—it\'s a competitive advantage.',
-        category: 'Product Strategy',
-        date: 'April 2026',
-        readTime: '7 min read'
+        slug: 'where-ai-delivering-roi-today',
+        title: 'Where AI Is Actually Delivering ROI Today',
+        description:
+            'Three areas where practical deployments are producing measurable returns.',
+        category: 'Future of Tech',
+        date: 'February 19, 2026',
+        readTime: '11 min read',
+        listImage: '/blog/ai-workspace-robot.png'
+    },
+    {
+        slug: 'future-software-engineering-age-of-ai',
+        title: 'The Future of Software Engineering in the Age of AI',
+        description:
+            'Intelligent validation and automation—without replacing the engineers who design systems.',
+        category: 'Future of Tech',
+        date: 'March 19, 2026',
+        readTime: '10 min read',
+        listImage: '/blog/robot-hand-neural-network.png'
+    },
+    {
+        slug: 'ai-regulated-industries-real-world-constraints',
+        title: 'AI in Regulated Industries: Innovation Within Real-World Constraints',
+        description:
+            'Reliability, safety, and compliance: where AI creates quiet, durable impact.',
+        category: 'Future of Tech',
+        date: 'April 2, 2026',
+        readTime: '12 min read',
+        listImage: '/blog/blog-series-extra.png'
     }
 ];
 
@@ -64,15 +82,21 @@ const BlogPage = () => {
                         {blogPosts.map((post, index) => (
                             <article key={index} className="blog-post-item">
                                 <div className="post-icon-wrapper">
-                                    <div className="post-icon">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                            <polyline points="14 2 14 8 20 8"></polyline>
-                                            <line x1="16" y1="13" x2="8" y2="13"></line>
-                                            <line x1="16" y1="17" x2="8" y2="17"></line>
-                                            <polyline points="10 9 9 9 8 9"></polyline>
-                                        </svg>
-                                    </div>
+                                    {post.listImage ? (
+                                        <div className="post-thumb-wrap">
+                                            <img src={post.listImage} alt="" className="post-thumb" />
+                                        </div>
+                                    ) : (
+                                        <div className="post-icon">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                                <polyline points="14 2 14 8 20 8"></polyline>
+                                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                                <polyline points="10 9 9 9 8 9"></polyline>
+                                            </svg>
+                                        </div>
+                                    )}
                                 </div>
                                 <div className="post-details">
                                     <div className="post-meta">
