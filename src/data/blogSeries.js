@@ -1,4 +1,9 @@
-/** Five-part series (Blog 1–5). Imported into blogArticles.js. */
+/**
+ * Five-part series (Blog 1–5). Imported into blogArticles.js.
+ *
+ * Read time: body words in `sections` ÷ 200 wpm, rounded up (see npm script).
+ * Recompute after edits: `npm run blog:read-times` → sync `readTime` here + in BlogPage.jsx.
+ */
 export const seriesArticles = {
   'next-era-ai-systems-not-models': {
     title: "Why the Next Era of AI Won't Be About Models — It Will Be About Systems",
@@ -6,7 +11,7 @@ export const seriesArticles = {
       'From model benchmarks to production systems: why reliability, integration, and operations matter more than the next release.',
     category: 'Enterprise AI',
     date: 'January 8, 2026',
-    readTime: '9 min read',
+    readTime: '2 min read',
     coverImage: '/blog/next-era-ai-systems-cover.png',
     coverAlt:
       'Illustration of a person and a humanoid robot connecting via a glowing interface, with abstract charts in the background—human and AI systems working together.',
@@ -150,7 +155,7 @@ export const seriesArticles = {
       'How AI is evolving from assistants that help people to systems that execute work alongside them—and what that means for enterprises.',
     category: 'AI Agents',
     date: 'January 29, 2026',
-    readTime: '10 min read',
+    readTime: '2 min read',
     coverImage: '/blog/ai-agents-cover.png',
     coverAlt:
       'Isometric illustration of four small AI robots at laptops in a row, representing an automated agent workforce.',
@@ -297,7 +302,7 @@ export const seriesArticles = {
       'Three areas where practical deployments are producing measurable returns—engineering and QA, operational automation, and optimization in complex environments.',
     category: 'Operations & ROI',
     date: 'February 19, 2026',
-    readTime: '11 min read',
+    readTime: '2 min read',
     coverImage: '/blog/ai-workspace-robot.png',
     coverAlt: 'An AI figure at a desk with connected digital workflow icons.',
     tldr:
@@ -437,7 +442,7 @@ export const seriesArticles = {
       'How intelligent validation and automation are changing development—without replacing the engineers who design systems.',
     category: 'Software Engineering',
     date: 'March 19, 2026',
-    readTime: '10 min read',
+    readTime: '2 min read',
     coverImage: '/blog/future-software-engineering-cover.png',
     coverAlt:
       'Isometric illustration of a laptop with dashboards, a drone, servers, and people collaborating—connected workflows and intelligent systems in software delivery.',
@@ -581,7 +586,7 @@ export const seriesArticles = {
       'Why aviation, healthcare, energy, and infrastructure are hard—and how AI can still deliver quiet, durable impact.',
     category: 'Regulated Industries',
     date: 'April 2, 2026',
-    readTime: '12 min read',
+    readTime: '2 min read',
     coverImage: '/blog/regulated-industries-cover.png',
     coverAlt:
       'Illustration of people reviewing a large checklist with charts and a magnifying glass—compliance, auditing, and analysis in regulated environments.',

@@ -10,7 +10,7 @@ const blogPosts = [
             'From model benchmarks to production systems: reliability, integration, and real-world operations.',
         category: 'Enterprise AI',
         date: 'January 8, 2026',
-        readTime: '9 min read',
+        readTime: '2 min read',
         listImage: '/blog/next-era-ai-systems-cover.png'
     },
     {
@@ -20,7 +20,7 @@ const blogPosts = [
             'How AI is evolving from assistants to systems that execute work alongside people—and what that means for enterprises.',
         category: 'AI Agents',
         date: 'January 29, 2026',
-        readTime: '10 min read',
+        readTime: '2 min read',
         listImage: '/blog/ai-agents-cover.png'
     },
     {
@@ -30,7 +30,7 @@ const blogPosts = [
             'Three areas where practical deployments are producing measurable returns.',
         category: 'Operations & ROI',
         date: 'February 19, 2026',
-        readTime: '11 min read',
+        readTime: '2 min read',
         listImage: '/blog/ai-workspace-robot.png'
     },
     {
@@ -40,7 +40,7 @@ const blogPosts = [
             'Intelligent validation and automation—without replacing the engineers who design systems.',
         category: 'Software Engineering',
         date: 'March 19, 2026',
-        readTime: '10 min read',
+        readTime: '2 min read',
         listImage: '/blog/future-software-engineering-cover.png'
     },
     {
@@ -50,7 +50,7 @@ const blogPosts = [
             'Reliability, safety, and compliance: where AI creates quiet, durable impact.',
         category: 'Regulated Industries',
         date: 'April 2, 2026',
-        readTime: '12 min read',
+        readTime: '2 min read',
         listImage: '/blog/regulated-industries-cover.png'
     }
 ];

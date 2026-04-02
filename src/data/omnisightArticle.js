@@ -2,6 +2,8 @@
  * Draft — not merged into `articles` until publish.
  * To ship: in blogArticles.js import this and add
  * `'omnisight-quality-evaluation-system': omnisightArticle` before `...seriesArticles`.
+ *
+ * readTime: recompute with `npm run blog:read-times` after editing `sections`.
  */
 export const omnisightArticle = {
   title: 'OmniSight® Quality Evaluation System',
@@ -9,10 +11,10 @@ export const omnisightArticle = {
     'Comprehensive Assessment: Usability, accessibility, responsive design, and security analysis with heuristic-based scoring and actionable recommendations.',
   category: 'Product',
   date: 'October 17, 2025',
-  readTime: '5 min read',
-  coverImage: '/blog/robot-hand-neural-network.png',
+  readTime: '3 min read',
+  coverImage: '/blog/omnisight-cover.png',
   coverAlt:
-    'A robotic hand reaches toward a glowing digital neural network, representing AI-driven quality evaluation.',
+    'OmniSight logo: stylized eye with a coral and orange pie chart on a dark background, representing sight and data-driven evaluation.',
   tldr:
     'We developed Omnisight®, an internal AI tool that uses computer vision and autonomous navigation to evaluate websites across UX, security, and accessibility dimensions. It browses sites like a human would, identifying issues that traditional scanners miss.',
   sections: [

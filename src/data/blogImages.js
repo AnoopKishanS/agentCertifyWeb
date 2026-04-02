@@ -4,6 +4,11 @@
  */
 export const BLOG_STOCK_IMAGES = [
   {
+    id: 'omnisight-cover',
+    path: '/blog/omnisight-cover.png',
+    label: 'OmniSight eye and chart mark (Product / Omnisight post)',
+  },
+  {
     id: 'next-era-ai-systems-cover',
     path: '/blog/next-era-ai-systems-cover.png',
     label: 'Human and robot with data visualization (Next era of AI post)',
