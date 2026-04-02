@@ -4,11 +4,12 @@
  *
  * Counts words in each article's `sections` only (body copy).
  * Formula: minutes = max(1, ceil(words / WPM)), default WPM = 200 (typical web nonfiction).
- * After changing copy, run this and paste `readTime` into blogSeries.js / BlogPage.jsx / omnisightArticle.js.
+ * After changing copy, run this and paste `readTime` into blogSeries.js / BlogPage.jsx / draft files.
  */
 
 import { seriesArticles } from '../src/data/blogSeries.js';
 import { omnisightArticle } from '../src/data/omnisightArticle.js';
+import { regulatedIndustriesArticle } from '../src/data/regulatedIndustriesArticle.js';
 
 const DEFAULT_WPM = 200;
 
@@ -47,4 +48,8 @@ for (const [slug, art] of Object.entries(seriesArticles)) {
 const omniW = countWords(omnisightArticle.sections);
 const omniM = minutesForWords(omniW);
 console.log('omnisightArticle (draft)'.padEnd(45), String(omniW).padStart(6), ' ', formatReadTime(omniM));
-console.log('\nUpdate readTime in: src/data/blogSeries.js, src/pages/BlogPage.jsx, src/data/omnisightArticle.js');
+
+const regW = countWords(regulatedIndustriesArticle.sections);
+const regM = minutesForWords(regW);
+console.log('regulatedIndustriesArticle (draft)'.padEnd(45), String(regW).padStart(6), ' ', formatReadTime(regM));
+console.log('\nUpdate readTime in: src/data/blogSeries.js, src/pages/BlogPage.jsx, draft article files.');

@@ -7,6 +7,8 @@ import { seriesArticles } from './blogSeries.js';
  * before `...seriesArticles`.
  *
  * Read times: run `npm run blog:read-times` after changing article bodies.
+ *
+ * Regulated industries post is draft-only: `regulatedIndustriesArticle.js` (merge into blogSeries when publishing).
  */
 export const articles = {
   ...seriesArticles,

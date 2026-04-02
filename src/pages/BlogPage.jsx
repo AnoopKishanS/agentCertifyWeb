@@ -42,16 +42,6 @@ const blogPosts = [
         date: 'March 19, 2026',
         readTime: '2 min read',
         listImage: '/blog/future-software-engineering-cover.png'
-    },
-    {
-        slug: 'ai-regulated-industries-real-world-constraints',
-        title: 'AI in Regulated Industries: Innovation Within Real-World Constraints',
-        description:
-            'Reliability, safety, and compliance: where AI creates quiet, durable impact.',
-        category: 'Regulated Industries',
-        date: 'April 2, 2026',
-        readTime: '2 min read',
-        listImage: '/blog/regulated-industries-cover.png'
     }
 ];
 
