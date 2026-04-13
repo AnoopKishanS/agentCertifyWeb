@@ -24,7 +24,7 @@ const Home = () => {
             <ROISection />
             <TargetAudience />
             <Pricing />
-            <BlogPreview />
+            {/* <BlogPreview /> */}
         </>
     );
 };

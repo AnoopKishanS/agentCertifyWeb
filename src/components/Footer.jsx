@@ -2,10 +2,12 @@ import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import './Footer.css';
 import { useModal } from '../context/ModalContext';
+import { useCookieConsent } from '../hooks/useCookieConsent';
 
 const Footer = () => {
     const { pathname } = useLocation();
     const { openModal } = useModal();
+    const { openPreferences } = useCookieConsent();
     const isHome = pathname === '/';
 
     return (
@@ -42,11 +44,18 @@ const Footer = () => {
                             <Link to="/#how-it-works" className="nav-link">How it Works</Link>
                             <Link to="/#industry" className="nav-link">Industry</Link>
                             <Link to="/#pricing" className="nav-link">Pricing</Link>
-                            <Link to="/blog" className="nav-link">Blog</Link>
+                            {/* <Link to="/blog" className="nav-link">Blog</Link> */}
                         </div>
                         <div className="footer-col">
                             <h5>Contact</h5>
                             <a href="mailto:info@solvik.ai">info@solvik.ai</a>
+                        </div>
+                        <div className="footer-col">
+                            <h5>Legal</h5>
+                            <Link to="/privacy" className="nav-link">Privacy &amp; Cookies</Link>
+                            <button type="button" className="footer-cookie-settings nav-link" onClick={openPreferences}>
+                                Cookie settings
+                            </button>
                         </div>
 
                     </div>

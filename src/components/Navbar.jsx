@@ -59,7 +59,7 @@ const Navbar = () => {
           <Link to="/product" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Product</Link>
           <Link to="/#pricing" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
           <Link to="/about" className="nav-link" onClick={() => setMobileMenuOpen(false)}>About</Link>
-          <Link to="/blog" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Resources</Link>
+          {/* <Link to="/blog" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Resources</Link> */}
         </div>
       </div>
     </nav>

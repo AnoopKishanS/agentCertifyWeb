@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ScrollReveal from './ScrollReveal';
 import Footer from './Footer';
+import { useModal } from '../context/ModalContext';
 import './Pricing.css';
 
 const plans = [
@@ -63,6 +64,7 @@ const plans = [
 ];
 
 const Pricing = () => {
+    const { openModal } = useModal();
     const [activePlan, setActivePlan] = useState(0); // Default to Starter
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);
@@ -144,8 +146,13 @@ const Pricing = () => {
                                     </ul>
                                 </div>
                                 <div className="card-footer">
-                                    <button className={`btn ${plan.highlight ? 'btn-primary' : 'btn-secondary'}`} style={{ width: '100%' }}>
-                                        {plan.name === 'Enterprise' ? 'Contact Sales' : 'Get Started'}
+                                    <button
+                                        type="button"
+                                        className={`btn ${plan.highlight ? 'btn-primary' : 'btn-secondary'}`}
+                                        style={{ width: '100%' }}
+                                        onClick={openModal}
+                                    >
+                                        Get Started
                                     </button>
                                 </div>
                             </div>
