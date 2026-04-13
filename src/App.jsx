@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { ModalProvider } from './context/ModalContext'; // Import Context Provider
+import { CookieConsentProvider } from './context/CookieConsentContext';
+import CookieConsent from './components/CookieConsent';
 import './animations.css'; // Global animations
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -14,6 +16,7 @@ import BlogPage from './pages/BlogPage';
 import BlogArticle from './pages/BlogArticle';
 import Product from './pages/Product';
 import AboutUs from './pages/AboutUs';
+import Privacy from './pages/Privacy';
 
 function AppRoutes() {
   const location = useLocation();
@@ -42,6 +45,7 @@ function AppRoutes() {
         <Route path="/" element={<Home />} />
         <Route path="/product" element={<Product />} />
         <Route path="/about" element={<AboutUs />} />
+        <Route path="/privacy" element={<Privacy />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogArticle />} />
       </Routes>
@@ -56,11 +60,14 @@ function AppRoutes() {
 function App() {
   return (
     <ModalProvider>
-      <Router>
-        <div className="App">
-          <AppRoutes />
-        </div>
-      </Router>
+      <CookieConsentProvider>
+        <Router>
+          <div className="App">
+            <AppRoutes />
+            <CookieConsent />
+          </div>
+        </Router>
+      </CookieConsentProvider>
     </ModalProvider>
   );
 }

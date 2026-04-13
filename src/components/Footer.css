@@ -130,6 +130,24 @@
     color: var(--color-primary);
 }
 
+.footer-cookie-settings {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    text-align: left;
+    width: 100%;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.footer-cookie-settings:hover {
+    color: var(--color-primary);
+}
+
 .footer-desc {
     color: var(--color-text-light);
     margin-bottom: 24px;
