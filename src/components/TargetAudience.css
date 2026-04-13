@@ -1,20 +1,15 @@
 .industry-carousel-section {
     height: 100vh;
-    /* Strict full height */
     position: relative;
     background: #ffffff;
-    /* Clean white background */
-    /* Dot pattern overlay handled by body/global but can be added here specifically if needed */
     overflow: hidden;
     padding: 0;
-    /* Remove all padding */
     margin: 0;
     scroll-snap-align: start;
 }
 
 .industry-header {
     position: absolute;
-    /* Overlay header */
     top: 70px;
     left: 0;
     width: 100%;
@@ -22,32 +17,27 @@
     z-index: 20;
     pointer-events: none;
     padding-top: 10px;
-    /* Let clicks pass through */
 }
 
 .industry-header h2 {
     font-size: 2.5rem;
     font-weight: 700;
     color: #3C4044;
-    /* Charcoal */
     letter-spacing: -1px;
     margin-bottom: 8px;
     text-shadow: 0 4px 12px rgba(255, 255, 255, 0.8);
-    /* Ensure legibility */
 }
 
 .industry-header p {
     font-size: 1.1rem;
     color: #64686c;
-    /* Soft grey text */
     font-weight: 500;
     text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
 }
 
 .industry-carousel-viewport {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    /* Full viewport height */
     position: relative;
     overflow: hidden;
 }
@@ -58,7 +48,6 @@
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Navigation arrows */
 .carousel-nav {
     position: absolute;
     top: 50%;
@@ -67,7 +56,6 @@
     height: 60px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.8);
-    /* More transparent */
     border: 1px solid #E8E8E6;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     color: #3C4044;
@@ -77,12 +65,10 @@
     cursor: pointer;
     transition: all 0.3s ease;
     z-index: 30;
-    /* Higher z-index */
 }
 
 .carousel-nav:hover {
     background: #FD7B41;
-    /* Taupe accent */
     border-color: #FD7B41;
     color: #ffffff;
     transform: translateY(-50%) scale(1.05);
@@ -97,44 +83,33 @@
 }
 
 .industry-card-fullwidth {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    /* Full height */
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
-    /* Remove padding */
 }
 
 .industry-card-content {
     width: 100%;
     height: 100%;
-    /* Full height */
     max-width: none;
-    /* Remove max-width */
     aspect-ratio: auto;
-    /* Remove aspect ratio */
     background: transparent;
-    /* Remove card background */
     border: none;
-    /* Remove border */
     border-radius: 0;
-    /* Remove radius */
     padding: 0;
-    /* Remove internal padding */
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 80px;
     box-shadow: none;
     transition: none;
-    /* Remove hover scale */
     position: relative;
 }
 
-/* Background element for each slide */
 .industry-card-content::before {
     content: '';
     position: absolute;
@@ -156,7 +131,6 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    /* Push illustration to center-right */
     padding-right: 60px;
     min-width: 400px;
 }
@@ -173,25 +147,19 @@
     position: relative;
     animation: float 6s ease-in-out infinite;
     width: 750px;
-    /* Even Larger */
-    max-width: 140%;
-    /* Allow significant overlap */
+    max-width: 90%;
     height: auto;
     max-height: 700px;
     object-fit: contain;
     filter: drop-shadow(0 30px 60px rgba(253, 123, 65, 0.2));
-    /* Deeper shadow */
-    margin-right: -40px;
-    /* Pull slightly right to balance */
+    margin: 0 auto;
 }
 
-/* Specific adjustment for E-commerce to be slightly smaller */
 .illustration-3d.illustration-ecommerce {
     width: 500px;
     max-width: 100%;
 }
 
-/* Wrapper for Ripple Effect */
 .illustration-3d-wrapper {
     position: relative;
     display: flex;
@@ -209,7 +177,6 @@
     width: 300px;
     height: 300px;
     background: rgba(253, 123, 65, 0.15);
-    /* Orange Pulse */
     border-radius: 50%;
     z-index: -1;
     animation: ripple 4s linear infinite;
@@ -217,7 +184,6 @@
 
 .illustration-3d-wrapper::after {
     animation-delay: 2s;
-    /* Staggered pulse */
     background: rgba(253, 123, 65, 0.1);
 }
 
@@ -235,7 +201,6 @@
     }
 }
 
-/* New wrapper for content to keep it readable */
 .industry-content-wrapper {
     display: flex;
     align-items: center;
@@ -250,17 +215,13 @@
     flex: 1;
     color: #3C4044;
     padding-left: 60px;
-    /* Spacing from illustration */
     padding-top: 80px;
-    /* Space for header */
 }
 
 .industry-text-content h3 {
     font-size: 4rem;
-    /* Larger size for full screen */
     font-weight: 700;
     background: linear-gradient(135deg, #FD7B41 0%, #3C4044 100%);
-    /* Orange to Charcoal */
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -291,7 +252,6 @@
     border-radius: 20px;
     font-size: 14px;
     font-weight: 500;
-    /* Lighter weight */
     color: #3C4044;
     transition: all 0.3s ease;
 }
@@ -303,7 +263,7 @@
     transform: translateY(-2px);
 }
 
-/* Navigation Tabs - Glassmorphism Dock */
+/* Navigation Tabs */
 .carousel-tabs {
     position: absolute;
     bottom: 40px;
@@ -341,124 +301,183 @@
 .carousel-tab-item.active {
     background: #fff;
     color: #FD7B41;
-    /* Orange */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    /* Lifted */
     font-weight: 600;
     transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
+/* ── Mobile: single-viewport layout ── */
+.industry-mobile-ticker {
+    display: none;
+}
 
-    .industry-carousel-section,
-    .industry-carousel-viewport,
-    .industry-card-fullwidth {
-        height: auto;
-        min-height: 80vh;
-        padding-top: 100px;
-        padding-bottom: 120px;
+@media (max-width: 768px) {
+    .industry-carousel-section {
+        height: 100vh;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 60px 20px;
+        overflow: hidden;
+    }
+
+    .industry-mobile-ticker {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--color-primary);
+        background: rgba(253, 123, 65, 0.08);
+        border: 1px solid rgba(253, 123, 65, 0.2);
+        border-radius: 100px;
+        padding: 5px 14px;
+        margin: 0 auto 10px;
+        animation: industryTickerFade 0.5s ease;
+    }
+
+    @keyframes industryTickerFade {
+        from {
+            opacity: 0;
+            transform: translateY(-4px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     .industry-header {
-        top: 20px;
+        position: relative;
+        top: auto;
+        padding-top: 0;
+        margin-bottom: 16px;
     }
 
     .industry-header h2 {
-        font-size: 1.75rem;
-        padding: 0 20px;
+        font-size: 1.5rem;
+        margin-bottom: 4px;
+        text-shadow: none;
+    }
+
+    .industry-header p {
+        font-size: 0.85rem;
+        text-shadow: none;
+    }
+
+    .industry-carousel-viewport {
+        height: auto;
+        flex: none;
+    }
+
+    .industry-cards-container {
+        flex-direction: column;
+        height: auto;
+        transform: none !important;
+    }
+
+    .industry-card-fullwidth {
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        padding: 0;
+        display: none;
+    }
+
+    .industry-card-fullwidth.mobile-active {
+        display: flex;
+    }
+
+    .industry-card-content {
+        height: auto;
+        flex-direction: column;
+        gap: 16px;
+        padding: 0;
+    }
+
+    .industry-card-content::before {
+        display: none;
     }
 
     .industry-content-wrapper {
         flex-direction: column;
-        padding: 0 20px;
-        gap: 0;
-    }
-
-    .industry-card-content {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .industry-illustration {
-        padding-right: 0;
-        min-width: 0;
-        width: 100%;
-        justify-content: center;
-        order: -1;
-        /* Image on top */
-    }
-
-    .illustration-3d {
-        width: 100%;
-        max-width: 320px;
-        /* Small enough for phones */
-        max-height: 300px;
-        margin-right: 0;
-    }
-
-    .illustration-3d.illustration-ecommerce {
-        width: 280px;
-    }
-
-    .industry-text-content {
-        padding-left: 0;
-        padding-top: 20px;
+        gap: 16px;
+        padding: 0;
         text-align: center;
     }
 
-    .industry-text-content h3 {
-        font-size: 2.5rem;
-        margin-bottom: 16px;
-    }
-
-    .industry-text-content p {
-        font-size: 1rem;
-        margin-bottom: 24px;
-    }
-
-    .use-cases {
+    .industry-illustration {
+        min-width: auto;
+        padding-right: 0;
         justify-content: center;
     }
 
-    /* Scrollable Tabs on Mobile */
-    .carousel-tabs {
-        bottom: 20px;
-        width: calc(100% - 40px);
-        overflow-x: auto;
-        justify-content: flex-start;
-        padding: 6px;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        /* Hide scrollbar Firefox */
+    .illustration-3d {
+        width: 200px;
+        max-width: 200px;
+        max-height: 200px;
     }
 
-    .carousel-tabs::-webkit-scrollbar {
-        display: none;
-        /* Hide scrollbar Chrome/Safari */
-    }
-
-    .carousel-tab-item {
-        padding: 8px 16px;
-        font-size: 13px;
+    .illustration-3d.illustration-ecommerce {
+        width: 180px;
     }
 
     .illustration-3d-wrapper::before,
     .illustration-3d-wrapper::after {
-        width: 200px;
-        height: 200px;
+        display: none;
     }
 
-    @keyframes ripple {
-        0% {
-            width: 0;
-            height: 0;
-            opacity: 0.8;
-        }
+    .industry-text-content {
+        padding-left: 0;
+        padding-top: 0;
+        text-align: center;
+    }
 
-        100% {
-            width: 400px;
-            height: 400px;
-            opacity: 0;
-        }
+    .industry-text-content h3 {
+        font-size: 1.75rem;
+        letter-spacing: -1px;
+        margin-bottom: 8px;
+    }
+
+    .industry-text-content p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+
+    .use-cases {
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .use-case-pill {
+        padding: 5px 12px;
+        font-size: 0.7rem;
+        border-radius: 14px;
+    }
+
+    /* Tabs at bottom */
+    .carousel-tabs {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        margin-top: 20px;
+        width: 100%;
+        padding: 4px;
+        gap: 4px;
+        border-radius: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .carousel-tab-item {
+        padding: 6px 12px;
+        font-size: 0.7rem;
+        border-radius: 8px;
+    }
+
+    .carousel-tab-item.active {
+        transform: none;
     }
 }

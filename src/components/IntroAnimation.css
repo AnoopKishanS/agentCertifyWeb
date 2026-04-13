@@ -1,0 +1,66 @@
+.intro-animation-section {
+    padding: 100px 20px;
+    background: #F9F9F8;
+    /* Specific off-white for contrast against white card */
+    min-height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.intro-animation-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.intro-animation-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+    color: var(--color-text-main);
+}
+
+.intro-animation-subtitle {
+    font-size: 1.15rem;
+    color: var(--color-text-light);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.intro-animation-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .intro-animation-section {
+        padding: 60px 20px;
+    }
+
+    .intro-animation-header {
+        margin-bottom: 24px;
+    }
+
+    .intro-animation-title {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+    }
+
+    .intro-animation-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .intro-animation-wrapper {
+        max-width: 100vw;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        aspect-ratio: 16 / 9;
+        max-height: none;
+    }
+}

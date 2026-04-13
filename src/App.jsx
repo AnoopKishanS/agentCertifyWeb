@@ -1,5 +1,8 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { ModalProvider } from './context/ModalContext'; // Import Context Provider
+import { CookieConsentProvider } from './context/CookieConsentContext';
+import CookieConsent from './components/CookieConsent';
 import './animations.css'; // Global animations
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -10,23 +13,61 @@ import Chatbot from './components/Chatbot';
 // Pages
 import Home from './pages/Home';
 import BlogPage from './pages/BlogPage';
+import BlogArticle from './pages/BlogArticle';
+import Product from './pages/Product';
+import AboutUs from './pages/AboutUs';
+import Privacy from './pages/Privacy';
+
+function AppRoutes() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const isBlogRoute = location.pathname.startsWith('/blog');
+    if (isBlogRoute) {
+      document.documentElement.classList.add('blog-route');
+      document.body.classList.add('blog-route');
+    } else {
+      document.documentElement.classList.remove('blog-route');
+      document.body.classList.remove('blog-route');
+    }
+    return () => {
+      document.documentElement.classList.remove('blog-route');
+      document.body.classList.remove('blog-route');
+    };
+  }, [location.pathname]);
+
+  const isSubpage = location.pathname === '/product' || location.pathname === '/about';
+
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/product" element={<Product />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:slug" element={<BlogArticle />} />
+      </Routes>
+      {!isSubpage && <Footer />}
+      <ScrollToTopButton />
+      <GetStartedModal />
+      <Chatbot />
+    </>
+  );
+}
 
 function App() {
   return (
     <ModalProvider>
-      <Router>
-        <div className="App">
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/blog" element={<BlogPage />} />
-          </Routes>
-          <Footer />
-          <ScrollToTopButton />
-          <GetStartedModal />
-          <Chatbot />
-        </div>
-      </Router>
+      <CookieConsentProvider>
+        <Router>
+          <div className="App">
+            <AppRoutes />
+            <CookieConsent />
+          </div>
+        </Router>
+      </CookieConsentProvider>
     </ModalProvider>
   );
 }

@@ -1,0 +1,910 @@
+.roi-section {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #ffffff 0%, #f6f9fc 100%);
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    scroll-snap-align: start;
+}
+
+.roi-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.roi-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    margin-bottom: 12px;
+    color: var(--color-text-main);
+}
+
+.roi-subtitle {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.roi-comparison {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 24px;
+    align-items: stretch;
+    max-width: 1100px;
+    margin: 0 auto 40px;
+    width: 100%;
+}
+
+.roi-comparison>div {
+    display: flex;
+    align-items: stretch;
+}
+
+.roi-comparison>div:nth-child(2) {
+    align-items: center;
+}
+
+.roi-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+    border: 2px solid var(--color-border);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.roi-card .roi-metrics {
+    flex: 1;
+    justify-content: space-between;
+}
+
+.roi-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+.roi-card.traditional {
+    border-color: rgba(220, 53, 69, 0.3);
+}
+
+.roi-card.solvik {
+    border-color: rgba(253, 123, 65, 0.4);
+    background: linear-gradient(135deg, #ffffff 0%, #fef8f5 100%);
+}
+
+.roi-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--color-border);
+}
+
+.roi-card-header h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+}
+
+.roi-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.badge-old {
+    background: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+    border: 1px solid rgba(220, 53, 69, 0.3);
+}
+
+.badge-new {
+    background: linear-gradient(135deg, rgba(253, 123, 65, 0.15), rgba(237, 191, 155, 0.15));
+    color: var(--color-primary);
+    border: 1px solid rgba(253, 123, 65, 0.3);
+}
+
+.roi-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.roi-metric {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.metric-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.metric-value.negative {
+    color: #dc3545;
+}
+
+.metric-value.positive {
+    color: #28a745;
+}
+
+.metric-value.large {
+    font-size: 1.75rem;
+}
+
+.metric-label {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    font-weight: 500;
+}
+
+.roi-divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+    margin: 8px 0;
+}
+
+.roi-metric.total {
+    margin-top: 4px;
+}
+
+.roi-cost {
+    margin-top: 14px;
+    padding: 12px 14px;
+    background: rgba(60, 64, 68, 0.05);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cost-label {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    font-weight: 500;
+}
+
+.cost-value {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+}
+
+.solvik-cost {
+    background: rgba(40, 167, 69, 0.08);
+    border: 1px solid rgba(40, 167, 69, 0.2);
+}
+
+.solvik-cost-value {
+    color: #28a745 !important;
+}
+
+.roi-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    animation: pulse-arrow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-arrow {
+
+    0%,
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateX(10px);
+        opacity: 0.7;
+    }
+}
+
+/* ===================== */
+/* Input Fields Styling  */
+/* ===================== */
+
+.roi-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-text-main);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.input-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    background: rgba(220, 53, 69, 0.08);
+    color: #dc3545;
+    flex-shrink: 0;
+}
+
+.team-size-group .input-icon {
+    background: rgba(99, 102, 241, 0.1);
+    color: #6366f1;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: #f8f9fa;
+    border: 1.5px solid var(--color-border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.25s ease;
+}
+
+.input-wrapper:focus-within {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(253, 123, 65, 0.1);
+    background: white;
+}
+
+.roi-input {
+    flex: 1;
+    padding: 10px 12px;
+    border: none;
+    background: transparent;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #dc3545;
+    outline: none;
+    min-width: 0;
+    font-family: inherit;
+}
+
+.team-size-group .roi-input {
+    color: #6366f1;
+}
+
+.roi-input::placeholder {
+    color: #ccc;
+    font-weight: 400;
+}
+
+/* Hide number input spinners */
+.roi-input::-webkit-outer-spin-button,
+.roi-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.roi-input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.input-unit {
+    padding: 10px 12px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+    background: rgba(0, 0, 0, 0.03);
+    white-space: nowrap;
+    border-left: 1px solid var(--color-border);
+    letter-spacing: 0.3px;
+}
+
+/* ======================== */
+/* Comparison Bar Styling   */
+/* ======================== */
+
+.metric-comparison {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.metric-saved {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #28a745;
+    background: rgba(40, 167, 69, 0.1);
+    padding: 4px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.metric-bar {
+    height: 6px;
+    background: rgba(40, 167, 69, 0.1);
+    border-radius: 100px;
+    overflow: hidden;
+    margin-top: 4px;
+}
+
+.metric-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #28a745, #34d058);
+    border-radius: 100px;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.metric-bar-fill::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 16px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 100px;
+}
+
+/* ==================== */
+/* Savings Cards        */
+/* ==================== */
+
+.roi-savings {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto 60px;
+}
+
+.savings-card {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--color-border);
+    transition: all 0.3s ease;
+}
+
+.savings-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(253, 123, 65, 0.15);
+    border-color: var(--color-primary);
+}
+
+.savings-card.highlight-card {
+    background: linear-gradient(135deg, #fef8f5 0%, #fff 100%);
+    border-color: rgba(253, 123, 65, 0.3);
+}
+
+.savings-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(253, 123, 65, 0.1), rgba(237, 191, 155, 0.1));
+    color: var(--color-primary);
+}
+
+.savings-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+    line-height: 1;
+}
+
+.savings-label {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    font-weight: 500;
+}
+
+.roi-cta {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(135deg, rgba(253, 123, 65, 0.1), rgba(237, 191, 155, 0.1));
+    border-radius: 20px;
+    border: 2px solid rgba(253, 123, 65, 0.2);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.roi-cta-text {
+    font-size: 1.35rem;
+    color: var(--color-text-main);
+    font-weight: 600;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ==================== */
+/* Responsive           */
+/* ==================== */
+
+@media (max-width: 968px) {
+    .roi-comparison {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        max-width: 100%;
+    }
+
+    .roi-arrow {
+        display: none;
+    }
+
+    .roi-title {
+        font-size: clamp(1.75rem, 5vw, 2.5rem);
+    }
+
+    .roi-subtitle {
+        font-size: 0.95rem;
+        padding: 0 10px;
+    }
+
+    .roi-savings {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 0 10px;
+    }
+
+    .roi-card {
+        padding: 16px;
+    }
+
+    .roi-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 14px;
+        padding-bottom: 10px;
+    }
+
+    .roi-card-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .input-label {
+        font-size: 0.75rem;
+    }
+
+    .roi-input {
+        padding: 8px 10px;
+        font-size: 0.95rem;
+    }
+
+    .input-unit {
+        font-size: 0.65rem;
+        padding: 8px 6px;
+    }
+
+    .metric-value {
+        font-size: 1rem;
+    }
+
+    .metric-value.large {
+        font-size: 1.35rem;
+    }
+
+    .metric-saved {
+        font-size: 0.7rem;
+        padding: 3px 8px;
+    }
+
+    .roi-cost {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        padding: 10px 12px;
+    }
+
+    .cost-value {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .roi-section {
+        padding: 40px 0;
+    }
+
+    .roi-subtitle {
+        display: none;
+    }
+
+    .roi-header {
+        margin-bottom: 20px;
+    }
+
+    .roi-title {
+        font-size: 1.5rem;
+    }
+
+    .roi-comparison {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .roi-card {
+        padding: 12px;
+    }
+
+    .roi-card-header {
+        margin-bottom: 10px;
+        padding-bottom: 6px;
+    }
+
+    .roi-card-header h3 {
+        font-size: 0.95rem;
+    }
+
+    .roi-badge {
+        font-size: 0.6rem;
+        padding: 3px 6px;
+    }
+
+    .roi-metrics {
+        gap: 10px;
+    }
+
+    .input-label {
+        font-size: 0.7rem;
+        gap: 4px;
+    }
+
+    .input-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .input-icon svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .roi-input {
+        padding: 6px 8px;
+        font-size: 0.85rem;
+    }
+
+    .input-unit {
+        font-size: 0.55rem;
+        padding: 6px 4px;
+    }
+
+    .metric-value {
+        font-size: 0.9rem;
+    }
+
+    .metric-value.large {
+        font-size: 1.15rem;
+    }
+
+    .metric-label {
+        font-size: 0.72rem;
+    }
+
+    .metric-comparison {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .metric-saved {
+        font-size: 0.6rem;
+        padding: 2px 6px;
+    }
+
+    .roi-cost {
+        padding: 8px 10px;
+    }
+
+    .cost-label {
+        font-size: 0.7rem;
+    }
+
+    .cost-value {
+        font-size: 0.85rem;
+    }
+
+    .savings-card {
+        padding: 14px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-align: left;
+    }
+
+    .savings-icon {
+        width: 36px;
+        height: 36px;
+        margin: 0;
+        flex-shrink: 0;
+    }
+
+    .savings-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .savings-value {
+        font-size: 1.1rem;
+        margin-bottom: 2px;
+    }
+
+    .savings-label {
+        font-size: 0.75rem;
+    }
+
+    .input-unit {
+        font-size: 0.7rem;
+        padding: 12px 10px;
+    }
+}
+
+/* ── Mobile compact ROI layout ── */
+.roi-section-mobile {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 20px;
+    scroll-snap-align: start;
+}
+
+.roi-section-mobile .roi-header {
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.roi-section-mobile .roi-title {
+    font-size: 1.75rem;
+}
+
+/* Mobile input fields */
+.roi-mobile-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 16px;
+    padding: 14px;
+    background: white;
+    border-radius: 14px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+}
+
+.roi-mobile-input-row {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.roi-mobile-input-row label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.roi-mobile-input-wrap {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--color-bg-alt);
+    transition: border-color 0.2s ease;
+}
+
+.roi-mobile-input-wrap:focus-within {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(253, 123, 65, 0.1);
+}
+
+.roi-mobile-field {
+    border: none;
+    outline: none;
+    padding: 8px 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    background: transparent;
+    width: 100%;
+    min-width: 0;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.roi-mobile-field::-webkit-inner-spin-button,
+.roi-mobile-field::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.roi-mobile-unit {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+    padding: 8px 8px;
+    background: rgba(0, 0, 0, 0.02);
+    border-left: 1px solid var(--color-border);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.roi-mobile-input-row.team-row .roi-mobile-input-wrap {
+    border-color: rgba(253, 123, 65, 0.3);
+    background: rgba(253, 123, 65, 0.03);
+}
+
+
+.roi-mobile-hero {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.roi-mobile-big-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.roi-mobile-big-number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+}
+
+.roi-mobile-big-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+.roi-mobile-comparison {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding: 20px 16px;
+    background: white;
+    border-radius: 16px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.roi-mobile-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+}
+
+.roi-mobile-col-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 10px;
+    border-radius: 100px;
+}
+
+.roi-mobile-col-badge.badge-old {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+.roi-mobile-col-badge.badge-new {
+    background: rgba(34, 197, 94, 0.1);
+    color: #22c55e;
+}
+
+.roi-mobile-col-hours {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-text-main);
+}
+
+.roi-mobile-col-hours.positive {
+    color: #22c55e;
+}
+
+.roi-mobile-col-cost {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    font-weight: 500;
+}
+
+.roi-mobile-arrow-col {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    opacity: 0.6;
+}
+
+.roi-mobile-savings-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.roi-mobile-stat-pill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 14px 8px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.pill-value {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--color-text-main);
+    white-space: nowrap;
+}
+
+.pill-label {
+    font-size: 0.65rem;
+    color: var(--color-text-light);
+    font-weight: 500;
+    text-align: center;
+}
+
+.roi-mobile-note {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+    opacity: 0.7;
+    margin: 0;
+}

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ScrollReveal from './ScrollReveal';
 import Footer from './Footer';
+import { useModal } from '../context/ModalContext';
 import './Pricing.css';
 
 const plans = [
@@ -63,6 +64,29 @@ const plans = [
 ];
 
 const Pricing = () => {
+    const { openModal } = useModal();
+    const [activePlan, setActivePlan] = useState(0); // Default to Starter
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
+    const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 900);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    // Auto-advance active plan on mobile every 4s
+    useEffect(() => {
+        if (!isMobile || !isAutoPlaying) return;
+        const t = setInterval(() => setActivePlan(prev => (prev + 1) % plans.length), 4000);
+        return () => clearInterval(t);
+    }, [isMobile, isAutoPlaying]);
+
+    const handleTabClick = (idx) => {
+        setActivePlan(idx);
+        setIsAutoPlaying(false); // Stop auto-play on manual interaction
+    };
+
     return (
         <section id="pricing" className="section bg-alt pricing-section">
             <div className="container">
@@ -75,12 +99,34 @@ const Pricing = () => {
                     </div>
                 </ScrollReveal>
 
+                {/* Mobile Tab Selectors */}
+                <div className="pricing-mobile-tabs">
+                    {plans.map((plan, idx) => (
+                        <button
+                            key={idx}
+                            className={`pricing-tab-btn ${activePlan === idx ? 'active' : ''}`}
+                            onClick={() => handleTabClick(idx)}
+                        >
+                            {plan.name}
+                        </button>
+                    ))}
+                </div>
+
                 <div className="pricing-grid">
                     {plans.map((plan, idx) => (
-                        <ScrollReveal key={idx} animation="fade-up" delay={`${(idx * 100) + 100}`} className={`pricing-card-wrapper`}>
-                            <div className={`pricing-card ${plan.highlight ? 'highlight' : ''}`}>
+                        <ScrollReveal
+                            key={idx}
+                            animation="fade-up"
+                            delay={`${(idx * 100) + 100}`}
+                            className={`pricing-card-wrapper ${activePlan === idx ? 'mobile-visible' : 'mobile-hidden'}`}
+                        >
+                            <div
+                                className={`pricing-card ${plan.highlight ? 'highlight' : ''}`}
+                            >
                                 <div className="card-header">
-                                    <h3>{plan.name}</h3>
+                                    <div className="mobile-header-trigger">
+                                        <h3>{plan.name}</h3>
+                                    </div>
                                     <p className="plan-desc">{plan.desc}</p>
                                     <div className="price">
                                         {plan.price}
@@ -100,8 +146,13 @@ const Pricing = () => {
                                     </ul>
                                 </div>
                                 <div className="card-footer">
-                                    <button className={`btn ${plan.highlight ? 'btn-primary' : 'btn-secondary'}`} style={{ width: '100%' }}>
-                                        {plan.name === 'Enterprise' ? 'Contact Sales' : 'Get Started'}
+                                    <button
+                                        type="button"
+                                        className={`btn ${plan.highlight ? 'btn-primary' : 'btn-secondary'}`}
+                                        style={{ width: '100%' }}
+                                        onClick={openModal}
+                                    >
+                                        Get Started
                                     </button>
                                 </div>
                             </div>

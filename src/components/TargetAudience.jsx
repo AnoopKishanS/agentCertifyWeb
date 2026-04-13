@@ -31,86 +31,68 @@ const industries = [
 
 const TargetAudience = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-    // Auto-advance carousel
     useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    // Auto-advance carousel on both desktop and mobile every 4s
+    useEffect(() => {
+        if (!isAutoPlaying) return;
         const interval = setInterval(() => {
             setCurrentIndex((prev) => (prev + 1) % industries.length);
-        }, 5000); // Change slide every 5 seconds
-
+        }, 4000);
         return () => clearInterval(interval);
-    }, []);
+    }, [isAutoPlaying]);
 
     const goToSlide = (index) => {
         setCurrentIndex(index);
-    };
-
-    const nextSlide = () => {
-        setCurrentIndex((prev) => (prev + 1) % industries.length);
-    };
-
-    const prevSlide = () => {
-        setCurrentIndex((prev) => (prev - 1 + industries.length) % industries.length);
+        setIsAutoPlaying(false); // Stop auto-play on manual click
     };
 
     return (
         <section id="industry" className="industry-carousel-section">
             <div className="industry-header">
                 <h2>Every Industry needs <span style={{ color: 'var(--color-primary)' }}>Solvik</span>.</h2>
-                <p>Solvik adapts Solvik protocols to your specific domain requirements.</p>
+                <p>Solvik adapts testing protocols to your specific domain requirements.</p>
             </div>
 
             <div className="industry-carousel-viewport">
                 <div
                     className="industry-cards-container"
-                    style={{
-                        transform: `translateX(-${currentIndex * 100}vw)`,
-                    }}
+                    style={isMobile ? {} : { transform: `translateX(-${currentIndex * 100}vw)` }}
                 >
                     {industries.map((industry, idx) => (
-                        <div key={idx} className="industry-card-fullwidth">
+                        <div
+                            key={idx}
+                            className={`industry-card-fullwidth ${isMobile && idx === currentIndex ? 'mobile-active' : ''}`}
+                        >
                             <div className="industry-card-content">
                                 <div className="industry-content-wrapper">
                                     <div className="industry-illustration">
                                         {industry.name === 'E-Commerce' ? (
                                             <div className="illustration-3d-wrapper">
-                                                <img
-                                                    src="/assets/ecommerce-3d.png"
-                                                    alt="Ecommerce 3D Illustration"
-                                                    className="illustration-3d illustration-ecommerce"
-                                                />
+                                                <img src="/assets/ecommerce-3d.png" alt="Ecommerce 3D Illustration" className="illustration-3d illustration-ecommerce" />
                                             </div>
                                         ) : industry.name === 'Healthcare' ? (
                                             <div className="illustration-3d-wrapper">
-                                                <img
-                                                    src="/assets/healthcare-3d.png"
-                                                    alt="Healthcare 3D Illustration"
-                                                    className="illustration-3d"
-                                                />
+                                                <img src="/assets/healthcare-3d.png" alt="Healthcare 3D Illustration" className="illustration-3d" />
                                             </div>
                                         ) : industry.name === 'FinTech' ? (
                                             <div className="illustration-3d-wrapper">
-                                                <img
-                                                    src="/assets/fintech-3d.png"
-                                                    alt="FinTech 3D Illustration"
-                                                    className="illustration-3d"
-                                                />
+                                                <img src="/assets/fintech-3d.png" alt="FinTech 3D Illustration" className="illustration-3d" />
                                             </div>
                                         ) : industry.name === 'Enterprise' ? (
                                             <div className="illustration-3d-wrapper">
-                                                <img
-                                                    src="/assets/enterprise-3d.png"
-                                                    alt="Enterprise 3D Illustration"
-                                                    className="illustration-3d"
-                                                />
+                                                <img src="/assets/enterprise-3d.png" alt="Enterprise 3D Illustration" className="illustration-3d" />
                                             </div>
                                         ) : industry.name === 'SaaS & Cloud' ? (
                                             <div className="illustration-3d-wrapper">
-                                                <img
-                                                    src="/assets/cloud-3d.png"
-                                                    alt="SaaS & Cloud 3D Illustration"
-                                                    className="illustration-3d"
-                                                />
+                                                <img src="/assets/cloud-3d.png" alt="SaaS & Cloud 3D Illustration" className="illustration-3d" />
                                             </div>
                                         ) : (
                                             <div className="illustration-placeholder">
@@ -143,7 +125,7 @@ const TargetAudience = () => {
                     ))}
                 </div>
 
-                {/* New Tab Navigation */}
+                {/* Tab Navigation */}
                 <div className="carousel-tabs">
                     {industries.map((industry, idx) => (
                         <button

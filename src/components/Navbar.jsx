@@ -38,7 +38,7 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-content">
         <Link to="/" className="logo">
-          Sol<span style={{ color: 'var(--color-primary)' }}>vik</span>
+          <span style={{ color: 'var(--color-primary)' }}>Solvik</span>
         </Link>
         <button
           className="mobile-menu-toggle"
@@ -50,12 +50,16 @@ const Navbar = () => {
           <span></span>
         </button>
         <div className={`nav-links ${mobileMenuOpen ? 'mobile-open' : ''}`}>
-          <Link to="/" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-          <Link to="/#features" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Features</Link>
-          <Link to="/#how-it-works" className="nav-link" onClick={() => setMobileMenuOpen(false)}>How it Works</Link>
-          <Link to="/#industry" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Industry</Link>
+          <Link to="/#about" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Explore Solvik</Link>
+          {/* <Link to="/#why-solvik" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Why</Link>
+          <Link to="/#how-it-works" className="nav-link" onClick={() => setMobileMenuOpen(false)}>How</Link>
+          <Link to="/#modern-dev" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Platform</Link> */}
+          <Link to="/#roi" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Smart ROI</Link>
+          <Link to="/#industry" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Industries</Link>
+          <Link to="/product" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Product</Link>
           <Link to="/#pricing" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
-          <Link to="/blog" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Blog</Link>
+          <Link to="/about" className="nav-link" onClick={() => setMobileMenuOpen(false)}>About</Link>
+          {/* <Link to="/blog" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Resources</Link> */}
         </div>
       </div>
     </nav>
